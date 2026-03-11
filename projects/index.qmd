@@ -1,0 +1,11 @@
+---
+title: "Projects"
+listing:
+  contents: "*.qmd"
+  type: grid
+  grid-columns: 2
+  sort:
+    - "priority"
+  fields: [title, description, categories]
+  categories: false
+---

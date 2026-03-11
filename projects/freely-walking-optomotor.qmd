@@ -1,0 +1,28 @@
+---
+title: "Freely Walking Optomotor Pipeline"
+description: "End-to-end data pipeline for behavioral experiments: automated ETL, Python/MATLAB processing, and interactive Dash dashboard."
+categories: [Python, MATLAB, Dash, ETL, Automation]
+priority: 1
+---
+
+## Overview
+
+Built a complete experimental platform that automatically processes, validates, and visualizes behavioral experiment data from a high-throughput screen of fruit fly visual responses. The system coordinates data acquisition, video tracking, and analysis across multiple computers, with Python automation services that monitor for new data and trigger processing pipelines automatically. Used by multiple researchers across overlapping projects at HHMI Janelia Research Campus.
+
+## Technical Highlights
+
+- **592 commits** of iterative development across a multi-language codebase
+- **Automated ETL pipeline**: monitor &rarr; copy &rarr; track &rarr; process &rarr; visualize
+- **Interactive Dash/Plotly dashboard** for exploring experimental results (speed tuning, contrast tuning, behavioral metrics)
+- **Pipeline status monitoring** with auto-generated HTML reports for real-time experiment tracking
+- **Centralized configuration system** managing parameters across 3 networked machines
+- **Quarto-based auto-generated documentation** keeping docs synchronized with the codebase
+
+## Technologies
+
+[Python]{.tag} [MATLAB]{.tag} [Dash]{.tag} [Plotly]{.tag} [Pandas]{.tag} [NumPy]{.tag} [SciPy]{.tag} [pixi]{.tag} [Quarto]{.tag} [Jinja2]{.tag}
+
+## Links
+
+- [Source Code]({{< var repos.optomotor >}})
+- [Documentation]({{< var repos.reiser_docs_site >}})

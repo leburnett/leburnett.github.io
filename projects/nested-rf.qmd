@@ -1,0 +1,27 @@
+---
+title: "Nested Receptive Field Protocol"
+description: "Adaptive electrophysiology toolkit that dynamically generates stimuli based on real-time neural response analysis."
+categories: [MATLAB, Python, Signal Processing, Experimental Design]
+priority: 3
+---
+
+## Overview
+
+Designed and built an adaptive experimental protocol for electrophysiology recordings. The system runs a coarse mapping protocol, automatically analyzes the neural responses, then generates a tailored high-resolution follow-up protocol centered on each neuron's identified receptive field. This two-stage adaptive approach reduces experimental time and improves data quality by focusing resources where they matter most.
+
+## Technical Highlights
+
+- **228 commits** of iterative development
+- **Adaptive pipeline design**: automated analysis of protocol 1 results feeds directly into protocol 2 generation
+- **Real-time signal processing** of electrophysiology data
+- **MATLAB GUI** for parameter input and experiment control
+- **Automated protocol generation** from prior experimental results — no manual intervention required between stages
+
+## Technologies
+
+[MATLAB]{.tag} [Python]{.tag} [Signal Processing]{.tag} [Experimental Design]{.tag} [Real-time Analysis]{.tag}
+
+## Links
+
+- [Source Code]({{< var repos.nested_rf >}})
+- [Documentation]({{< var repos.reiser_docs_site >}}/Ephys/ephys_nested_rf.html)

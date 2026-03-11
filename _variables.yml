@@ -1,0 +1,12 @@
+links:
+  github: "https://github.com/leburnett"
+  linkedin: "https://linkedin.com/in/LINKEDIN_USERNAME"
+  scholar: "https://scholar.google.com/citations?user=SCHOLAR_ID"
+  email: "your.email@example.com"
+
+repos:
+  optomotor: "https://github.com/leburnett/freely-walking-optomotor"
+  connectome: "https://github.com/reiserlab/male-drosophila-visual-system-connectome-code"
+  nested_rf: "https://github.com/leburnett/nested_RF_stimulus"
+  reiser_docs: "https://github.com/leburnett/reiser-documentation"
+  reiser_docs_site: "https://leburnett.github.io/reiser-documentation"

@@ -1,0 +1,45 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Laura Burnett"
+  description: "Data scientist with a background in neuroscience research. Portfolio showcasing data pipelines, interactive dashboards, connectomics analysis, and scientific computing."
+
+  sidebar:
+    style: docked
+    search: false
+    background: light
+    contents:
+      - text: "Home"
+        href: index.qmd
+      - text: "About"
+        href: about.qmd
+      - text: "Projects"
+        href: projects/index.qmd
+      - text: "Blog"
+        href: blog/index.qmd
+      - text: "---"
+      - icon: github
+        text: "GitHub"
+        href: https://github.com/leburnett
+      - icon: linkedin
+        text: "LinkedIn"
+        href: https://linkedin.com/in/LINKEDIN_USERNAME
+      - text: "Scholar"
+        href: https://scholar.google.com/citations?user=SCHOLAR_ID
+
+  page-footer:
+    center: "Built with [Quarto](https://quarto.org)"
+
+  open-graph: true
+  twitter-card: true
+
+format:
+  html:
+    theme:
+      light: [journal, custom.scss]
+    toc: false
+    anchor-sections: true
+    smooth-scroll: true
+    link-external-newwindow: true

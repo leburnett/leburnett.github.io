@@ -1,0 +1,10 @@
+---
+title: "Welcome"
+date: "2026-03-10"
+description: "First post on my new website."
+categories: [news]
+---
+
+This is my new portfolio and blog, built with [Quarto](https://quarto.org) and hosted on GitHub Pages.
+
+I'll be writing here about data science, neuroscience, and the transition from academia to industry. Stay tuned.

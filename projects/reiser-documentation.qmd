@@ -1,0 +1,27 @@
+---
+title: "Reiser Lab Documentation Site"
+description: "Comprehensive Quarto documentation website for multi-user experimental workflows, with auto-generated content from code."
+categories: [Quarto, Technical Writing, Documentation, Jinja2]
+priority: 4
+---
+
+## Overview
+
+Created and maintained a comprehensive documentation website for the Reiser Lab's experimental setups at HHMI Janelia Research Campus. The site covers electrophysiology and freely-walking behavioral paradigms, with step-by-step guides for running experiments, analyzing data, and troubleshooting hardware. Designed for consumption by researchers with varying levels of experience.
+
+## Technical Highlights
+
+- **Quarto static site** with custom theming and light/dark mode support
+- **Auto-generated documentation** from MATLAB code analysis using Python (Jinja2 templates), ensuring docs stay synchronized with the codebase
+- **Tiered documentation structure**: Quickstart guides, Deep Dives, Reference materials, Troubleshooting
+- **Multi-user design** serving researchers across different experience levels and experimental paradigms
+- Deployed via **GitHub Pages** with continuous updates
+
+## Technologies
+
+[Quarto]{.tag} [Python]{.tag} [Jinja2]{.tag} [GitHub Pages]{.tag} [SCSS]{.tag} [Technical Writing]{.tag}
+
+## Links
+
+- [Live Site]({{< var repos.reiser_docs_site >}})
+- [Source Code]({{< var repos.reiser_docs >}})

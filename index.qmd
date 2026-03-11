@@ -1,0 +1,16 @@
+---
+title: ""
+page-layout: article
+toc: false
+title-block-style: none
+---
+
+::: {.hero}
+# Laura Burnett
+
+[Data Scientist | Neuroscience PhD]{.subtitle}
+
+::: {.bio}
+[TODO: Add 2-3 sentences positioning yourself. Example framing: "I build data pipelines, interactive dashboards, and computational tools for scientific research. With X years of experience turning complex biological datasets into actionable insights, I'm seeking data science roles in industry where I can apply my skills in pipeline engineering, statistical analysis, and data visualization."]
+:::
+:::

@@ -1,0 +1,28 @@
+---
+title: "Male Drosophila Visual System Connectome"
+description: "Computational analysis and 3D visualization for a Nature paper on the Drosophila optic lobe connectome."
+categories: [Python, Snakemake, Blender, Graph DB, neuPrint]
+priority: 2
+---
+
+## Overview
+
+Developed reproducible analysis pipelines for a large-scale connectomics dataset, published as supplemental code for a Nature paper (Nern et al. 2025). The project involved querying a connectome database of over 100,000 neurons, performing connectivity analysis, creating 3D neuronal morphology renderings, and building reproducible computational workflows. The codebase supports interactive exploration through Jupyter notebooks and is publicly available as supplementary material.
+
+## Technical Highlights
+
+- **neuPrint graph database queries** (Cypher) for connectome analysis across 100,000+ neurons
+- **Snakemake workflow** for reproducible, automated computational pipelines
+- **Blender 3D visualization** of neural structures and morphologies
+- **Python analysis stack**: navis, neuprint-python, pandas, matplotlib, seaborn
+- **Multi-platform support** (Linux, macOS, Windows) with pixi environment management
+- **Collaborative development** across 14 contributors
+
+## Technologies
+
+[Python]{.tag} [Cypher/SQL]{.tag} [Snakemake]{.tag} [Blender]{.tag} [Jupyter]{.tag} [navis]{.tag} [neuPrint]{.tag} [pixi]{.tag}
+
+## Links
+
+- [Source Code]({{< var repos.connectome >}})
+- [TODO: Link to Nature paper DOI]

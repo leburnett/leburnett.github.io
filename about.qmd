@@ -1,0 +1,68 @@
+---
+title: "About"
+toc: true
+---
+
+## About Me
+
+[TODO: Add 3-4 paragraphs describing your professional background and career transition. Suggested framing:]
+
+- [TODO: Paragraph 1 — Current role and what you do. E.g., "I'm a postdoctoral researcher at HHMI Janelia Research Campus where I design and build computational tools for neuroscience research."]
+- [TODO: Paragraph 2 — The data science skills you've developed through research. Frame pipeline engineering, dashboard development, statistical analysis, and visualization as industry-transferable strengths.]
+- [TODO: Paragraph 3 — What you're looking for next. E.g., "I'm seeking data science roles where I can apply my experience building production-quality data systems and turning complex datasets into actionable insights."]
+- [TODO: Paragraph 4 — Your domain expertise as a differentiator. Your neuroscience background gives you unique strengths in working with complex, high-dimensional data.]
+
+## Technical Skills
+
+| Category | Skills |
+|----------|--------|
+| **Languages** | Python, MATLAB, SQL (Cypher/neuPrint) |
+| **Data Engineering** | ETL pipelines, automated processing, Snakemake workflows |
+| **Visualization** | Dash/Plotly, Matplotlib, Blender 3D rendering |
+| **Data Science** | Statistical analysis, behavioral modeling, graph databases |
+| **Tools & Platforms** | Git, GitHub Actions, Quarto, pixi, Jupyter |
+
+## Education
+
+- [TODO: PhD — Field, Institution, Year]
+- [TODO: Additional degrees]
+
+## Selected Publications
+
+::: {.pub-timeline}
+::: {.pub-year}
+2025
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**[TODO: Paper Title](https://doi.org/TODO)**
+
+Nern, A., Burnett, L., et al. *Nature*. 2025.
+:::
+:::
+:::
+
+::: {.pub-timeline}
+::: {.pub-year}
+[TODO]
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**[TODO: Paper Title](https://doi.org/TODO)**
+
+[TODO: Authors]. *[TODO: Journal]*. [TODO: Year].
+:::
+::: {.pub-entry}
+**[TODO: Paper Title](https://doi.org/TODO)**
+
+[TODO: Authors]. *[TODO: Journal]*. [TODO: Year].
+:::
+:::
+:::
+
+## Contact
+
+- Email: [{{< var links.email >}}](mailto:{{< var links.email >}})
+- GitHub: [{{< var links.github >}}]({{< var links.github >}})
+- LinkedIn: [{{< var links.linkedin >}}]({{< var links.linkedin >}})
+- Google Scholar: [{{< var links.scholar >}}]({{< var links.scholar >}})
