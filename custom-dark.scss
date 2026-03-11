@@ -1,0 +1,119 @@
+/*-- scss:defaults --*/
+
+// Minimal dark palette — inverted grayscale
+$body-color: #e0e0e0;
+$link-color: #aaaaaa;
+$link-hover-color: #ffffff;
+
+// Backgrounds
+$body-bg: #1a1a1a;
+
+// Sidebar — same as page background
+$sidebar-bg: #1a1a1a;
+
+/*-- scss:rules --*/
+
+// Sidebar styling
+.sidebar {
+  border-right: 1px solid #333333;
+}
+
+.sidebar-item .sidebar-item-text {
+  color: #aaaaaa;
+}
+
+.sidebar-item .sidebar-item-text:hover {
+  color: #ffffff;
+}
+
+// Hero section
+.hero {
+  border-bottom: 1px solid #333333;
+}
+
+.hero h1 {
+  color: #e0e0e0;
+}
+
+.hero .subtitle {
+  color: #999999;
+}
+
+.hero .bio {
+  color: #cccccc;
+}
+
+// Project cards
+.project-card {
+  border: 1px solid #333333;
+}
+
+.project-card:hover {
+  border-color: #666666;
+}
+
+.project-card h3 {
+  color: #e0e0e0;
+}
+
+.project-card p {
+  color: #aaaaaa;
+}
+
+// Tech tags
+.tag {
+  background-color: #2a2a2a;
+  color: #aaaaaa;
+}
+
+// Section headings
+.section-heading {
+  color: #e0e0e0;
+  border-bottom: 1px solid #333333;
+}
+
+// Blog listing
+.quarto-listing-table td {
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.quarto-listing-table a {
+  color: #e0e0e0;
+}
+
+.quarto-listing-table a:hover {
+  color: #aaaaaa;
+}
+
+// Skills table
+.skills-table td:first-child {
+  color: #cccccc;
+}
+
+// Footer
+.nav-footer {
+  border-top: 1px solid #333333;
+  color: #777777;
+}
+
+// Publications timeline
+.pub-year {
+  color: #aaaaaa;
+}
+
+.pub-year::before {
+  background-color: #777777;
+}
+
+.pub-year::after {
+  background-color: #444444;
+}
+
+.pub-entry p {
+  color: #aaaaaa;
+}
+
+// Page title
+.quarto-title h1.title {
+  color: #e0e0e0;
+}

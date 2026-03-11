@@ -9,10 +9,8 @@ website:
   sidebar:
     style: docked
     search: false
-    background: light
+    background: transparent
     contents:
-      - text: "Home"
-        href: index.qmd
       - text: "About"
         href: about.qmd
       - text: "Projects"
@@ -39,6 +37,7 @@ format:
   html:
     theme:
       light: [journal, custom.scss]
+      dark: [darkly, custom-dark.scss]
     toc: false
     anchor-sections: true
     smooth-scroll: true

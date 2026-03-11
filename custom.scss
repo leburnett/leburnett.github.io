@@ -8,14 +8,25 @@ $link-hover-color: #000000;
 // Backgrounds
 $body-bg: #ffffff;
 
-// Sidebar
-$sidebar-bg: #fafafa;
+// Sidebar — same as page background
+$sidebar-bg: #ffffff;
 
 /*-- scss:rules --*/
 
-// Sidebar styling
+// Sidebar styling — wider, starts from left edge
 .sidebar {
   border-right: 1px solid #e8e8e8;
+}
+
+#quarto-sidebar {
+  width: 300px;
+  padding-left: 2.5rem;
+  padding-right: 1.5rem;
+}
+
+// Push grid sidebar column wider
+.page-columns > #quarto-sidebar {
+  grid-column: screen-start / page-start-inset;
 }
 
 .sidebar-item .sidebar-item-text {
@@ -154,9 +165,11 @@ a:hover {
   font-weight: 700;
 }
 
-// Content width constraint
+// Center main content in the space after sidebar
 .content {
   max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // Publications timeline (inspired by lingxi.li)
