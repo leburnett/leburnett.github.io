@@ -8,9 +8,358 @@ title-block-style: none
 ::: {.hero}
 # Laura Burnett
 
-[Data Scientist | Neuroscience PhD]{.subtitle}
+[Systems neuroscience postdoctoral researcher that enjoys thinking about data.]{.subtitle}
 
 ::: {.bio}
-[TODO: Add 2-3 sentences positioning yourself. Example framing: "I build data pipelines, interactive dashboards, and computational tools for scientific research. With X years of experience turning complex biological datasets into actionable insights, I'm seeking data science roles in industry where I can apply my skills in pipeline engineering, statistical analysis, and data visualization."]
+[Spent 6 years thinking about rapid, visually-driven decision making in mice before moving to a more data-driven role helping develop a connectome of the fruit fly's visual system and develops, conducts and analyses complex electrophysiological and behavioural data in flies.]{.bio-text}
 :::
 :::
+
+```{=html}
+<canvas id="disco-canvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:9999;display:none;"></canvas>
+<button id="disco-btn" aria-label="Toggle disco ball">🪩</button>
+
+<script>
+(function() {
+  const canvas = document.getElementById('disco-canvas');
+  const ctx = canvas.getContext('2d');
+  const btn = document.getElementById('disco-btn');
+
+  let active = false;
+  let animId = null;
+  let t = 0;
+  let dropT = 0;
+  let retracting = false;
+  let retractStartY = 0;
+  let retractT = 0;
+
+  // ─── Config ───
+  const BALL_RADIUS = 65;
+  const ROWS = 28;
+  const STRING_WIDTH = 1.5;
+
+  // ─── Lights ───
+  const lights = [
+    { x: 0.4, y: -0.6, z: 0.7, color: [255, 250, 240], intensity: 1.0 },
+    { x: -0.5, y: -0.3, z: 0.6, color: [220, 230, 255], intensity: 0.5 },
+    { x: 0.0, y: 0.4, z: 0.8, color: [255, 240, 230], intensity: 0.3 },
+  ];
+  for (const l of lights) {
+    const len = Math.sqrt(l.x * l.x + l.y * l.y + l.z * l.z);
+    l.x /= len; l.y /= len; l.z /= len;
+  }
+
+  // ─── Build sphere facets ───
+  const facets = [];
+  for (let row = 0; row < ROWS; row++) {
+    const phi1 = (row / ROWS) * Math.PI;
+    const phi2 = ((row + 1) / ROWS) * Math.PI;
+    const y1 = Math.cos(phi1), y2 = Math.cos(phi2);
+    const r1 = Math.sin(phi1), r2 = Math.sin(phi2);
+    const midSin = Math.sin((phi1 + phi2) / 2);
+    const cols = Math.max(6, Math.round(midSin * 40));
+
+    for (let col = 0; col < cols; col++) {
+      const t1 = (col / cols) * Math.PI * 2;
+      const t2 = ((col + 1) / cols) * Math.PI * 2;
+      const tm = (t1 + t2) / 2;
+      const rm = (r1 + r2) / 2;
+      const nx = Math.cos(tm) * rm;
+      const ny = (y1 + y2) / 2;
+      const nz = Math.sin(tm) * rm;
+      const nLen = Math.sqrt(nx * nx + ny * ny + nz * nz);
+      const perturb = 0.09;
+      const px = (Math.random() - 0.5) * perturb;
+      const py = (Math.random() - 0.5) * perturb;
+      const pz = (Math.random() - 0.5) * perturb;
+
+      facets.push({
+        corners: [
+          { x: Math.cos(t1) * r1, y: y1, z: Math.sin(t1) * r1 },
+          { x: Math.cos(t2) * r1, y: y1, z: Math.sin(t2) * r1 },
+          { x: Math.cos(t2) * r2, y: y2, z: Math.sin(t2) * r2 },
+          { x: Math.cos(t1) * r2, y: y2, z: Math.sin(t1) * r2 },
+        ],
+        inset: 0.93,
+        cx: nx, cy: ny, cz: nz,
+        pnx: nx / nLen + px, pny: ny / nLen + py, pnz: nz / nLen + pz,
+        tintR: 0.92 + Math.random() * 0.16,
+        tintG: 0.92 + Math.random() * 0.16,
+        tintB: 0.94 + Math.random() * 0.12,
+      });
+    }
+  }
+
+  // ─── Colorful speckles ───
+  const speckleAnchors = [];
+  const RINGS = 7;
+  const BASE_PER_RING = 6;
+  for (let ring = 1; ring <= RINGS; ring++) {
+    const count = BASE_PER_RING + ring * 3;
+    const ringDist = ring / RINGS;
+    for (let i = 0; i < count; i++) {
+      const angle = (i / count) * Math.PI * 2 + (ring % 2) * (Math.PI / count);
+      speckleAnchors.push({
+        angle,
+        dist: ringDist * (0.93 + Math.random() * 0.14),
+        size: 1.5 + Math.random() * 4,
+        brightness: 0.3 + Math.random() * 0.7,
+        phaseOffset: Math.random() * Math.PI * 2,
+        hue: Math.random() * 360,
+      });
+    }
+  }
+
+  // ─── Helpers ───
+  function rotY(x, y, z, a) {
+    const c = Math.cos(a), s = Math.sin(a);
+    return { x: x * c + z * s, y, z: -x * s + z * c };
+  }
+  function insetPoint(px, py, cx, cy, factor) {
+    return { x: cx + (px - cx) * factor, y: cy + (py - cy) * factor };
+  }
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+
+  // ─── Ball position ───
+  function getBallX() { return canvas.width - 120; }
+  function getTargetY() { return canvas.height * 0.24; }
+
+  // ─── Spring drop: gentle bounce ───
+  function getDropY(elapsed) {
+    const target = getTargetY();
+    const startOff = -200;
+    const amp = target - startOff;
+    if (elapsed > 4) return target;
+    const spring = amp * Math.exp(-2.5 * elapsed) * Math.cos(4 * elapsed);
+    return target - spring;
+  }
+
+  // ─── Retract: ease-out slide up ───
+  function getRetractY(elapsed) {
+    const duration = 1.2;
+    const progress = Math.min(1, elapsed / duration);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    return retractStartY + (-200 - retractStartY) * ease;
+  }
+
+  // ─── Main draw ───
+  function draw() {
+    t += 0.005;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const isDark = document.body.classList.contains('quarto-dark');
+    const ballX = getBallX();
+    let ballY;
+
+    if (retracting) {
+      retractT += 1 / 60;
+      ballY = getRetractY(retractT);
+      if (ballY <= -200) {
+        stopDisco();
+        return;
+      }
+    } else {
+      dropT += 1 / 60;
+      ballY = getDropY(dropT);
+    }
+
+    const rotAngle = t;
+
+    // ── String ──
+    ctx.save();
+    ctx.strokeStyle = isDark ? '#555' : '#999';
+    ctx.lineWidth = STRING_WIDTH;
+    ctx.beginPath();
+    ctx.moveTo(ballX, 0);
+    ctx.lineTo(ballX, ballY - BALL_RADIUS + 2);
+    ctx.stroke();
+    ctx.restore();
+
+    // ── Speckles ──
+    const maxSpread = Math.min(canvas.width, canvas.height) * 0.42;
+    const groupRot = t * 0.6;
+
+    for (const sp of speckleAnchors) {
+      const a = sp.angle + groupRot;
+      const d = sp.dist * maxSpread;
+      const sx = ballX + Math.cos(a) * d;
+      const sy = ballY + Math.sin(a) * d * 0.9;
+
+      const pulse = 0.5 + 0.5 * Math.sin(t * 2.5 + sp.phaseOffset);
+      const alpha = sp.brightness * (0.15 + 0.85 * pulse);
+      const r = sp.size * (0.7 + 0.3 * pulse);
+      const lightness = isDark ? '75%' : '60%';
+      const sat = isDark ? '80%' : '70%';
+
+      // Soft glow
+      const glow = ctx.createRadialGradient(sx, sy, 0, sx, sy, r * 4);
+      glow.addColorStop(0, 'hsla(' + sp.hue + ',' + sat + ',' + lightness + ',' + (alpha * 0.3) + ')');
+      glow.addColorStop(1, 'transparent');
+      ctx.fillStyle = glow;
+      ctx.beginPath();
+      ctx.arc(sx, sy, r * 4, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Core
+      const core = ctx.createRadialGradient(sx, sy, 0, sx, sy, r);
+      core.addColorStop(0, 'hsla(' + sp.hue + ',' + sat + ',' + lightness + ',' + alpha + ')');
+      core.addColorStop(0.5, 'hsla(' + sp.hue + ',' + sat + ',' + lightness + ',' + (alpha * 0.5) + ')');
+      core.addColorStop(1, 'transparent');
+      ctx.fillStyle = core;
+      ctx.beginPath();
+      ctx.arc(sx, sy, r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // ── Disco Ball ──
+    const gapColor = isDark ? 'rgb(35, 35, 40)' : 'rgb(20, 20, 24)';
+    const ambientBase = isDark ? 75 : 65;
+
+    const transformed = facets.map(function(f) {
+      const rc = rotY(f.cx, f.cy, f.cz, rotAngle);
+      const rn = rotY(f.pnx, f.pny, f.pnz, rotAngle);
+      const pts = f.corners.map(function(c) {
+        const p = rotY(c.x, c.y, c.z, rotAngle);
+        return { x: ballX + p.x * BALL_RADIUS, y: ballY + p.y * BALL_RADIUS, z: p.z };
+      });
+      return { pts: pts, z: rc.z, nx: rn.x, ny: rn.y, nz: rn.z, tintR: f.tintR, tintG: f.tintG, tintB: f.tintB, inset: f.inset };
+    });
+
+    transformed.sort(function(a, b) { return a.z - b.z; });
+
+    for (const f of transformed) {
+      if (f.nz < -0.02) continue;
+
+      let centX = 0, centY = 0;
+      for (const p of f.pts) { centX += p.x; centY += p.y; }
+      centX /= f.pts.length;
+      centY /= f.pts.length;
+
+      const inPts = f.pts.map(function(p) { return insetPoint(p.x, p.y, centX, centY, f.inset); });
+
+      let totalR = ambientBase, totalG = ambientBase, totalB = ambientBase + 3;
+      let maxSpec = 0;
+
+      for (const l of lights) {
+        const dot = f.nx * l.x + f.ny * l.y + f.nz * l.z;
+        const diffuse = Math.max(0, dot);
+        const spec = Math.pow(Math.max(0, dot), 40) * l.intensity;
+        maxSpec = Math.max(maxSpec, spec);
+        const fresnel = 1.0 - Math.abs(f.nz);
+        const fresnelBoost = 0.3 + 0.7 * Math.pow(fresnel, 2);
+        const contribution = (diffuse * 0.75 + spec * 1.5) * l.intensity * fresnelBoost;
+        totalR += l.color[0] * contribution * f.tintR;
+        totalG += l.color[1] * contribution * f.tintG;
+        totalB += l.color[2] * contribution * f.tintB;
+      }
+
+      const rv = Math.min(255, totalR) | 0;
+      const gv = Math.min(255, totalG) | 0;
+      const bv = Math.min(255, totalB) | 0;
+
+      // Gap
+      ctx.fillStyle = gapColor;
+      ctx.beginPath();
+      ctx.moveTo(f.pts[0].x, f.pts[0].y);
+      for (let i = 1; i < f.pts.length; i++) ctx.lineTo(f.pts[i].x, f.pts[i].y);
+      ctx.closePath();
+      ctx.fill();
+
+      // Tile
+      ctx.fillStyle = 'rgb(' + rv + ',' + gv + ',' + bv + ')';
+      ctx.beginPath();
+      ctx.moveTo(inPts[0].x, inPts[0].y);
+      for (let i = 1; i < inPts.length; i++) ctx.lineTo(inPts[i].x, inPts[i].y);
+      ctx.closePath();
+      ctx.fill();
+
+      // Flash
+      if (maxSpec > 0.4) {
+        const flashAlpha = Math.min(1, (maxSpec - 0.4) * 2.5);
+        ctx.fillStyle = 'rgba(255, 255, 255, ' + (flashAlpha * 0.8) + ')';
+        ctx.beginPath();
+        ctx.moveTo(inPts[0].x, inPts[0].y);
+        for (let i = 1; i < inPts.length; i++) ctx.lineTo(inPts[i].x, inPts[i].y);
+        ctx.closePath();
+        ctx.fill();
+      }
+
+      // Bevel
+      if (f.nz > 0.1) {
+        ctx.strokeStyle = 'rgba(255,255,255,' + (0.06 + maxSpec * 0.15) + ')';
+        ctx.lineWidth = 0.4;
+        ctx.beginPath();
+        ctx.moveTo(inPts[0].x, inPts[0].y);
+        ctx.lineTo(inPts[1].x, inPts[1].y);
+        ctx.stroke();
+      }
+    }
+
+    // ── Sheen ──
+    const sheenX = ballX - BALL_RADIUS * 0.2;
+    const sheenY = ballY - BALL_RADIUS * 0.25;
+    const sheen = ctx.createRadialGradient(sheenX, sheenY, 0, ballX, ballY, BALL_RADIUS);
+    sheen.addColorStop(0, 'rgba(255,255,255,0.1)');
+    sheen.addColorStop(0.3, 'rgba(255,255,255,0.03)');
+    sheen.addColorStop(1, 'transparent');
+    ctx.fillStyle = sheen;
+    ctx.beginPath();
+    ctx.arc(ballX, ballY, BALL_RADIUS, 0, Math.PI * 2);
+    ctx.fill();
+
+    // ── Rim light ──
+    ctx.save();
+    ctx.globalCompositeOperation = 'screen';
+    const rim = ctx.createRadialGradient(ballX, ballY, BALL_RADIUS * 0.85, ballX, ballY, BALL_RADIUS * 1.05);
+    rim.addColorStop(0, 'transparent');
+    rim.addColorStop(0.7, 'rgba(180, 200, 220, 0.04)');
+    rim.addColorStop(1, 'rgba(180, 200, 220, 0.08)');
+    ctx.fillStyle = rim;
+    ctx.beginPath();
+    ctx.arc(ballX, ballY, BALL_RADIUS * 1.05, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+
+    animId = requestAnimationFrame(draw);
+  }
+
+  // ─── Toggle ───
+  function startDisco() {
+    active = true;
+    retracting = false;
+    dropT = 0;
+    t = 0;
+    resize();
+    canvas.style.display = 'block';
+    animId = requestAnimationFrame(draw);
+  }
+
+  function beginRetract() {
+    retracting = true;
+    retractStartY = getDropY(dropT);
+    retractT = 0;
+  }
+
+  function stopDisco() {
+    active = false;
+    retracting = false;
+    if (animId) { cancelAnimationFrame(animId); animId = null; }
+    canvas.style.display = 'none';
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  btn.addEventListener('click', function() {
+    if (!active) {
+      startDisco();
+    } else {
+      beginRetract();
+    }
+  });
+})();
+</script>
+```
