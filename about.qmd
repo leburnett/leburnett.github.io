@@ -3,7 +3,9 @@ title: "About Me"
 toc: true
 ---
 
-Hey there! I'm Laura. I have a background in systems neuroscience, and my work has spanned from investigating rapid, visually-driven decision making in mice to helping develop a fruit fly visual system connectome. I also enjoy packaging information into interactive web resources for browsing data.
+Hey there! I'm Laura. 👋
+
+I have a background in systems neuroscience, and my work has spanned from investigating rapid, visually-driven decision making in mice to helping develop a fruit fly visual system connectome. I also enjoy packaging information into interactive web resources for browsing data.
 
 When I'm not at my computer you can find me with my nose in a book, listening to a podcast,running along trails, trying to grow enough basil to make "fresh" pesto year round, painting, drawing or making relief prints. I love to boogie when I can (which is usually in my kitchen). I like to think that life's all one big adventure and have lived in the US, UK, Austria and Australia (never noticed how 'Noah's Ark' that collection of countries is...). 
 

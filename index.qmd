@@ -8,7 +8,7 @@ title-block-style: none
 ::: {.hero}
 # Laura Burnett <img src="assets/icons/brain.svg" class="hero-icon" alt="">
 
-[Systems neuroscience, PhD.<br><br>I like thinking about how to present and share complex data]{.subtitle}
+[Systems neuroscience, PhD.<br><br>I like to plot and share data.]{.subtitle}
 
 ::: {.bio}
 [Hi! 👋 I'm Laura - I'm a neuroscience research scientist. I've investigated [rapid, visually-driven decision making](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002668) in mice, helped develop a [fruit fly visual system connectome](https://www.nature.com/articles/s41586-025-08746-0) and package the information into an [interactive web resource](https://reiserlab.github.io/celltype-explorer-drosophila-male-cns/index.html) for browsing the data.]{.bio-text}
