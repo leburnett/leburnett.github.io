@@ -6,7 +6,7 @@ title-block-style: none
 ---
 
 ::: {.hero}
-# Laura Burnett
+# Laura Burnett <img src="assets/icons/brain.svg" class="hero-icon" alt="">
 
 [Systems neuroscience, PhD.<br><br>I like thinking about how to present and share complex data]{.subtitle}
 

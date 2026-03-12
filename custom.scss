@@ -79,6 +79,15 @@ $sidebar-bg: #ffffff;
   color: #1a1a1a;
 }
 
+// Brain icon next to name
+.hero-icon {
+  height: 1.2em;
+  width: auto;
+  vertical-align: -0.1em;
+  margin-left: 0.3rem;
+  opacity: 0.7;
+}
+
 .hero .subtitle {
   font-size: 1.15rem;
   color: #666666;
@@ -114,6 +123,14 @@ $sidebar-bg: #ffffff;
 .project-card p {
   color: #555555;
   font-size: 0.95rem;
+}
+
+// Section heading icons (projects page)
+.section-icon {
+  height: 1.3em;
+  width: auto;
+  vertical-align: -0.15em;
+  margin-right: 0.3rem;
 }
 
 // Tech tags

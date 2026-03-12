@@ -11,12 +11,14 @@ website:
     search: false
     background: transparent
     contents:
-      - text: "About"
+      - text: "About Me"
         href: about.qmd
       - text: "Projects"
         href: projects/index.qmd
       - text: "Publications"
         href: publications.qmd
+      - text: "Experience & Skills"
+        href: experience.qmd
       - text: "Blog"
         href: blog/index.qmd
       - text: "---"

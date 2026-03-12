@@ -1,0 +1,72 @@
+---
+title: "Experience and Skills"
+toc: true
+---
+
+## Education 
+
+::: {.pub-timeline}
+::: {.pub-year}
+August 2023 - Now
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**Postdoctoral Research Scientist**
+
+[Reiser Lab](https://www.janelia.org/lab/reiser-lab), Howard Hughes Medical Institute (HHMI) Janelia Research Campus
+:::
+:::
+:::
+
+::: {.pub-timeline}
+::: {.pub-year}
+September 2016 - May 2023
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**PhD Student**
+
+[Joesch Lab](https://ista.ac.at/en/research/josch-group/), Insitute of Science and Technology Austria (ISTA)
+:::
+:::
+:::
+
+
+::: {.pub-timeline}
+::: {.pub-year}
+June 2016 -  August 2016
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**ISTern**
+
+[Hippenmeyer Lab](https://ista.ac.at/en/research/hippenmeyer-group/), Insitute of Science and Technology Austria (ISTA)
+:::
+:::
+:::
+
+
+::: {.pub-timeline}
+::: {.pub-year}
+September 2012 -  May 2016
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**Natural Sciences MSci**
+
+Univeristy College London (UCL)
+:::
+:::
+:::
+
+
+## Technical Skills
+
+| Category | Skills |
+|----------|--------|
+| **Languages** | Python, MATLAB, SQL (Cypher/neuPrint) |
+| **Data Engineering** | ETL pipelines, automated processing, Snakemake workflows |
+| **Visualization** | Dash/Plotly, Matplotlib, Blender 3D rendering |
+| **Data Science** | Statistical analysis, behavioral modeling, graph databases |
+| **Tools & Platforms** | Git, GitHub Actions, Quarto, pixi, Jupyter |
+

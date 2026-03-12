@@ -127,6 +127,13 @@ $sidebar-bg: #1a1a1a;
   color: #aaaaaa;
 }
 
+// Section heading icons + hero icon — invert for dark mode
+.section-icon,
+.hero-icon {
+  filter: invert(1);
+  opacity: 0.85;
+}
+
 // Page title
 .quarto-title h1.title {
   color: #e0e0e0;

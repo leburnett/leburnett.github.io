@@ -2,7 +2,7 @@
 title: "Nested Receptive Field Protocol"
 description: "Adaptive electrophysiology toolkit that dynamically generates stimuli based on real-time neural response analysis."
 categories: [MATLAB, Python, Signal Processing, Experimental Design]
-priority: 3
+priority: 4
 ---
 
 ## Overview

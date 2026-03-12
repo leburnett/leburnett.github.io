@@ -10,3 +10,4 @@ repos:
   nested_rf: "https://github.com/leburnett/nested_RF_stimulus"
   reiser_docs: "https://github.com/leburnett/reiser-documentation"
   reiser_docs_site: "https://leburnett.github.io/reiser-documentation"
+  neuview: "https://github.com/reiserlab/neuView"
