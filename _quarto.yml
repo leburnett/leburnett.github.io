@@ -15,20 +15,23 @@ website:
         href: about.qmd
       - text: "Projects"
         href: projects/index.qmd
+      - text: "Publications"
+        href: publications.qmd
       - text: "Blog"
         href: blog/index.qmd
       - text: "---"
       - icon: github
         text: "GitHub"
         href: https://github.com/leburnett
+      - icon: mortarboard-fill
+        text: "Scholar"
+        href: https://scholar.google.com/citations?user=oPPRKuIAAAAJ&hl=en&oi=ao
       - icon: linkedin
         text: "LinkedIn"
-        href: https://linkedin.com/in/LINKEDIN_USERNAME
-      - text: "Scholar"
-        href: https://scholar.google.com/citations?user=SCHOLAR_ID
-
-  page-footer:
-    center: "Built with [Quarto](https://quarto.org)"
+        href: https://www.linkedin.com/in/laura-burnett-265a16247/
+      - icon: envelope
+        text: "Email"
+        href: mailto:burnettl@hhmi.org
 
   open-graph: true
   twitter-card: true

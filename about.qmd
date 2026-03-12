@@ -5,7 +5,7 @@ toc: true
 
 ## About Me
 
-[TODO: Add 3-4 paragraphs describing your professional background and career transition. Suggested framing:]
+
 
 - [TODO: Paragraph 1 — Current role and what you do. E.g., "I'm a postdoctoral researcher at HHMI Janelia Research Campus where I design and build computational tools for neuroscience research."]
 - [TODO: Paragraph 2 — The data science skills you've developed through research. Frame pipeline engineering, dashboard development, statistical analysis, and visualization as industry-transferable strengths.]
@@ -35,22 +35,23 @@ toc: true
 :::
 ::: {.pub-entries}
 ::: {.pub-entry}
-**[TODO: Paper Title](https://doi.org/TODO)**
+**[Connectome-driven neural inventory of a complete visual system](https://doi.org/10.1038/s41586-025-08746-0)**
 
-Nern, A., Burnett, L., et al. *Nature*. 2025.
+
+Nern, A., Loesche, F., Takemura, Sy., Burnett, L., et al. *Nature*. 2025.
 :::
 :::
 :::
 
 ::: {.pub-timeline}
 ::: {.pub-year}
-[TODO]
+2024
 :::
 ::: {.pub-entries}
 ::: {.pub-entry}
-**[TODO: Paper Title](https://doi.org/TODO)**
+**[Shared behavioural impairments in visual perception and place avoidance across different autism models are driven by periaqueductal grey hypoexcitability in Setd5 haploinsufficient mice](https://doi.org/10.1371/journal.pbio.3002668)**
 
-[TODO: Authors]. *[TODO: Journal]*. [TODO: Year].
+Burnett, L.E., Koppensteiner, P., Symonova, O., Masson, T., Vega-Zuniga, T., Contreras, X., Rülicke, T., Shigemoto, R., Novarino, G., Joesch, M. *PLoS Biology*. 2024.
 :::
 ::: {.pub-entry}
 **[TODO: Paper Title](https://doi.org/TODO)**
@@ -59,6 +60,38 @@ Nern, A., Burnett, L., et al. *Nature*. 2025.
 :::
 :::
 :::
+
+## Preprints
+
+::: {.pub-timeline}
+::: {.pub-year}
+2025
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**[Sexual dimorphism in the complete connectome of the Drosophila male central nervous system](https://doi.org/10.1101/2025.10.09.680999)**
+
+
+Berg, S., ... Burnett, L.E., et al. *bioRxiv*. 2025.
+:::
+:::
+:::
+
+## Thesis
+
+::: {.pub-timeline}
+::: {.pub-year}
+2025
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**[To flee, or not to flee? Using innate defensive behaviours to investigate rapid perceptual decision-making through subcortical circuits in mouse models of autism.](10.15479/at:ista:12716)**
+
+Burnett, L.E. 2023.
+:::
+:::
+:::
+
 
 ## Contact
 

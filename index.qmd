@@ -8,10 +8,10 @@ title-block-style: none
 ::: {.hero}
 # Laura Burnett
 
-[Data Scientist. Systems neuroscience, PhD.]{.subtitle}
+[Systems neuroscience, PhD.<br><br>I like thinking about how to present and share complex data]{.subtitle}
 
 ::: {.bio}
-[Investigated rapid, visually-driven decision making in mice. Helped develop the connectome of the fruit fly's visual system. Develops, conducts and analyses electrophysiological and behavioural experiments in fruit flies.]{.bio-text}
+[Hi! 👋 I'm Laura - I'm a neuroscience research scientist. I've investigated [rapid, visually-driven decision making](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002668) in mice, helped develop a [fruit fly visual system connectome](https://www.nature.com/articles/s41586-025-08746-0) and package the information into an [interactive web resource](https://reiserlab.github.io/celltype-explorer-drosophila-male-cns/index.html) for browsing the data.]{.bio-text}
 :::
 :::
 

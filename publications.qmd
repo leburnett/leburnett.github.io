@@ -1,0 +1,110 @@
+---
+title: "Publications"
+toc: true
+---
+
+::: {.pub-timeline}
+::: {.pub-year}
+2025
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**[Connectome-driven neural inventory of a complete visual system](https://doi.org/10.1038/s41586-025-08746-0)**
+
+
+Nern, A., Loesche, F., Takemura, Sy., Burnett, L., et al. *Nature*. 2025.
+:::
+:::
+:::
+
+
+::: {.pub-timeline}
+::: {.pub-year}
+2024
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**[Shared behavioural impairments in visual perception and place avoidance across different autism models are driven by periaqueductal grey hypoexcitability in Setd5 haploinsufficient mice](https://doi.org/10.1371/journal.pbio.3002668)**
+
+Burnett, L.E., Koppensteiner, P., Symonova, O., Masson, T., Vega-Zuniga, T., Contreras, X., Rülicke, T., Shigemoto, R., Novarino, G., Joesch, M. *PLoS Biology*. 2024.
+
+:::
+:::
+:::
+
+
+::: {.pub-timeline}
+::: {.pub-year}
+2019
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**[Role of JNK, MEK and adenylyl cyclase signalling in speed and directionality of enteric neural crest-derived cells](https://doi.org/10.1016/j.ydbio.2019.07.007)**
+
+Hao, M.M., ... Burnett, L.E. et. al. *Developmental Biology*. 2019.
+:::
+:::
+:::
+
+::: {.pub-timeline}
+::: {.pub-year}
+2017
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**[Transplantation of enteric nervous system stem cells rescues nitric oxide synthase deficient mouse colon](https://doi.org/10.1038/ncomms15937)**
+
+McCann C.J., ... Burnett, L.E. et. al. *Nature Communications*. 2017.
+:::
+:::
+:::
+
+
+::: {.pub-timeline}
+::: {.pub-year}
+2017
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**[Mosaic Analysis with Double Markers Reveals Distinct Sequential Functions of Lgl1 in Neural Stem Cells](https://doi.org/10.1016/j.neuron.2017.04.012)**
+
+Beattie, R., Postiglione, M.P., Burnett, L.E. et. al. *Neuron*. 2017.
+:::
+:::
+:::
+
+
+
+## Preprints
+
+::: {.pub-timeline}
+::: {.pub-year}
+2025
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**[Sexual dimorphism in the complete connectome of the Drosophila male central nervous system](https://doi.org/10.1101/2025.10.09.680999)**
+
+
+Berg, S., ... Burnett, L.E., et al. *bioRxiv*. 2025.
+:::
+:::
+:::
+
+
+
+## Thesis
+
+::: {.pub-timeline}
+::: {.pub-year}
+2023
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**[To flee, or not to flee? Using innate defensive behaviours to investigate rapid perceptual decision-making through subcortical circuits in mouse models of autism.](10.15479/at:ista:12716)**
+
+Burnett, L.E. 2023.
+:::
+:::
+:::
+

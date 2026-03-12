@@ -38,6 +38,33 @@ $sidebar-bg: #ffffff;
   color: #000000;
 }
 
+// Social links — icon-only, horizontal row
+.sidebar-item:has(.bi-github),
+.sidebar-item:has(.bi-linkedin),
+.sidebar-item:has(.bi-mortarboard-fill),
+.sidebar-item:has(.bi-envelope) {
+  display: inline-block;
+  margin-right: 0.4rem;
+
+  .sidebar-item-container {
+    padding: 0;
+  }
+
+  .sidebar-item-text {
+    font-size: 0;
+    padding: 0.2rem;
+
+    i {
+      font-size: 1.1rem;
+      color: #555555;
+    }
+
+    &:hover i {
+      color: #000000;
+    }
+  }
+}
+
 // Hero section for landing page
 .hero {
   padding: 3rem 0 2rem 0;
@@ -175,6 +202,33 @@ $sidebar-bg: #ffffff;
 #disco-btn:hover {
   opacity: 1;
   border-color: #aaaaaa;
+}
+
+// Sun/moon toggle — replace default toggle switch with icons
+.sidebar-tools-main {
+  margin-left: 0.5rem;
+}
+
+.sidebar-navigation .quarto-color-scheme-toggle .bi::before {
+  background-image: none !important;
+  font-family: "bootstrap-icons" !important;
+  font-size: 0.9rem;
+  width: auto;
+  height: auto;
+}
+
+.sidebar-navigation .quarto-color-scheme-toggle:not(.alternate) .bi::before {
+  content: "\f494"; // bi-moon-fill — click to go dark
+  color: #555555;
+}
+
+.sidebar-navigation .quarto-color-scheme-toggle.alternate .bi::before {
+  content: "\f5a1"; // bi-sun-fill — click to go light
+  color: #555555;
+}
+
+.sidebar-navigation .quarto-color-scheme-toggle:hover .bi::before {
+  color: #000000;
 }
 
 // General cleanup

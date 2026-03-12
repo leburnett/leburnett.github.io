@@ -26,6 +26,20 @@ $sidebar-bg: #1a1a1a;
   color: #ffffff;
 }
 
+// Social links — icon-only overrides for dark mode
+.sidebar-item:has(.bi-github),
+.sidebar-item:has(.bi-linkedin),
+.sidebar-item:has(.bi-mortarboard-fill),
+.sidebar-item:has(.bi-envelope) {
+  .sidebar-item-text i {
+    color: #aaaaaa;
+  }
+
+  .sidebar-item-text:hover i {
+    color: #ffffff;
+  }
+}
+
 // Hero section
 .hero {
   border-bottom: 1px solid #333333;
@@ -116,6 +130,29 @@ $sidebar-bg: #1a1a1a;
 // Page title
 .quarto-title h1.title {
   color: #e0e0e0;
+}
+
+// Sun/moon toggle — replace default toggle switch with icons
+.sidebar-navigation .quarto-color-scheme-toggle .bi::before {
+  background-image: none !important;
+  font-family: "bootstrap-icons" !important;
+  font-size: 0.9rem;
+  width: auto;
+  height: auto;
+}
+
+.sidebar-navigation .quarto-color-scheme-toggle:not(.alternate) .bi::before {
+  content: "\f494"; // bi-moon-fill
+  color: #aaaaaa;
+}
+
+.sidebar-navigation .quarto-color-scheme-toggle.alternate .bi::before {
+  content: "\f5a1"; // bi-sun-fill
+  color: #aaaaaa;
+}
+
+.sidebar-navigation .quarto-color-scheme-toggle:hover .bi::before {
+  color: #ffffff;
 }
 
 // Disco ball button — visible only in dark mode
