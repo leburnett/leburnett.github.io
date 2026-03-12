@@ -45,6 +45,19 @@ June 2016 -  August 2016
 :::
 :::
 
+::: {.pub-timeline}
+::: {.pub-year}
+July 2014 -  July 2015
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**Exchange Student**
+
+University of Melbourne, Australia
+:::
+:::
+:::
+
 
 ::: {.pub-timeline}
 ::: {.pub-year}
