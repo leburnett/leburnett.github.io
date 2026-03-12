@@ -8,10 +8,10 @@ title-block-style: none
 ::: {.hero}
 # Laura Burnett
 
-[Systems neuroscience postdoctoral researcher that enjoys thinking about data.]{.subtitle}
+[Data Scientist. Systems neuroscience, PhD.]{.subtitle}
 
 ::: {.bio}
-[Spent 6 years thinking about rapid, visually-driven decision making in mice before moving to a more data-driven role helping develop a connectome of the fruit fly's visual system and develops, conducts and analyses complex electrophysiological and behavioural data in flies.]{.bio-text}
+[Investigated rapid, visually-driven decision making in mice. Helped develop the connectome of the fruit fly's visual system. Develops, conducts and analyses electrophysiological and behavioural experiments in fruit flies.]{.bio-text}
 :::
 :::
 
@@ -141,10 +141,11 @@ title-block-style: none
 
   // ─── Retract: ease-out slide up ───
   function getRetractY(elapsed) {
-    const duration = 1.2;
+    const duration = 1.5;
     const progress = Math.min(1, elapsed / duration);
     const ease = 1 - Math.pow(1 - progress, 3);
-    return retractStartY + (-200 - retractStartY) * ease;
+    const offScreen = -(BALL_RADIUS + Math.min(canvas.width, canvas.height) * 0.5 + 100);
+    return retractStartY + (offScreen - retractStartY) * ease;
   }
 
   // ─── Main draw ───
@@ -153,13 +154,20 @@ title-block-style: none
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     const isDark = document.body.classList.contains('quarto-dark');
+
+    // Auto-retract if user switches to light mode while ball is active
+    if (!isDark && active && !retracting) {
+      beginRetract();
+    }
+
     const ballX = getBallX();
     let ballY;
 
     if (retracting) {
       retractT += 1 / 60;
       ballY = getRetractY(retractT);
-      if (ballY <= -200) {
+      const offScreen = -(BALL_RADIUS + Math.min(canvas.width, canvas.height) * 0.5 + 100);
+      if (ballY <= offScreen + 1) {
         stopDisco();
         return;
       }

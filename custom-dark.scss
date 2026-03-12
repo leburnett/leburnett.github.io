@@ -118,8 +118,9 @@ $sidebar-bg: #1a1a1a;
   color: #e0e0e0;
 }
 
-// Disco ball button
+// Disco ball button — visible only in dark mode
 #disco-btn {
+  display: flex;
   border-color: #444444;
 }
 

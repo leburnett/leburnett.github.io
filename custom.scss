@@ -151,7 +151,7 @@ $sidebar-bg: #ffffff;
   font-size: 0.85rem;
 }
 
-// Disco ball easter egg trigger
+// Disco ball easter egg trigger — dark mode only
 #disco-btn {
   position: fixed;
   bottom: 1.5rem;
@@ -166,7 +166,7 @@ $sidebar-bg: #ffffff;
   cursor: pointer;
   opacity: 0.5;
   transition: opacity 0.2s, border-color 0.2s;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 0;
