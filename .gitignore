@@ -12,3 +12,6 @@ Thumbs.db
 .vscode/
 
 **/*.quarto_ipynb
+
+# Lab notebook session notes (auto-added)
+session-notes.md
