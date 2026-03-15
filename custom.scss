@@ -157,6 +157,11 @@ $sidebar-bg: #ffffff;
 }
 
 // Blog listing - clean minimal list
+.quarto-listing-table {
+  min-width: 500px;
+  width: 100%;
+}
+
 .quarto-listing-table td {
   padding: 0.5rem 0;
   border-bottom: 1px solid #f0f0f0;
