@@ -27,6 +27,21 @@ jobs:
       - name: Render
         uses: quarto-dev/quarto-actions/render@v2
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Encrypt personal blog pages
+        run: |
+          find _site/blog/personal -name "*.html" -print0 | xargs -0 npx staticrypt@3 \
+            -p "$STATICRYPT_PASSWORD" \
+            --remember 30 \
+            --template-title "Personal Blog - Password Required" \
+            --template-instructions "This content is for friends and family. Enter the password to continue."
+        env:
+          STATICRYPT_PASSWORD: ${{ secrets.STATICRYPT_PASSWORD }}
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -1,0 +1,8 @@
+---
+title: "A Personal Update"
+date: "2026-03-15"
+description: "First personal blog post."
+categories: [personal]
+---
+
+Hello friends and family! This is the first post on the personal blog. More to come soon.

@@ -1,7 +1,9 @@
 ---
 title: "Blog"
 listing:
-  contents: posts/*/index.qmd
+  contents:
+    - posts/*/index.qmd
+    - "!personal/**"
   type: table
   sort: "date desc"
   fields: [date, title]
@@ -11,3 +13,8 @@ listing:
   sort-ui: false
   filter-ui: false
 ---
+
+::: {.callout-note appearance="simple"}
+## Personal Blog
+Looking for the personal blog? [Click here](personal/index.html) (password required).
+:::

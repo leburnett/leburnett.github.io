@@ -1,0 +1,15 @@
+---
+title: "Personal Blog"
+listing:
+  contents: posts/*/index.qmd
+  type: table
+  sort: "date desc"
+  fields: [date, title]
+  date-format: "YYYY-MM-DD"
+  table-hover: true
+  categories: false
+  sort-ui: false
+  filter-ui: false
+---
+
+Posts for friends and family. This page is password-protected.
