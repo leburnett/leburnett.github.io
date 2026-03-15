@@ -34,11 +34,33 @@ jobs:
 
       - name: Encrypt personal blog pages
         run: |
-          find _site/blog/personal -name "*.html" -print0 | xargs -0 npx staticrypt@3 \
-            -p "$STATICRYPT_PASSWORD" \
-            --remember 30 \
-            --template-title "Personal Blog - Password Required" \
-            --template-instructions "This content is for friends and family. Enter the password to continue."
+          echo "=== Files to encrypt ==="
+          find _site/blog/personal -name "*.html" -print
+
+          # Encrypt each file and replace the original with the encrypted version
+          find _site/blog/personal -name "*.html" -print | while read -r file; do
+            echo "Encrypting: $file"
+            dir=$(dirname "$file")
+            npx staticrypt@3 "$file" \
+              -p "$STATICRYPT_PASSWORD" \
+              --remember 30 \
+              -d "$dir" \
+              --template-title "Personal Blog - Password Required" \
+              --template-instructions "This content is for friends and family. Enter the password to continue."
+
+            # StaticCrypt creates <filename>_encrypted.html — replace the original
+            base=$(basename "$file" .html)
+            encrypted="$dir/${base}_encrypted.html"
+            if [ -f "$encrypted" ]; then
+              mv "$encrypted" "$file"
+              echo "  Replaced $file with encrypted version"
+            else
+              echo "  WARNING: Encrypted file not found at $encrypted"
+              ls -la "$dir/"
+            fi
+          done
+
+          echo "=== Encryption complete ==="
         env:
           STATICRYPT_PASSWORD: ${{ secrets.STATICRYPT_PASSWORD }}
 
