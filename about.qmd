@@ -11,7 +11,7 @@ When I'm not at my computer you can find me with my nose in a book (both fiction
 
 Looking back, I seem to be living my life with the idea that life is all one big adventure and have lived in the US, UK, Austria and Australia. I'm only just noticing how 'Noah's Ark' that collection of countries is... 
 
-                                *
+                                            *
 
 Over the course of my research career, I've realised that what I enjoy most is working with **data** — figuring out how to collect it well, present it clearly, and package it so that someone else can actually pick it up and use it. I care a lot about making research outputs genuinely reusable, not just technically available. I like thinking about possible alternative, non-traditional ways in which scientific knowledge might be shared and used based on the type of data involved and the people that might wish to access and use it in the future.
 
