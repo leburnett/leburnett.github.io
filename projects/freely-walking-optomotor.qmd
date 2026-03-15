@@ -1,17 +1,18 @@
 ---
 title: "Freely Walking Optomotor Pipeline"
-description: "End-to-end data pipeline for behavioral experiments: automated ETL, Python/MATLAB processing, and interactive Dash dashboard."
-categories: [Python, MATLAB, Dash, ETL, Automation]
+description: "Pipeline for designing, performing and analysing fruit fly behavioral experiments within an LED arena."
+categories: [Python, MATLAB, Dash, Automation]
 priority: 1
 ---
 
 ## Overview
 
-Built a complete experimental platform that automatically processes, validates, and visualizes behavioral experiment data from a high-throughput screen of fruit fly visual responses. The system coordinates data acquisition, video tracking, and analysis across multiple computers, with Python automation services that monitor for new data and trigger processing pipelines automatically. Used by multiple researchers across overlapping projects at HHMI Janelia Research Campus.
+Built a complete experimental platform that automatically processes, validates, and visualizes behavioral experiment data from a high-throughput screen of fruit fly visual responses. The system coordinates data acquisition, video tracking, and analysis across multiple computers, with Python automation services that monitor for new data and trigger processing pipelines automatically.
+
+I developed all of the protocols, as well as the embedded functions for logging and syncing the visual stimulus to the behavioural camera, and the processing and plotting scripts. This repository was mainly used for a high-throughput screen conducted in collaboration with Aparna Dev but it also contains a number of development protocol from tests along the way.
 
 ## Technical Highlights
 
-- **592 commits** of iterative development across a multi-language codebase
 - **Automated ETL pipeline**: monitor &rarr; copy &rarr; track &rarr; process &rarr; visualize
 - **Interactive Dash/Plotly dashboard** for exploring experimental results (speed tuning, contrast tuning, behavioral metrics)
 - **Pipeline status monitoring** with auto-generated HTML reports for real-time experiment tracking
@@ -20,7 +21,7 @@ Built a complete experimental platform that automatically processes, validates, 
 
 ## Technologies
 
-[Python]{.tag} [MATLAB]{.tag} [Dash]{.tag} [Plotly]{.tag} [Pandas]{.tag} [NumPy]{.tag} [SciPy]{.tag} [pixi]{.tag} [Quarto]{.tag} [Jinja2]{.tag}
+[MATLAB]{.tag} [Python]{.tag} [Dash]{.tag} [Plotly]{.tag} [pixi]{.tag} [Quarto]{.tag}
 
 ## Links
 

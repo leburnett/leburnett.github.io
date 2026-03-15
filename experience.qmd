@@ -77,7 +77,7 @@ Univeristy College London (UCL)
 
 | Category | Skills |
 |----------|--------|
-| **Languages** | Python, MATLAB, SQL (Cypher/neuPrint) |
+| **Languages** | Python, MATLAB, SQL (Cypher/neuPrint), Javascript |
 | **Data Engineering** | ETL pipelines, automated processing, Snakemake workflows |
 | **Visualization** | Dash/Plotly, Matplotlib, Blender 3D rendering |
 | **Data Science** | Statistical analysis, behavioral modeling, graph databases |

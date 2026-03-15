@@ -1,13 +1,15 @@
 ---
-title: "MADM"
-description: "Investigating the role of <i>Lgl1</i> in cortical development."
+title: "Mosaic Analysis with Double Markers"
+description: "Investigating the role of the protein Lgl1 in cortical development."
 categories: [Molecular, MADM, Genetics, RNAseq, Mouse]
 priority: 1
 ---
 
 ## Overview
 
-Lgl1 protein's role in cortical development. Also during rotation RNAseq.
+This project uncovered two distinct roles of the protein Lgl1, a protein involved in regulating intracellular polarity, in regulating brain development both at the community level (tissue) and intrinsically within single cells. This project was made possible due to the features of the genetic tool MADM (Mosaic Analysis with Double Markers) to create both sparse and global knockout of the <i>Ldl1</i> gene within tissues. 
+
+I started working on this project during my summer intership at the Institute of Science and Technology, Austria (ISTA) under the supervision of Dr Robert Beattie in the group of Professor Simon Hippenmeyer. I learnt a lot about mouse genetics, histology techniques, confocal microscopy and mouse husbandry during my time in the Hippenmeyer group.
 
 ## Technical Highlights
 
@@ -18,7 +20,7 @@ Lgl1 protein's role in cortical development. Also during rotation RNAseq.
 
 ## Technologies
 
-[MADM]{.tag} [Confocal]{.tag}
+[MADM]{.tag} [Confocal]{.tag} [Genetics]{.tag}
 
 ## Links
 

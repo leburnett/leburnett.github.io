@@ -7,13 +7,16 @@ priority: 1
 
 ## Overview
 
-Investigating the role of nNOS in enteric nervous system development.
+During my masters degree, I was fortunate to spend time in the group of Dr Alan Burns and work under the supervision of Dr Conor McCann. Dr McCann's research centred on determining the feasibility of transplanting enteric neural stem cells (ENSCs) into the gastrointestinal system of a mouse model of human enteric neuropathy (<i>nNOS^-^^/^^-^</i>) to rescue the impaired gut motility. 
+
+I was specifically involved in characterising the populations of cells within the enteric nervous system of these <i>nNOS^-^^/^^-^</i> mice at baseline to then compare with the changes after the ENSC transplants. Among other things, I was also introduced to the technique of quantitative polymerase chain reaction (qPCR) to measure gene expression levels in tissues and performed dissections of enteric tissues and immunohistological stainings to uncover the levels of certain proteins present in this tissue.
 
 ## Technical Highlights
 
 - **Microscopy** confocal microscopy
 - **Dissection** preparation of histological sections
-- **Immunohistochemistry** labelling samples with antibodies to detect the presence and abundance of certain proteins.
+- **Immunohistochemistry** labelling samples with antibodies to detect the presence and abundance of certain proteins
+- **qPCR** quantitative technique for measuring gene expression levels in tissues
 
 ## Technologies
 

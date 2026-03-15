@@ -1,5 +1,5 @@
 ---
-title: "Nested Receptive Field Protocol"
+title: "Electrophysiology Receptive Field Protocol"
 description: "Adaptive electrophysiology toolkit that dynamically generates stimuli based on real-time neural response analysis."
 categories: [MATLAB, Python, Signal Processing, Experimental Design]
 priority: 4
@@ -7,11 +7,12 @@ priority: 4
 
 ## Overview
 
-Designed and built an adaptive experimental protocol for electrophysiology recordings. The system runs a coarse mapping protocol, automatically analyzes the neural responses, then generates a tailored high-resolution follow-up protocol centered on each neuron's identified receptive field. This two-stage adaptive approach reduces experimental time and improves data quality by focusing resources where they matter most.
+Designed and built an adaptive experimental protocol for electrophysiology recordings of motion-responsive cell types. The system runs a coarse mapping protocol (P1), automatically analyzes the neural responses, then generates a tailored high-resolution follow-up protocol (P2) centered on each neuron's identified receptive field. This two-stage adaptive approach improves data quality by focusing resources where they matter most.
+
+This protocol was based on a similiar protocol developed by Eyal Gruntman in the Reiser Lab and was designed for experiments carried out by Jin Yong Park at HHMI Janelia for a collaboration with S Lawrence (Larry) Zipurski and Piero Sanfilippo at UCLA.
 
 ## Technical Highlights
 
-- **228 commits** of iterative development
 - **Adaptive pipeline design**: automated analysis of protocol 1 results feeds directly into protocol 2 generation
 - **Real-time signal processing** of electrophysiology data
 - **MATLAB GUI** for parameter input and experiment control
