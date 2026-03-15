@@ -14,7 +14,5 @@ listing:
   filter-ui: false
 ---
 
-::: {.callout-note appearance="simple"}
-## Personal Blog
-Looking for the personal blog? [Click here](personal/index.html) (password required).
-:::
+<br>
+[<i class="bi bi-lock-fill"></i> Personal Blog](personal/index.html){.btn .btn-outline-secondary .btn-sm .rounded-pill}
