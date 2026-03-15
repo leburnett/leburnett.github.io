@@ -1,7 +1,7 @@
 ---
 title: "Enteric Nervous System Development"
 description: "Investigating the role of <i>nNOS</i> in the development of the enteric nervous sytem."
-categories: [Molecular, qPCR, Mouse]
+categories: [Molecular, qPCR, Confocal]
 priority: 1
 ---
 

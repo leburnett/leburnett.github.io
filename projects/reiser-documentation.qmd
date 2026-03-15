@@ -1,6 +1,6 @@
 ---
 title: "Reiser Lab Documentation Site"
-description: "Comprehensive Quarto documentation website for multi-user experimental workflows, with auto-generated content from code."
+description: "Comprehensive Quarto documentation website for experiments run in the Reiser Lab."
 categories: [Quarto, Technical Writing, Documentation, Jinja2]
 priority: 5
 ---
