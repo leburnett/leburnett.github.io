@@ -1,16 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 90" fill="none" stroke="currentColor">
-  <!-- Left page group -->
-  <path d="M48 12 Q48 10 46 10 L12 14 Q8 14.5 8 18.5 L8 74 Q8 78 12 77.5 L46 73.5 Q48 73.2 48 71.2 Z" stroke-width="3" stroke-linejoin="round"/>
-  <!-- Right page group -->
-  <path d="M52 12 Q52 10 54 10 L88 14 Q92 14.5 92 18.5 L92 74 Q92 78 88 77.5 L54 73.5 Q52 73.2 52 71.2 Z" stroke-width="3" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Left page -->
+  <path d="M12 4 C10 3 7 2.5 3 3 L3 19 C7 18.5 10 19 12 20"/>
+  <!-- Right page -->
+  <path d="M12 4 C14 3 17 2.5 21 3 L21 19 C17 18.5 14 19 12 20"/>
   <!-- Spine -->
-  <line x1="50" y1="10" x2="50" y2="73" stroke-width="2"/>
-  <!-- Left page curls -->
-  <path d="M48 14 Q48 12 45 12 L16 15.5 Q13 16 13 19 L13 71 Q13 74 16 73.5 L45 70 Q48 69.7 48 67.7" stroke-width="2" stroke-linejoin="round"/>
-  <!-- Right page curls -->
-  <path d="M52 14 Q52 12 55 12 L84 15.5 Q87 16 87 19 L87 71 Q87 74 84 73.5 L55 70 Q52 69.7 52 67.7" stroke-width="2" stroke-linejoin="round"/>
-  <!-- Left page top curve -->
-  <path d="M48 8 C48 4 46 4 44 4 L14 8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-  <!-- Right page top curve -->
-  <path d="M52 8 C52 4 54 4 56 4 L86 8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <line x1="12" y1="4" x2="12" y2="20"/>
+  <!-- Left page lines -->
+  <line x1="6" y1="7" x2="10" y2="6.5" stroke-width="0.8" opacity="0.3"/>
+  <line x1="6" y1="10" x2="10" y2="9.5" stroke-width="0.8" opacity="0.3"/>
+  <line x1="6" y1="13" x2="10" y2="12.5" stroke-width="0.8" opacity="0.3"/>
+  <!-- Right page lines -->
+  <line x1="14" y1="6.5" x2="18" y2="7" stroke-width="0.8" opacity="0.3"/>
+  <line x1="14" y1="9.5" x2="18" y2="10" stroke-width="0.8" opacity="0.3"/>
+  <line x1="14" y1="12.5" x2="18" y2="13" stroke-width="0.8" opacity="0.3"/>
 </svg>

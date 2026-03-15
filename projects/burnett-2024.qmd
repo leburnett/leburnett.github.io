@@ -1,0 +1,27 @@
+---
+title: "Rapid, Visually-Driven Decision Making in Mouse Models of Autism"
+description: "Analysis code and figure generation for a study on shared visual perception and avoidance deficits across genetically distinct autism mouse models."
+categories: [MATLAB, Neuroscience, Data Analysis, Electrophysiology]
+priority: 2
+---
+
+## Overview
+
+Code and analysis pipeline for my PhD research, published in *PLOS Biology*. This study investigated why individuals with autism spectrum disorder share common sensory and behavioral difficulties despite having different genetic causes. We tested three genetically distinct ASD mouse models (Setd5, Cul3, Ptchd1) and discovered they converge on the same behavioral deficits: slower visual threat detection and reduced environmental avoidance learning.
+
+## Technical Highlights
+
+- **Multi-model behavioral analysis**: looming escape response paradigm across three ASD mouse lines
+- **Electrophysiology pipeline**: whole-cell patch-clamp and silicon probe recording analysis
+- **Optogenetic circuit dissection**: channelrhodopsin-2 activation of specific neural pathways
+- **Proteomics and molecular analysis**: immunohistochemistry and western blotting quantification
+- **Statistical analysis and figure generation** for all panels in the published paper
+
+## Technologies
+
+[MATLAB]{.tag} [Electrophysiology]{.tag} [Optogenetics]{.tag} [Proteomics]{.tag} [Statistical Analysis]{.tag}
+
+## Links
+
+- [Source Code]({{< var repos.burnett_2024 >}})
+- [Published Paper](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002668)

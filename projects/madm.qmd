@@ -1,0 +1,25 @@
+---
+title: "MADM"
+description: "Investigating the role of <i>Lgl1</i> in cortical development."
+categories: [Molecular, MADM, Genetics, RNAseq, Mouse]
+priority: 1
+---
+
+## Overview
+
+Lgl1 protein's role in cortical development. Also during rotation RNAseq.
+
+## Technical Highlights
+
+- **Mouse Genetics**: understanding the genetic tool MADM
+- **Image Analysis Pipeline** tracking red, green and yellow MADM cells in confocal micrographs
+- **Microscopy** confocal microscopy
+- **Histology** preparation of mouse histology sections
+
+## Technologies
+
+[MADM]{.tag} [Confocal]{.tag}
+
+## Links
+
+- [Published Paper](https://www.cell.com/neuron/fulltext/S0896-6273(17)30305-7?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0896627317303057%3Fshowall%3Dtrue)

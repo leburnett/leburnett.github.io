@@ -1,0 +1,24 @@
+---
+title: "Enteric Nervous System Development"
+description: "Investigating the role of <i>nNOS</i> in the development of the enteric nervous sytem."
+categories: [Molecular, qPCR, Mouse]
+priority: 1
+---
+
+## Overview
+
+Investigating the role of nNOS in enteric nervous system development.
+
+## Technical Highlights
+
+- **Microscopy** confocal microscopy
+- **Dissection** preparation of histological sections
+- **Immunohistochemistry** labelling samples with antibodies to detect the presence and abundance of certain proteins.
+
+## Technologies
+
+[Enteric]{.tag} [Confocal]{.tag} [Dissection]{.tag} [Immunohistochemistry]{.tag} [qPCR]{.tag}
+
+## Links
+
+- [Published Paper](https://www.nature.com/articles/ncomms15937)

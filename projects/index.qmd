@@ -15,6 +15,17 @@ listing:
     contents:
       - freely-walking-optomotor.qmd
       - nested-rf.qmd
+      - burnett-2024.qmd
+    type: grid
+    grid-columns: 2
+    sort:
+      - "priority"
+    fields: [title, description, categories]
+    categories: false
+  - id: developmental
+    contents:
+      - madm.qmd
+      - enteric.qmd
     type: grid
     grid-columns: 2
     sort:
@@ -40,6 +51,11 @@ listing:
 ## <img src="../assets/icons/eye.svg" class="section-icon" alt=""> Visual Neuroscience Experiments
 
 ::: {#experiments}
+:::
+
+## <img src="../assets/icons/cell.svg" class="section-icon" alt=""> Developmental Neuroscience Experiments
+
+::: {#developmental}
 :::
 
 ## <img src="../assets/icons/book.svg" class="section-icon" alt=""> Documentation

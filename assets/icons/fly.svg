@@ -1,35 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor" stroke="currentColor">
-  <!-- Body -->
-  <ellipse cx="50" cy="52" rx="14" ry="22" fill="currentColor" stroke="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
   <!-- Head -->
-  <circle cx="50" cy="26" r="8" fill="currentColor" stroke="none"/>
+  <ellipse cx="12" cy="5.5" rx="2.5" ry="2" fill="currentColor" stroke="none"/>
   <!-- Eyes -->
-  <circle cx="44" cy="23" r="4" fill="currentColor" stroke="none"/>
-  <circle cx="56" cy="23" r="4" fill="currentColor" stroke="none"/>
-  <!-- Left wing -->
-  <ellipse cx="28" cy="42" rx="20" ry="10" fill="none" stroke-width="2.5" transform="rotate(-25 28 42)"/>
-  <!-- Right wing -->
-  <ellipse cx="72" cy="42" rx="20" ry="10" fill="none" stroke-width="2.5" transform="rotate(25 72 42)"/>
-  <!-- Wing veins left -->
-  <line x1="18" y1="36" x2="38" y2="44" stroke-width="1" fill="none"/>
-  <line x1="14" y1="42" x2="38" y2="44" stroke-width="1" fill="none"/>
-  <!-- Wing veins right -->
-  <line x1="82" y1="36" x2="62" y2="44" stroke-width="1" fill="none"/>
-  <line x1="86" y1="42" x2="62" y2="44" stroke-width="1" fill="none"/>
+  <circle cx="10.2" cy="5" r="1.2" fill="currentColor" stroke="none"/>
+  <circle cx="13.8" cy="5" r="1.2" fill="currentColor" stroke="none"/>
   <!-- Antennae -->
-  <line x1="46" y1="20" x2="38" y2="10" stroke-width="2" fill="none"/>
-  <line x1="54" y1="20" x2="62" y2="10" stroke-width="2" fill="none"/>
+  <path d="M10.5 4 L8 1.5" fill="none"/>
+  <path d="M13.5 4 L16 1.5" fill="none"/>
+  <!-- Thorax -->
+  <ellipse cx="12" cy="9" rx="2.8" ry="2.5" fill="currentColor" stroke="none"/>
+  <!-- Abdomen -->
+  <ellipse cx="12" cy="15" rx="3.2" ry="5" fill="currentColor" stroke="none"/>
+  <!-- Abdomen segments -->
+  <line x1="9.8" y1="12.5" x2="14.2" y2="12.5" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+  <line x1="9.6" y1="14.5" x2="14.4" y2="14.5" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+  <line x1="9.8" y1="16.5" x2="14.2" y2="16.5" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+  <!-- Left wing -->
+  <ellipse cx="8" cy="11" rx="5.5" ry="2.2" fill="none" stroke-width="0.5" transform="rotate(-25 8 11)"/>
+  <!-- Right wing -->
+  <ellipse cx="16" cy="11" rx="5.5" ry="2.2" fill="none" stroke-width="0.5" transform="rotate(25 16 11)"/>
   <!-- Legs left -->
-  <line x1="40" y1="42" x2="28" y2="52" stroke-width="1.5" fill="none"/>
-  <line x1="38" y1="52" x2="24" y2="60" stroke-width="1.5" fill="none"/>
-  <line x1="38" y1="62" x2="22" y2="72" stroke-width="1.5" fill="none"/>
+  <path d="M9.5 8.5 L6.5 11" fill="none" stroke-width="0.8"/>
+  <path d="M9.5 10 L6 13" fill="none" stroke-width="0.8"/>
+  <path d="M9.8 11.5 L6 15.5" fill="none" stroke-width="0.8"/>
   <!-- Legs right -->
-  <line x1="60" y1="42" x2="72" y2="52" stroke-width="1.5" fill="none"/>
-  <line x1="62" y1="52" x2="76" y2="60" stroke-width="1.5" fill="none"/>
-  <line x1="62" y1="62" x2="78" y2="72" stroke-width="1.5" fill="none"/>
-  <!-- Body segments -->
-  <line x1="38" y1="45" x2="62" y2="45" stroke-width="1" opacity="0.4" fill="none"/>
-  <line x1="37" y1="52" x2="63" y2="52" stroke-width="1" opacity="0.4" fill="none"/>
-  <line x1="37" y1="59" x2="63" y2="59" stroke-width="1" opacity="0.4" fill="none"/>
-  <line x1="38" y1="66" x2="62" y2="66" stroke-width="1" opacity="0.4" fill="none"/>
+  <path d="M14.5 8.5 L17.5 11" fill="none" stroke-width="0.8"/>
+  <path d="M14.5 10 L18 13" fill="none" stroke-width="0.8"/>
+  <path d="M14.2 11.5 L18 15.5" fill="none" stroke-width="0.8"/>
 </svg>

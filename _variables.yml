@@ -1,8 +1,8 @@
 links:
   github: "https://github.com/leburnett"
-  linkedin: "https://linkedin.com/in/LINKEDIN_USERNAME"
-  scholar: "https://scholar.google.com/citations?user=SCHOLAR_ID"
-  email: "your.email@example.com"
+  linkedin: "https://linkedin.com/in/laura-burnett-265a16247/"
+  scholar: "https://scholar.google.com/citations?user=oPPRKuIAAAAJ&hl=en&oi=ao"
+  email: "burnettl@hhmi.org"
 
 repos:
   optomotor: "https://github.com/leburnett/freely-walking-optomotor"
@@ -11,3 +11,4 @@ repos:
   reiser_docs: "https://github.com/leburnett/reiser-documentation"
   reiser_docs_site: "https://leburnett.github.io/reiser-documentation"
   neuview: "https://github.com/reiserlab/neuView"
+  burnett_2024: "https://github.com/leburnett/Burnett_et_al_2024"
