@@ -1,7 +1,7 @@
 ---
 title: "Rapid, Visually-Driven Decision Making in Mouse Models of Autism"
 description: "A study on shared visual perception and avoidance deficits across genetically distinct autism mouse models."
-categories: [MATLAB, Neuroscience, Data Analysis, Electrophysiology]
+categories: [MATLAB, Data Analysis, Electrophysiology, Optogenetics, Behaviour, Pharmacology]
 priority: 2
 ---
 

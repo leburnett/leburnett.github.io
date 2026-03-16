@@ -1,5 +1,5 @@
 ---
-title: "Freely Walking Optomotor Pipeline"
+title: "Freely Walking Optomotor Responses"
 description: "Pipeline for designing, performing and analysing fruit fly behavioral experiments within an LED arena."
 categories: [Python, MATLAB, Dash, Automation]
 priority: 1

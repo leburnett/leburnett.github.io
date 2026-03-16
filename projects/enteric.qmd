@@ -1,6 +1,6 @@
 ---
-title: "Enteric Nervous System Development"
-description: "Investigating the role of <i>nNOS</i> in the development of the enteric nervous sytem."
+title: "Characterising the enteric nervous system in the <i>nNOS^-^^/^^-^</i> mouse model"
+description: "Generated a cellular and molecular profile of the enteric nervous system before stem cell transplant"
 categories: [Molecular, qPCR, Confocal]
 priority: 1
 ---
