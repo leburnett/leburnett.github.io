@@ -7,7 +7,7 @@ priority: 2
 
 ## Overview
 
-Developed reproducible analysis pipelines for a large-scale connectomics dataset, published as supplemental code for a Nature paper (Nern et al. 2025). The project involved querying a connectome database of over 100,000 neurons, performing connectivity analysis, creating 3D neuronal morphology renderings, and building reproducible computational workflows. The codebase supports interactive exploration through Jupyter notebooks and is publicly available as supplementary material.
+Developed reproducible analysis pipelines for a large-scale connectomics dataset, published as supplemental code for Nern <i>et al.</i> 2025. The project involved querying a connectome database of over 100,000 neurons, performing connectivity analysis, creating 3D neuronal morphology renderings, and building reproducible computational workflows. The codebase supports interactive exploration through Jupyter notebooks and is publicly available as supplementary material. I was specifically 
 
 ## Technical Highlights
 

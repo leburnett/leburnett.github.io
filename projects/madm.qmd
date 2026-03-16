@@ -1,6 +1,6 @@
 ---
 title: "Investigating Lgl1 function in brain development with MADM"
-description: "Using the genetic tool Mosaic Analysis with Double Markers (MADM) to determine the role of Lgl1 in cortical development."
+description: "Used the genetic tool Mosaic Analysis with Double Markers (MADM) to determine the role of Lgl1 in cortical development."
 categories: [Molecular, MADM, Genetics, RNAseq]
 priority: 1
 ---
