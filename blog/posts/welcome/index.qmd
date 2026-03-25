@@ -1,10 +1,14 @@
 ---
 title: "Welcome"
-date: "2026-03-10"
-description: "First post on my new website."
+date: "2026-03-25"
+description: "Introduction to the blog."
 categories: [news]
 ---
 
-This is my new portfolio and blog, built with [Quarto](https://quarto.org) and hosted on GitHub Pages.
+Hello! Welcome to the blog portion of my website. 
 
-I'll be writing here about data science, neuroscience, and the transition from academia to industry. Stay tuned.
+While I'm transitioning out of my role as a lab-based researcher I thought I would use this space to try and collect any ideas or helpful tips I pick up along the way. Although I'm not limiting the content of these posts to anything in particular they will most likely be related to data science, data management, documentation and anything that I think would be useful for other people, especially those trying to keep on top of data-related things in a lab setting but hopefully other people will find some of it useful too.
+
+The posts will likely be a combination of things that I am discovering as I go and reflections on things that I have learnt during my time as a research scientist. For this reason, the posts will mostly be aimed at other beginners and probably other people, such as myself, that start working in a lab with very little knowledge of programming and working with data. For this reason I will say that I am by no means an expert in the things that I will write about. I almost certainly will make mistakes and strongly welcome comments, corrections and suggestions.
+
+Thank you for taking the time to read this and stay tuned for the first "offical" post.
