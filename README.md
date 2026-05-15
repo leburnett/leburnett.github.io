@@ -12,46 +12,6 @@ quarto preview
 quarto render
 ```
 
-## Adding Content
-
-### New blog post
-
-Create a new directory and file:
-
-```
-blog/posts/my-post-title/index.qmd
-```
-
-With frontmatter:
-
-```yaml
----
-title: "My Post Title"
-date: "2026-03-15"
-description: "A short description."
-categories: [data-science]
----
-```
-
-### New project
-
-Create a new file in `projects/`:
-
-```
-projects/my-project.qmd
-```
-
-With frontmatter:
-
-```yaml
----
-title: "My Project"
-description: "One-line description."
-categories: [Python, Data Science]
-priority: 5
----
-```
-
 ## Configuration
 
 - **`_quarto.yml`** — Site structure, navigation, theme
