@@ -24,4 +24,4 @@ I started working on this project during my summer intership at the Institute of
 
 ## Links
 
-- [Published Paper](https://www.cell.com/neuron/fulltext/S0896-6273(17)30305-7?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0896627317303057%3Fshowall%3Dtrue)
+- [Article](https://www.cell.com/neuron/fulltext/S0896-6273(17)30305-7?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0896627317303057%3Fshowall%3Dtrue)

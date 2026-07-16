@@ -25,4 +25,4 @@ Developed reproducible analysis pipelines for a large-scale connectomics dataset
 ## Links
 
 - [Source Code]({{< var repos.connectome >}})
-- [TODO: Link to Nature paper DOI]
+- [Article](https://www.nature.com/articles/s41586-025-08746-0)

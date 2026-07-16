@@ -4,7 +4,7 @@ project:
 
 website:
   title: "Laura Burnett"
-  description: "Data scientist with a background in neuroscience research. Portfolio showcasing data pipelines, interactive dashboards, connectomics analysis, and scientific computing."
+  description: "Data scientist with a background in neuroscience research."
 
   sidebar:
     style: docked
@@ -17,8 +17,6 @@ website:
         href: experience.qmd
       - text: "Publications"
         href: publications.qmd
-      - text: "Blog"
-        href: blog/index.qmd
       - text: "About Me"
         href: about.qmd
       - text: "---"
@@ -33,7 +31,7 @@ website:
         href: https://www.linkedin.com/in/laura-burnett-265a16247/
       - icon: envelope
         text: "Email"
-        href: mailto:burnettl@hhmi.org
+        href: mailto:leburnett3@gmail.com
 
   open-graph: true
   twitter-card: true
