@@ -1,5 +1,5 @@
 ---
-title: "Rapid, Visually-Driven Decision Making in Mouse Models of Autism"
+title: "Investigating rapid, visually-driven decision making in mouse models of autism"
 description: "A study on shared visual perception and avoidance deficits across genetically distinct autism mouse models."
 categories: [MATLAB, Data Analysis, Electrophysiology, Optogenetics, Behaviour, Pharmacology]
 priority: 2
@@ -7,10 +7,17 @@ priority: 2
 
 ## Overview
 
-Code and analysis pipeline for my PhD research. This study investigated why individuals with autism spectrum disorder share common sensory and behavioral difficulties despite having different genetic causes. We tested three genetically distinct ASD mouse models (<i>Setd5</i>, <i>Cul3</i>, <i>Ptchd1</i>) and discovered they converge on the same behavioral deficits: slower visual threat detection and reduced environmental avoidance learning.
+My PhD project was interested in understanding whether altered functioning in a subcortical brain pathway could be linked to attentional differences observed in mouse models of autism.
+
+Autism spectrum disorders (ASDs) have many different genetic causes, yet people with ASD show strikingly similar sensory and perceptual difficulties alongside their core social/behavioural traits — and the severity of those sensory problems tends to track with the severity of other autistic traits. We wanted to understand whether these seemingly separate deficits (sensory/perceptual vs. behavioural) share a common underlying circuit, using an innate, easily measured behaviour — the mouse "looming escape response" (fleeing from a simulated aerial threat) — as a window into subcortical visual threat processing.
+
+We found that mice with a mutation in <i>Setd5</i> (a gene strongly linked to human ASD/intellectual disability) took longer to initiate escape from a looming threat and showed weaker learned avoidance of the danger zone, even though their basic vision and motor ability were normal. Two other genetically distinct ASD mouse models (<i>Cul3</i> and <i>Ptchd1</i>) showed similar behavioural impairments, suggesting a shared "downstream" behavioural outcome despite different molecular causes. In <i>Setd5</i> mice specifically, we traced the problem to reduced excitability of neurons in the dorsal periaqueductal grey (dPAG), a brainstem region that triggers escape behaviour — caused by overactive Kv1 potassium channels rather than a change in how many channels were present. Blocking those channels with a drug (α-dendrotoxin) restored normal escape timing and normal threat avoidance, showing the effect was reversible in adulthood rather than fixed early in development.
+
+Overall, we were able to link a specific, druggable ion-channel mechanism in a subcortical brain region to both a perceptual deficit and a related learning/avoidance deficit, offering a concrete example of how very different autism-linked genes might converge on the same circuit-level dysfunction.
 
 ## Technical Highlights
 
+- **End-to-end experimental pipeline**: generated custom scripts to present visual stimuli and analyse both behaviour and electrophysiological recordings
 - **Multi-model behavioral analysis**: looming escape response paradigm across three ASD mouse lines
 - **Electrophysiology pipeline**: whole-cell patch-clamp and silicon probe recording analysis
 - **Optogenetic circuit dissection**: channelrhodopsin-2 activation of specific neural pathways
@@ -18,7 +25,7 @@ Code and analysis pipeline for my PhD research. This study investigated why indi
 
 ## Technologies
 
-[MATLAB]{.tag} [Electrophysiology]{.tag} [Optogenetics]{.tag} [Proteomics]{.tag} [Statistical Analysis]{.tag}
+[MATLAB]{.tag} [Electrophysiology]{.tag} [Optogenetics]{.tag} [Visual Stimuli]{.tag} [Statistical Analysis]{.tag}
 
 ## Links
 

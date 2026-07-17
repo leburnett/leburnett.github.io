@@ -1,17 +1,19 @@
 ---
 title: "Male Drosophila Visual System Connectome"
-description: "Computational analysis and 3D visualization for a Nature paper on the Drosophila optic lobe connectome."
+description: "Computational analysis and 3D visualization of the Drosophila optic lobe connectome."
 categories: [Python, Snakemake, Blender, Graph DB, neuPrint]
 priority: 2
 ---
 
 ## Overview
 
-Developed reproducible analysis pipelines for a large-scale connectomics dataset, published as supplemental code for Nern <i>et al.</i> 2025. The project involved querying a connectome database of over 100,000 neurons, performing connectivity analysis, creating 3D neuronal morphology renderings, and building reproducible computational workflows. The codebase supports interactive exploration through Jupyter notebooks and is publicly available as supplementary material. I was specifically 
+I was part of a team that developed a reproducible analysis pipeline for a large-scale connectomics dataset - a complete wiring map of every neuron in the brain of the fruit fly. The entire analysis workflow was published as supplemental code for Nern <i>et al.</i> 2025, creating what we like to think of as an "executable paper" where every figure and analysis can be independently replicated and reproduced. 
+
+The project involved querying a connectome database of over 100,000 neurons, performing connectivity analysis, creating 3D neuronal morphology renderings, and building reproducible computational workflows. The codebase supports interactive exploration through Jupyter notebooks and is publicly available as supplementary material. I was specifically involved in the analysis of each cell's location in 3D space and its assignment to vertical columns that span the depths of the fruit fly's visual system and form functionally distinct units.
 
 ## Technical Highlights
 
-- **neuPrint graph database queries** (Cypher) for connectome analysis across 100,000+ neurons
+- **SQL graph database queries** (Cypher) for connectome analysis across 100,000+ neurons
 - **Snakemake workflow** for reproducible, automated computational pipelines
 - **Blender 3D visualization** of neural structures and morphologies
 - **Python analysis stack**: navis, neuprint-python, pandas, matplotlib, seaborn

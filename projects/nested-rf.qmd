@@ -1,5 +1,5 @@
 ---
-title: "2-step protocol for investigating responses to motion."
+title: "2-step protocol for investigating neural responses to motion."
 description: "Electrophysiology toolkit that dynamically generates stimuli based on real-time neural response analysis."
 categories: [MATLAB, Python, Signal Processing, Experimental Design]
 priority: 4
@@ -7,7 +7,7 @@ priority: 4
 
 ## Overview
 
-Designed and built an adaptive experimental protocol for electrophysiology recordings of motion-responsive cell types. The system runs a coarse mapping protocol (P1), automatically analyzes the neural responses, then generates a tailored high-resolution follow-up protocol (P2) centered on each neuron's identified receptive field. This two-stage adaptive approach improves data quality by focusing resources where they matter most.
+I designed and built an adaptive experimental protocol for electrophysiology recordings of motion-responsive cell types. This two-step system runs a coarse mapping protocol (P1), automatically analyses the neural responses, then generates a tailored high-resolution follow-up protocol (P2) centered on the neuron's identified receptive field. This two-stage adaptive approach improves data quality by allowing for  time to be better allocated to record responses only to stimuli in the region of visual space we know the cell cares about.
 
 This protocol was based on a similiar protocol developed by Eyal Gruntman in the Reiser Lab and was designed for experiments carried out by Jin Yong Park at HHMI Janelia for a collaboration with S Lawrence (Larry) Zipurski and Piero Sanfilippo at UCLA.
 

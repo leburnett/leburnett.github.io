@@ -7,7 +7,7 @@ priority: 3
 
 ## Overview
 
-A modern Python CLI tool that generates rich, interactive HTML pages for neuron types by querying the NeuPrint connectome database. neuView supports multiple datasets (CNS, Hemibrain, Optic-lobe), automatically adapting its queries and output to each. Pages include advanced filtering by cell count, neurotransmitter, and brain region, with responsive design and accessible formatting. The tool features a persistent caching layer for high-throughput processing.
+I was part of a small team thatt developed a modern Python CLI tool that generates rich, interactive HTML pages for neuron types by querying the NeuPrint connectome database. neuView supports multiple datasets (CNS, Hemibrain, Optic-lobe), automatically adapting its queries and output to each. Pages include advanced filtering by cell count, neurotransmitter, and brain region, with responsive design and accessible formatting. The tool features a persistent caching layer for high-throughput processing.
 
 ## Technical Highlights
 
