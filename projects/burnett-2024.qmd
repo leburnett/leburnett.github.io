@@ -1,7 +1,7 @@
 ---
 title: "Investigating rapid, visually-driven decision making in mouse models of autism"
 description: "A study on shared visual perception and avoidance deficits across genetically distinct autism mouse models."
-categories: [MATLAB, Data Analysis, Electrophysiology, Optogenetics, Behaviour, Pharmacology]
+categories: [MATLAB, Data analysis, Decision-making, Autism, Visual neuroscience, Subcortical circuits, Innate behaviour]
 priority: 2
 ---
 
@@ -25,9 +25,10 @@ Overall, we were able to link a specific, druggable ion-channel mechanism in a s
 
 ## Technologies
 
-[MATLAB]{.tag} [Electrophysiology]{.tag} [Optogenetics]{.tag} [Visual Stimuli]{.tag} [Statistical Analysis]{.tag}
+[MATLAB]{.tag} [Electrophysiology]{.tag} [Optogenetics]{.tag} [Visual Stimuli]{.tag} [Statistical Analysis]{.tag} [Pharmacology]{.tag}
 
 ## Links
 
 - [Source Code]({{< var repos.burnett_2024 >}})
 - [Published Paper](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002668)
+- [Thesis](https://research-explorer.ista.ac.at/download/12716/12718/Burnett_Thesis_2023_pdfA.pdf)
