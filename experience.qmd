@@ -34,38 +34,11 @@ September 2016 - May 2023
 
 ::: {.pub-timeline}
 ::: {.pub-year}
-June 2016 -  August 2016
-:::
-::: {.pub-entries}
-::: {.pub-entry}
-**ISTern**
-
-[Hippenmeyer Lab](https://ista.ac.at/en/research/hippenmeyer-group/), Insitute of Science and Technology Austria (ISTA)
-:::
-:::
-:::
-
-::: {.pub-timeline}
-::: {.pub-year}
-July 2014 -  July 2015
-:::
-::: {.pub-entries}
-::: {.pub-entry}
-**Exchange Student**
-
-University of Melbourne, Australia
-:::
-:::
-:::
-
-
-::: {.pub-timeline}
-::: {.pub-year}
 September 2012 -  May 2016
 :::
 ::: {.pub-entries}
 ::: {.pub-entry}
-**Natural Sciences MSci**
+**Natural Sciences BSc & MSc**
 
 Univeristy College London (UCL)
 :::
