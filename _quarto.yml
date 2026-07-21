@@ -5,10 +5,10 @@ project:
 website:
   title: "Laura Burnett"
   description: "Data scientist with a background in neuroscience research."
+  search: false
 
   sidebar:
     style: docked
-    search: false
     background: transparent
     contents:
       - text: "Projects"
