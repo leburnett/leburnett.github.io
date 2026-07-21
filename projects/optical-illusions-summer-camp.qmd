@@ -1,0 +1,23 @@
+---
+title: "Optical Illusions Summer Camp"
+description: "A summer camp introducing students to the neuroscience of optical illusions."
+categories: [Outreach, Visual Neuroscience]
+priority: 1
+---
+
+<!-- PLACEHOLDER PAGE — replace the content below with the real project write-up. -->
+
+## Overview
+
+_Placeholder — describe the summer camp here: who it was for, what students did,
+and what they learned about how the visual system can be fooled._
+
+## Highlights
+
+- _Placeholder highlight_
+- _Placeholder highlight_
+- _Placeholder highlight_
+
+## Technologies
+
+[Outreach]{.tag} [Visual Neuroscience]{.tag}

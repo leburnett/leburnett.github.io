@@ -67,33 +67,47 @@ $sidebar-bg: #1a1a1a;
   color: #cccccc;
 }
 
-// Project cards
-.project-card {
-  border: 1px solid #333333;
-}
-
-.project-card:hover {
-  border-color: #666666;
-}
-
-.project-card h3 {
-  color: #e0e0e0;
-}
-
-.project-card p {
-  color: #aaaaaa;
-}
-
-// Tech tags
+// Tags
 .tag {
   background-color: #2a2a2a;
   color: #aaaaaa;
+}
+
+// Domain/topic tag — emphasised (inverted chip in dark mode)
+.tag-domain {
+  background-color: #e0e0e0;
+  color: #1a1a1a;
 }
 
 // Section headings
 .section-heading {
   color: #e0e0e0;
   border-bottom: 1px solid #333333;
+}
+
+// Projects page — stacked, hover-to-expand cards (dark overrides)
+.project-item {
+  border-color: #333333;
+}
+
+.project-item:hover,
+.project-item:focus-visible {
+  border-color: #666666;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.project-item-title {
+  color: #e0e0e0;
+}
+
+.project-desc > * {
+  color: #aaaaaa;
+}
+
+.tag-year {
+  background-color: transparent;
+  border-color: #444444;
+  color: #999999;
 }
 
 // Blog listing

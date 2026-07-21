@@ -120,29 +120,6 @@ $sidebar-bg: #ffffff;
   max-width: 640px;
 }
 
-// Project cards - minimal style
-.project-card {
-  border: 1px solid #e8e8e8;
-  border-radius: 4px;
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-  transition: border-color 0.2s;
-}
-
-.project-card:hover {
-  border-color: #aaaaaa;
-}
-
-.project-card h3 {
-  margin-top: 0;
-  font-size: 1.15rem;
-}
-
-.project-card p {
-  color: #555555;
-  font-size: 0.95rem;
-}
-
 // Section heading icons (projects page)
 .section-icon {
   height: 1.3em;
@@ -172,6 +149,109 @@ $sidebar-bg: #ffffff;
   margin-bottom: 1rem;
   padding-bottom: 0.4rem;
   border-bottom: 1px solid #e8e8e8;
+}
+
+// Projects page — stacked, hover-to-expand cards
+.projects-hint {
+  display: block;
+  font-size: 0.85rem;
+  color: #888888;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.project-item {
+  display: block;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  text-decoration: none !important;
+  color: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-item:hover,
+.project-item:focus-visible {
+  border-color: #aaaaaa;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.project-item-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.6rem 0;
+  color: #1a1a1a;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.project-tags .tag {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+// Description is collapsed by default and revealed on hover (see @media rules).
+// The 0fr -> 1fr grid trick animates to the content's natural height smoothly.
+.project-desc {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  margin-top: 0;
+  transition: grid-template-rows 0.3s ease, opacity 0.25s ease, margin-top 0.3s ease;
+}
+
+.project-desc > * {
+  overflow: hidden;
+  min-height: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #555555;
+}
+
+// Reveal on hover / keyboard focus — only on devices that can actually hover.
+@media (hover: hover) {
+  .project-item:hover .project-desc,
+  .project-item:focus-visible .project-desc,
+  .project-item:focus-within .project-desc {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    margin-top: 0.65rem;
+  }
+}
+
+// Touch devices can't hover, so always show the description there.
+@media (hover: none) {
+  .project-desc {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    margin-top: 0.65rem;
+  }
+}
+
+// Domain/topic tag — emphasised (the primary categorisation of each project).
+.tag-domain {
+  background-color: #333333;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+// Year tag — outlined so it reads as metadata rather than a topic tag.
+.tag-year {
+  background-color: transparent;
+  border: 1px solid #d0d0d0;
+  color: #777777;
 }
 
 // Blog listing - clean minimal list
