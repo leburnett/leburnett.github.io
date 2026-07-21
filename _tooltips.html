@@ -1,0 +1,27 @@
+<!-- Adds hover tooltips (native title attribute) to the icon-only sidebar links.
+     Included site-wide via `include-after-body` in _quarto.yml. Keyed off each
+     link's inline-SVG icon class, so it survives Quarto re-rendering the sidebar. -->
+<script>
+  (function () {
+    function addSidebarTitles() {
+      var labels = {
+        "bi-file-earmark-arrow-down": "CV",
+        "bi-github": "GitHub",
+        "bi-mortarboard-fill": "Google Scholar",
+        "bi-linkedin": "LinkedIn",
+        "bi-envelope": "Email"
+      };
+      Object.keys(labels).forEach(function (cls) {
+        document.querySelectorAll(".sidebar a ." + cls).forEach(function (icon) {
+          var link = icon.closest("a");
+          if (link) link.setAttribute("title", labels[cls]);
+        });
+      });
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", addSidebarTitles);
+    } else {
+      addSidebarTitles();
+    }
+  })();
+</script>

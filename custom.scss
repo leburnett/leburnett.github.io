@@ -48,6 +48,7 @@ $sidebar-bg: #ffffff;
 }
 
 // Social links — icon-only, horizontal row
+.sidebar-item:has(.bi-file-earmark-arrow-down),
 .sidebar-item:has(.bi-github),
 .sidebar-item:has(.bi-linkedin),
 .sidebar-item:has(.bi-mortarboard-fill),
@@ -72,6 +73,14 @@ $sidebar-bg: #ffffff;
       color: #000000;
     }
   }
+}
+
+// "Last updated" note under the CV download button
+.cv-updated {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #888888;
+  margin-top: 0.4rem;
 }
 
 // Hero section for landing page

@@ -34,6 +34,13 @@ jobs:
 
       - name: Encrypt personal blog pages
         run: |
+          # The blog is currently excluded from rendering (see _quarto.yml).
+          # Skip encryption entirely if the personal blog wasn't built.
+          if [ ! -d _site/blog/personal ]; then
+            echo "No _site/blog/personal directory — blog not rendered, skipping."
+            exit 0
+          fi
+
           echo "=== Files to encrypt ==="
           find _site/blog/personal -name "*.html" -print
 

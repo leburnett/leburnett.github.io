@@ -36,6 +36,7 @@ $sidebar-bg: #1a1a1a;
 }
 
 // Social links — icon-only overrides for dark mode
+.sidebar-item:has(.bi-file-earmark-arrow-down),
 .sidebar-item:has(.bi-github),
 .sidebar-item:has(.bi-linkedin),
 .sidebar-item:has(.bi-mortarboard-fill),

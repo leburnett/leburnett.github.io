@@ -3,7 +3,11 @@ title: "Experience and Skills"
 toc: true
 ---
 
-## Education 
+[<i class="bi bi-file-earmark-arrow-down"></i> Download CV (PDF)](assets/cv.pdf){.btn .btn-outline-secondary .btn-sm .rounded-pill target="_blank"}
+
+[Last updated: 2026-07-21]{.cv-updated}
+
+## Education
 
 ::: {.pub-timeline}
 ::: {.pub-year}

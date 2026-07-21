@@ -1,10 +1,16 @@
 project:
   type: website
   output-dir: _site
+  # Render everything except the blog (kept in the repo, not published for now).
+  # To bring the blog back, remove these render rules.
+  render:
+    - "*.qmd"
+    - "**/*.qmd"
+    - "!blog/**"
 
 website:
   title: "Laura Burnett"
-  description: "Data scientist with a background in neuroscience research."
+  description: "Personal research portfolio."
   search: false
 
   sidebar:
@@ -32,16 +38,20 @@ website:
       - icon: envelope
         text: "Email"
         href: mailto:leburnett3@gmail.com
+      - icon: file-earmark-arrow-down
+        text: "Download CV"
+        href: assets/cv.pdf
+        target: "_blank"
 
   open-graph: true
 
 format:
   html:
     theme:
-      # dark listed first => dark is the default; toggle still switches to light
       dark: [darkly, custom-dark.scss]
       light: [journal, custom.scss]
     toc: false
     anchor-sections: true
     smooth-scroll: true
     link-external-newwindow: true
+    include-after-body: _tooltips.html
