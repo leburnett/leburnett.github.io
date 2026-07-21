@@ -75,6 +75,21 @@ $sidebar-bg: #ffffff;
   }
 }
 
+// CV download button — grey outline/text so it's visible without hovering,
+// matching the "Last updated" note colour. (.btn.cv-button beats Bootstrap's
+// .btn-outline-secondary specificity.)
+.btn.cv-button {
+  color: #888888;
+  border-color: #888888;
+}
+
+.btn.cv-button:hover,
+.btn.cv-button:focus-visible {
+  background-color: #888888;
+  border-color: #888888;
+  color: #ffffff;
+}
+
 // "Last updated" note under the CV download button
 .cv-updated {
   display: inline-block;
