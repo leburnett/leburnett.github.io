@@ -11,7 +11,7 @@ title-block-style: none
 [Systems neuroscience, PhD.<br>]{.subtitle}
 
 ::: {.bio}
-[Hi! 👋 I'm Laura - I'm a research data scientist who's worked in neuroscience labs for over a decade: designing and running experiments, building analysis workflows, and sharing the work through talks and articles. Among other things, I've investigated [decision making](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002668) in mice and, as part of a team, analysed a [fruit fly visual system connectome](https://www.nature.com/articles/s41586-025-08746-0) — using statistics and visualisation to turn a massive, complex dataset into biological insight, then packaged it into an open-access, interactive [web resource](https://reiserlab.github.io/celltype-explorer-drosophila-male-cns/index.html) for browsing the data.]{.bio-text}
+[Hi! 👋 I'm Laura - I'm a research data scientist who's worked in neuroscience labs for over a decade: designing and running experiments, building analysis workflows, and sharing the work through talks and articles. Among other things, I've investigated [decision making](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002668) in mice and was part of a team that analysed a [fruit fly visual system connectome](https://www.nature.com/articles/s41586-025-08746-0) — using statistics and visualisation to extract biological insight from a massive, complex dataset, then packaged it into an open-access, interactive [web resource](https://reiserlab.github.io/celltype-explorer-drosophila-male-cns/index.html).]{.bio-text}
 :::
 :::
 
