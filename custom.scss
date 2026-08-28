@@ -35,6 +35,15 @@ body {
   font-weight: 300;
 }
 
+// Bootstrap's reboot sets `strong { font-weight: bolder }`. Resolved against
+// the 300 body weight, CSS `bolder` lands on 400 — and no 400 face is shipped,
+// so bold text was being faked from Light and barely read as bold. Pin it to
+// the 700 cut that _fonts-source-sans.scss actually loads.
+strong,
+b {
+  font-weight: 700;
+}
+
 // Sidebar styling — wider, starts from left edge
 .sidebar {
   border-right: 1px solid #e8e8e8;
@@ -304,6 +313,72 @@ $project-tag-colors: (
     background-color: nth($pair, 1);
     color: nth($pair, 2);
   }
+}
+
+// Boxed section for project pages — sets a section apart from the surrounding
+// prose. Wrap the heading and its text in a fenced div:
+//
+//   ::: {.problem-box}
+//   ## Problem
+//
+//   ...text...
+//   :::
+//
+// To add another variant (an outcome box, say), append its class to the two
+// selector lists below and give it its own background colour.
+.problem-box {
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  padding: 1.35rem 1.5rem;
+  margin: 2rem 0;
+}
+
+// The theme underlines section headings; inside a filled box that reads as a
+// stray divider, and the usual top margin pushes the heading off centre.
+.problem-box h2,
+.problem-box h3 {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-top: 0;
+}
+
+// Kill the trailing paragraph margin so the box's padding stays even.
+.problem-box > *:last-child {
+  margin-bottom: 0;
+}
+
+// Figures inside project pages. Images never overflow the reading column, and
+// captions read as quiet annotations rather than body copy.
+.quarto-figure,
+figure {
+  margin: 2rem 0;
+}
+
+figure img,
+.figure img,
+p > img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #e8e8e8;
+}
+
+figcaption,
+.figure-caption {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: #888888;
+  margin-top: 0.6rem;
+  text-align: left;
+}
+
+// Side-by-side figures via ::: {layout-ncol=2}
+.quarto-layout-panel {
+  margin: 2rem 0;
+}
+
+.quarto-layout-panel figure {
+  margin: 0;
 }
 
 // Blog listing - clean minimal list

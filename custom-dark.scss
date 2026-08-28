@@ -31,6 +31,13 @@ body {
   font-weight: 300;
 }
 
+// See custom.scss — pin bold to the 700 face rather than `bolder`, which
+// resolves to 400 against the 300 body weight.
+strong,
+b {
+  font-weight: 700;
+}
+
 // Sidebar styling
 .sidebar {
   border-right: 1px solid #333333;
@@ -125,6 +132,24 @@ $project-tag-colors-dark: (
     background-color: nth($pair, 1);
     color: nth($pair, 2);
   }
+}
+
+// Boxed section (dark override) — a touch lighter than the page background.
+.problem-box {
+  background-color: #242424;
+}
+
+// Figures (dark overrides) — a lighter hairline so images don't float
+// borderless against the dark page.
+figure img,
+.figure img,
+p > img {
+  border-color: #333333;
+}
+
+figcaption,
+.figure-caption {
+  color: #888888;
 }
 
 // Blog listing
