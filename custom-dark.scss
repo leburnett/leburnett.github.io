@@ -3,6 +3,10 @@
 // Disable the theme's Google Fonts @import; we self-host instead (see _fonts-*)
 $web-font-path: false;
 
+// Body text — Source Sans 3, set at Light (300) as its normal weight (see the
+// `body { font-weight: 300; }` rule below and _fonts-source-sans.scss).
+$font-family-base: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
 // Minimal dark palette — inverted grayscale
 $body-color: #e0e0e0;
 $link-color: #aaaaaa;
@@ -19,8 +23,13 @@ $sidebar-bg: #1a1a1a;
 // Inline-SVG icons that replace the bootstrap-icons.woff font (see _icons.scss)
 @import "icons";
 
-// Self-hosted Lato (body) — replaces the theme's Google Fonts import
-@import "fonts-lato";
+// Self-hosted Source Sans 3 (body) — replaces the theme's Google Fonts import
+@import "fonts-source-sans";
+
+// Body text renders at Light (300)
+body {
+  font-weight: 300;
+}
 
 // Sidebar styling
 .sidebar {

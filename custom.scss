@@ -3,6 +3,10 @@
 // Disable the theme's Google Fonts @import; we self-host instead (see _fonts-*)
 $web-font-path: false;
 
+// Body text — Source Sans 3, set at Light (300) as its normal weight (see the
+// `body { font-weight: 300; }` rule below and _fonts-source-sans.scss).
+$font-family-base: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
 // Minimal color palette
 $body-color: #1a1a1a;
 $link-color: #444444;
@@ -21,6 +25,15 @@ $sidebar-bg: #ffffff;
 
 // Self-hosted News Cycle (headings) — replaces the theme's Google Fonts import
 @import "fonts-news-cycle";
+
+// Self-hosted Source Sans 3 (body) — replaces the theme's Google Fonts import
+@import "fonts-source-sans";
+
+// Body text renders at Light (300); headings/News Cycle above are unaffected
+// since they set their own font-weight directly.
+body {
+  font-weight: 300;
+}
 
 // Sidebar styling — wider, starts from left edge
 .sidebar {
