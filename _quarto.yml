@@ -20,27 +20,22 @@ website:
   # `image:` in frontmatter (e.g. project cards) override this automatically.
   image: "/assets/social-card.png"
 
-  # --- Analytics (not enabled) ------------------------------------------
-  # To turn on Google Analytics, create a GA4 property at analytics.google.com,
-  # copy its Measurement ID (looks like G-XXXXXXXXXX) and uncomment both blocks.
+  # Google Analytics. Quarto injects the gtag snippet into every page it builds,
+  # so nothing needs adding to individual .qmd files — despite what Google's
+  # own setup instructions say (those assume hand-written HTML).
   #
-  # `storage: none` runs GA without cookies, and `anonymize-ip` truncates
-  # visitor IPs. Together they avoid storing anything that identifies an
-  # individual — which is what makes the consent banner below optional rather
-  # than legally required for UK/EU visitors.
+  # `storage: none` runs GA in cookieless mode and `anonymize-ip` truncates
+  # visitor IPs, so no individual is identified and no consent banner is legally
+  # required for UK/EU visitors. The trade-off is that returning visitors can't
+  # be recognised, so every visit counts as a new user — treat the user and
+  # session totals as inflated. Page views and referrers remain accurate.
   #
+  # Switching `storage` back to `cookies` gives accurate user counts but then a
+  # consent banner IS required; add `cookie-consent: {type: express}` alongside.
   google-analytics:
     tracking-id: "G-G40VL43XQE"
     storage: none
     anonymize-ip: true
-  #
-  # If you switch `storage` back to `cookies`, a consent banner IS required for
-  # UK/EU visitors — uncomment this too:
-  #
-  # cookie-consent:
-  #   type: express
-  #   style: simple
-  # ----------------------------------------------------------------------
 
   sidebar:
     style: docked
