@@ -5,18 +5,9 @@ categories: [Outreach, Visual Neuroscience]
 priority: 1
 ---
 
-<!-- PLACEHOLDER PAGE — replace the content below with the real project write-up. -->
-
 ## Overview
 
-_Placeholder — describe the summer camp here: who it was for, what students did,
-and what they learned about how the visual system can be fooled._
-
-## Highlights
-
-- _Placeholder highlight_
-- _Placeholder highlight_
-- _Placeholder highlight_
+The "Fakebusters" Summer Camp was run over two summers for high school students aged 14-17. Overall, it was designed to teach the students about combatting fake information. I pitched a session on optical illusions titled "Seeing is believing? The neuroscience behind optical illusions" since my background was in visual neuroscience. Over the course of the day long session I covered some basic neuroscience about how our visual system works and covered a range of different optical illusions, explaining how our brains are "tricked" into seeing something that doesn't necessarily make sense to us. There was also an interactive component to the session where students were asked to create their own "optical illusions".
 
 ## Technologies
 
