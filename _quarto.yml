@@ -26,10 +26,8 @@ website:
     contents:
       - text: "Projects"
         href: projects/index.qmd
-      - text: "Experience"
+      - text: "CV"
         href: experience.qmd
-      - text: "Publications"
-        href: publications.qmd
       - text: "About Me"
         href: about.qmd
       - text: "---"

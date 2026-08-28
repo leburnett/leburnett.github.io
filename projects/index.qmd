@@ -19,7 +19,7 @@ listing:
     sort: "priority asc"
 ---
 
-A selection of my research and the tools I've built.
+A selection of my experimental and data science projects.
 
 ::: {#projects}
 :::
