@@ -1,7 +1,9 @@
 ---
-title: "Lab Documentation Website"
+title: "Documentation Website"
 description: "Quarto documentation site for the Reiser Lab's experimental setups, with pages auto-generated from MATLAB code by Python and Jinja2 to stay in sync."
-subtitle: "Auto-generated documentation site kept in sync with the codebase"
+subtitle: "Useful resource that can be used as a template for other experimental researchers."
+image: "/assets/projects/reiser-documentation/card.png"
+imagealt: "Example page within the documentation website."
 years: "2025–2026"
 kinds: [Web Resource]
 categories: [Documentation, Jinja2, Quarto]

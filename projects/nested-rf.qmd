@@ -1,7 +1,9 @@
 ---
-title: "2-step protocol for investigating neural responses to motion."
+title: "Pipeline for investigating neural responses to moving stimuli."
 description: "Adaptive two-step electrophysiology protocol: coarse receptive-field mapping is analysed in real time to auto-generate a targeted high-resolution follow-up."
-subtitle: "Adaptive protocol driven by real-time neural response analysis"
+subtitle: "An adaptive, 2-step protocol that includes real-time neural response analysis"
+image: "/assets/projects/nested-rf/card.png"
+imagealt: "Data visualisations of a single cell's response to flashes at different locations in space."
 years: "2024–2026"
 kinds: [Pipeline]
 categories: [MATLAB, Python, Signal Processing, Experimental Design]

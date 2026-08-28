@@ -1,7 +1,9 @@
 ---
-title: "Behavioural characterisation of walking fruit flies to visual stimuli"
+title: "Behavioural responses of walking fruit flies to moving patterns"
 description: "End-to-end pipeline for high-throughput fruit fly behaviour: MATLAB stimulus protocols, automated Python processing, and a Dash dashboard for results."
-subtitle: "End-to-end ETL pipeline for a high-throughput behavioural screen"
+subtitle: "End-to-end pipeline for a high-throughput behavioural screen"
+image: "/assets/projects/freely-walking-optomotor/card.png"
+imagealt: "An example trajectory of a single fruit fly while moving gratings are presented around the edge of a circular arena (left) and plots of behavioural metrics (right)."
 years: "2023–2026"
 kinds: [Experiments, Data Analysis, Pipeline]
 categories: [Behaviour, MATLAB, Automation, Group dynamics, High-throughput]

@@ -1,10 +1,12 @@
 ---
-title: "Characterising the enteric nervous system in the nNOS⁻/⁻ mouse model"
+title: "Characterising the gut nervous system in a disease mouse model"
 description: "Cellular and molecular profiling of the enteric nervous system in nNOS-/- mice, establishing a baseline for stem cell transplants. Nat Communications, 2017."
-subtitle: "Cellular and molecular profiling ahead of stem cell transplant"
+subtitle: "Cellular and molecular profiling in preparation for stem cell transplant therapies"
+image: "/assets/projects/enteric/card.png"
+imagealt: "Confocal micrograph of stem cells transplanted into a mouse's gut."
 years: "2015–2016"
 kinds: [Experiments, Data Analysis]
-categories: [Molecular, qPCR, Confocal]
+categories: [Dissections, Histology, Molecular, qPCR, Confocal imaging]
 priority: 8
 ---
 
