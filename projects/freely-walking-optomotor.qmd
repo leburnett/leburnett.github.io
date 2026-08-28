@@ -1,15 +1,18 @@
 ---
 title: "Behavioural characterisation of walking fruit flies to visual stimuli"
-description: "Pipeline for designing, performing and analysing behavioural experiments within an LED arena."
+description: "End-to-end pipeline for high-throughput fruit fly behaviour: MATLAB stimulus protocols, automated Python processing, and a Dash dashboard for results."
+subtitle: "End-to-end ETL pipeline for a high-throughput behavioural screen"
+years: "2023–2026"
+kinds: [Experiments, Data Analysis, Pipeline]
 categories: [Behaviour, MATLAB, Automation, Group dynamics, High-throughput]
-priority: 1
+priority: 3
 ---
 
 ## Overview
 
 I built an end-to-end data pipeline that generates the visual stimuli and the experimental protocols, runs the experiments and automatically processes, validates, and visualizes behavioral experiment data from a high-throughput behavioural screen of fruit fly visual responses. The pipeline coordinates data acquisition, video tracking, and analysis across multiple computers, with Python automation services that monitor for new data and trigger processing pipelines automatically.
 
-I developed all of the protocols, as well as the embedded functions for logging and syncing the visual stimulus to the behavioural camera, and the processing and plotting scripts. This repository was mainly used for a high-throughput screen conducted in collaboration with Aparna Dev, but it also contains a number of development protocols from tests along the way. I also generated detailed documentation of this pipeline within my [documentation website](projects/reiser-documentation.qmd) and created a standalone [dashboard](https://leburnett.github.io/reiser-documentation/Freely-walking/freely_walking_dashboard.html) for viewing the results of the main behavioural screen.
+I developed all of the protocols, as well as the embedded functions for logging and syncing the visual stimulus to the behavioural camera, and the processing and plotting scripts. This repository was mainly used for a high-throughput screen conducted in collaboration with Aparna Dev, but it also contains a number of development protocols from tests along the way. I also generated detailed documentation of this pipeline within my [documentation website](reiser-documentation.qmd) and created a standalone [dashboard](https://leburnett.github.io/reiser-documentation/Freely-walking/freely_walking_dashboard.html) for viewing the results of the main behavioural screen.
 
 ## Technical Highlights
 

@@ -1,5 +1,6 @@
 ---
 title: "Publications"
+description: "Peer-reviewed publications in Nature, Cell, PLOS Biology, Neuron and Nature Communications, spanning connectomics, visual neuroscience and development."
 toc: true
 ---
 
@@ -105,7 +106,7 @@ Sanfilippo, P.,  ... Burnett, L.E., et al.
 
 
 
-## Thesis
+## PhD Thesis
 
 ::: {.pub-timeline}
 ::: {.pub-year}

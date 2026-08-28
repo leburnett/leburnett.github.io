@@ -10,8 +10,15 @@ project:
 
 website:
   title: "Laura Burnett"
-  description: "Personal research portfolio."
+  description: "Research data scientist working across neuroscience, data pipelines and open research resources."
+  # Required for absolute og:image / canonical URLs — social scrapers reject
+  # relative image paths, so link previews stay blank without this.
+  site-url: "https://leburnett.github.io"
   search: false
+
+  # Default social preview image for every page. Pages that set their own
+  # `image:` in frontmatter (e.g. project cards) override this automatically.
+  image: "/assets/social-card.png"
 
   sidebar:
     style: docked
@@ -19,7 +26,7 @@ website:
     contents:
       - text: "Projects"
         href: projects/index.qmd
-      - text: "Experience & Skills"
+      - text: "Experience"
         href: experience.qmd
       - text: "Publications"
         href: publications.qmd
@@ -44,6 +51,7 @@ website:
         target: "_blank"
 
   open-graph: true
+  twitter-card: true
 
 format:
   html:

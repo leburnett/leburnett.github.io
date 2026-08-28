@@ -82,41 +82,49 @@ body {
   color: #aaaaaa;
 }
 
-// Domain/topic tag — emphasised (inverted chip in dark mode)
-.tag-domain {
-  background-color: #e0e0e0;
-  color: #1a1a1a;
-}
-
 // Section headings
 .section-heading {
   color: #e0e0e0;
   border-bottom: 1px solid #333333;
 }
 
-// Projects page — stacked, hover-to-expand cards (dark overrides)
-.project-item {
+// Projects page — square card grid (dark overrides)
+.project-card {
   border-color: #333333;
 }
 
-.project-item:hover,
-.project-item:focus-visible {
+.project-card:hover,
+.project-card:focus-visible {
   border-color: #666666;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
-.project-item-title {
+.project-card-media {
+  background-color: #262626;
+}
+
+.project-card-title {
   color: #e0e0e0;
 }
 
-.project-desc > * {
+.project-card-subtitle {
   color: #aaaaaa;
 }
 
-.tag-year {
-  background-color: transparent;
-  border-color: #444444;
-  color: #999999;
+// Project-type tags — same hues as the light theme, darkened so the chips read
+// as muted fills rather than bright blocks against the dark page.
+$project-tag-colors-dark: (
+  "experiments":   (#2b352a, #a9c3a1),
+  "data-analysis": (#26313d, #9db9d6),
+  "web-resource":  (#332b3a, #c0a9cd),
+  "pipeline":      (#3a3128, #d3b48d),
+);
+
+@each $name, $pair in $project-tag-colors-dark {
+  .project-tag--#{$name} {
+    background-color: nth($pair, 1);
+    color: nth($pair, 2);
+  }
 }
 
 // Blog listing
@@ -160,8 +168,7 @@ body {
   color: #aaaaaa;
 }
 
-// Section heading icons + hero icon — invert for dark mode
-.section-icon,
+// Hero icon — invert for dark mode
 .hero-icon {
   filter: invert(1);
   opacity: 0.85;

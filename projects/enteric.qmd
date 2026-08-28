@@ -1,8 +1,11 @@
 ---
-title: "Characterising the enteric nervous system in the <i>nNOS^-^^/^^-^</i> mouse model"
-description: "Generated a cellular and molecular profile of the enteric nervous system before stem cell transplant"
+title: "Characterising the enteric nervous system in the nNOS⁻/⁻ mouse model"
+description: "Cellular and molecular profiling of the enteric nervous system in nNOS-/- mice, establishing a baseline for stem cell transplants. Nat Communications, 2017."
+subtitle: "Cellular and molecular profiling ahead of stem cell transplant"
+years: "2015–2016"
+kinds: [Experiments, Data Analysis]
 categories: [Molecular, qPCR, Confocal]
-priority: 1
+priority: 8
 ---
 
 ## Overview

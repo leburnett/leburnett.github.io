@@ -1,0 +1,21 @@
+```{=html}
+<div class="project-grid">
+<% for (const item of items) { %>
+<a class="project-card" href="<%- item.path %>">
+<% if (item.image) { %><div class="project-card-media"><img src="<%- item.image %>" alt="<%- item.imagealt || '' %>" loading="lazy"></div><% } %>
+<div class="project-card-body">
+<% const kinds = Array.isArray(item.kinds) ? item.kinds : (item.kinds ? [item.kinds] : []); %>
+<% if (kinds.length) { %>
+<div class="project-card-tags">
+<% for (const kind of kinds) { %>
+<span class="project-tag project-tag--<%- String(kind).trim().toLowerCase().replace(/[^a-z0-9]+/g, '-') %>"><%- kind %></span>
+<% } %>
+</div>
+<% } %>
+<h3 class="project-card-title"><%- item.title %></h3>
+<span class="project-card-subtitle"><%- item.subtitle || item.description || '' %></span>
+</div>
+</a>
+<% } %>
+</div>
+```

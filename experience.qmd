@@ -1,5 +1,6 @@
 ---
-title: "Experience and Skills"
+title: "Experience"
+description: "Experience and technical skills: Python, MATLAB, SQL, ETL pipelines, statistical analysis and data visualisation across ten years of neuroscience research."
 toc: true
 ---
 
@@ -48,15 +49,3 @@ Univeristy College London (UCL)
 :::
 :::
 :::
-
-
-## Technical Skills
-
-| Category | Skills |
-|----------|--------|
-| **Languages** | Python, MATLAB, SQL (Cypher/neuPrint), Javascript |
-| **Data Engineering** | ETL pipelines, automated processing, Snakemake workflows |
-| **Visualization** | Dash/Plotly, Matplotlib, Blender 3D rendering |
-| **Data Science** | Statistical analysis, behavioral modeling, graph databases |
-| **Tools & Platforms** | Git, GitHub Actions, Quarto, pixi, Jupyter |
-

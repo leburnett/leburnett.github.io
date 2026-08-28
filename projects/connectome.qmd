@@ -1,30 +1,37 @@
 ---
-title: "Male Drosophila Visual System Connectome"
-description: "Computational analysis and 3D visualization of the Drosophila optic lobe connectome."
-categories: [Python, Snakemake, Blender, Graph DB, neuPrint]
-priority: 2
+title: "Making sense of a fruit fly's neural wiring diagram"
+description: "Computational analysis and visualization of the Drosophila optic lobe connectome."
+subtitle: "Connectivity analysis and 3D visualisation of >150,000 neurons"
+years: "2023–2025"
+kinds: [Data Analysis]
+categories: [Python, Neo4j, SQL, Snakemake, Blender, neuPrint]
+priority: 1
 ---
+
+## Background
+
+**Connectomes** are extraordinary scientific resources. They are comprehensive maps of all neural cells and their connections within an organism's nervous system. These resources are made by creating many, many EM (electron microscopy) images of very thin sections of fixed tissue and then reconstructing them computationally back into a 3D representation. Individual neurons and their connections are meticulously segmented and traced, by both machine learning algorithms and human annotators, to generate a complex database where each neuron and each connection has it's own unique ID. 
 
 ## Overview
 
-I was part of a team that developed a reproducible analysis pipeline for a large-scale connectomics dataset - a complete wiring map of every neuron in the brain of the fruit fly. The entire analysis workflow was published as supplemental code for Nern <i>et al.</i> 2025, creating what we like to think of as an "executable paper" where every figure and analysis can be independently replicated and reproduced. 
+I was part of a team that developed a reproducible analysis pipeline for a large-scale connectomics dataset - a complete wiring map of every neuron in the nervous system (brain + spinal cord equivalent) of the fruit fly. 
 
-The project involved querying a connectome database of over 100,000 neurons, performing connectivity analysis, creating 3D neuronal morphology renderings, and building reproducible computational workflows. The codebase supports interactive exploration through Jupyter notebooks and is publicly available as supplementary material. I was specifically involved in the analysis of each cell's location in 3D space and its assignment to vertical columns that span the depths of the fruit fly's visual system and form functionally distinct units.
+The entire analysis workflow was published as supplemental code for [Nern <i>et al.</i> 2025]()(https://www.nature.com/articles/s41586-025-08746-0), creating what we like to think of as an "executable paper" where every figure and analysis can be independently replicated and reproduced. 
+
+The project involved querying a connectome database of over 150,000 neurons, performing connectivity analysis, creating 3D neuronal morphology renderings, and building reproducible computational workflows. The codebase supports interactive exploration through Jupyter notebooks and is publicly available as supplementary material. 
+
+I was specifically involved in the analysis of each cell's location in 3D space and its assignment to vertical columns that span the depths of the fruit fly's visual system and form functionally distinct units.
 
 ## Technical Highlights
 
-- **SQL graph database queries** (Cypher) for connectome analysis across 100,000+ neurons
+- **neo4j graph database queries** (Cypher) for connectome analysis across 150,000+ neurons
 - **Snakemake workflow** for reproducible, automated computational pipelines
 - **Blender 3D visualization** of neural structures and morphologies
 - **Python analysis stack**: navis, neuprint-python, pandas, matplotlib, seaborn
 - **Multi-platform support** (Linux, macOS, Windows) with pixi environment management
 - **Collaborative development** across 14 contributors
 
-## Technologies
-
-[Python]{.tag} [Cypher/SQL]{.tag} [Snakemake]{.tag} [Blender]{.tag} [Jupyter]{.tag} [navis]{.tag} [neuPrint]{.tag} [pixi]{.tag}
-
 ## Links
 
-- [Source Code]({{< var repos.connectome >}})
-- [Article](https://www.nature.com/articles/s41586-025-08746-0)
+- [Source Code]({{< var repos.connectome >}}). This code contains everything needed to reproduce the analyses and to generate the figures in the paper below.
+- [Published Article](https://www.nature.com/articles/s41586-025-08746-0)

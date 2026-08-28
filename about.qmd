@@ -1,5 +1,6 @@
 ---
 title: "About Me"
+description: "Laura Burnett, a research data scientist across molecular and systems neuroscience, focused on making research data reproducible, accessible and reusable."
 toc: true
 ---
 

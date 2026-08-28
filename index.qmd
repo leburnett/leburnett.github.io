@@ -1,5 +1,16 @@
 ---
+# `title` stays empty so the hero below is the only heading on the page.
+# `pagetitle` sets the browser tab and og:title without Quarto appending the
+# site name — otherwise the share preview reads "– Laura Burnett".
 title: ""
+pagetitle: "Laura Burnett — Research Data Scientist"
+# Suppress the site-name suffix here; pagetitle already contains her name, so
+# without this the tab reads "…Research Data Scientist – Laura Burnett".
+title-prefix: ""
+# Set explicitly: without it Quarto picks the first image on the page (the hero
+# brain SVG), and social scrapers won't render an SVG.
+image: "/assets/social-card.png"
+description: "Research data scientist with ten years in neuroscience labs, building analysis pipelines that turn large, complex experimental datasets into open resources."
 page-layout: article
 toc: false
 title-block-style: none

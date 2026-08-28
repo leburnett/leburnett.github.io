@@ -148,12 +148,11 @@ body {
   max-width: 640px;
 }
 
-// Section heading icons (projects page)
-.section-icon {
-  height: 1.3em;
-  width: auto;
-  vertical-align: -0.15em;
-  margin-right: 0.3rem;
+// Project pages carry both `subtitle` (shown under the title) and `description`
+// (kept for SEO/social cards and the project grid fallback). Rendering both in
+// the title block just repeats the same sentence, so hide the visible copy.
+.quarto-title-block .description {
+  display: none;
 }
 
 // Tech tags
@@ -179,107 +178,132 @@ body {
   border-bottom: 1px solid #e8e8e8;
 }
 
-// Projects page — stacked, hover-to-expand cards
-.projects-hint {
-  display: block;
-  font-size: 0.85rem;
-  color: #888888;
-  margin-top: 0.2rem;
-  margin-bottom: 0.5rem;
+// Projects page — square card grid. Three columns at full width; the .content
+// max-width override below gives the grid room to breathe (see `.content`).
+// `align-items: start` lets each card take its own aspect-ratio height rather
+// than being stretched to the tallest card in the row.
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  gap: 1rem;
+  margin-top: 1.75rem;
 }
 
-.project-stack {
+@media (max-width: 1000px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-card {
+  aspect-ratio: 1 / 1;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 2.5rem;
-}
-
-.project-item {
-  display: block;
+  overflow: hidden;
   border: 1px solid #e8e8e8;
   border-radius: 6px;
-  padding: 1rem 1.25rem;
   text-decoration: none !important;
   color: inherit;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.project-item:hover,
-.project-item:focus-visible {
+.project-card:hover,
+.project-card:focus-visible {
   border-color: #aaaaaa;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
-.project-item-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 0 0 0.6rem 0;
-  color: #1a1a1a;
+// Optional image, shown only when a project sets `image:` in its frontmatter.
+// Takes the top ~45% of the square; the body flexes into whatever is left.
+.project-card-media {
+  flex: 0 0 45%;
+  overflow: hidden;
+  background-color: #f4f4f4;
 }
 
-.project-tags {
+.project-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+// Phones get one full-width column, where a square would be a very tall,
+// mostly empty box — let those cards hug their content instead. This block
+// must stay *after* the .project-card rules above: media queries add no
+// specificity, so an earlier override would simply lose the cascade.
+@media (max-width: 640px) {
+  .project-card {
+    aspect-ratio: auto;
+  }
+
+  .project-card-media {
+    flex-basis: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.project-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 1.1rem 1.25rem;
+}
+
+.project-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+  color: #1a1a1a;
+  text-wrap: balance;
+}
+
+// Matches the tag chips, so the two read as one text size within the card.
+.project-card-subtitle {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: #555555;
+}
+
+// Project-type tags — muted, rounded chips that let someone scan the page and
+// tell at a glance what kind of work each project was.
+.project-card-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
 }
 
-.project-tags .tag {
-  margin-right: 0;
-  margin-bottom: 0;
+.project-tag {
+  display: inline-block;
+  font-size: 0.85rem;
+  line-height: 1.3;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
 }
 
-// Description is collapsed by default and revealed on hover (see @media rules).
-// The 0fr -> 1fr grid trick animates to the content's natural height smoothly.
-.project-desc {
-  display: grid;
-  grid-template-rows: 0fr;
-  opacity: 0;
-  margin-top: 0;
-  transition: grid-template-rows 0.3s ease, opacity 0.25s ease, margin-top 0.3s ease;
-}
+$project-tag-colors: (
+  "experiments":   (#e6efe4, #47613f),
+  "data-analysis": (#e3ecf5, #3a5a7d),
+  "web-resource":  (#efe7f3, #66507c),
+  "pipeline":      (#f5ece0, #7d5e3c),
+);
 
-.project-desc > * {
-  overflow: hidden;
-  min-height: 0;
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: #555555;
-}
-
-// Reveal on hover / keyboard focus — only on devices that can actually hover.
-@media (hover: hover) {
-  .project-item:hover .project-desc,
-  .project-item:focus-visible .project-desc,
-  .project-item:focus-within .project-desc {
-    grid-template-rows: 1fr;
-    opacity: 1;
-    margin-top: 0.65rem;
+@each $name, $pair in $project-tag-colors {
+  .project-tag--#{$name} {
+    background-color: nth($pair, 1);
+    color: nth($pair, 2);
   }
-}
-
-// Touch devices can't hover, so always show the description there.
-@media (hover: none) {
-  .project-desc {
-    grid-template-rows: 1fr;
-    opacity: 1;
-    margin-top: 0.65rem;
-  }
-}
-
-// Domain/topic tag — emphasised (the primary categorisation of each project).
-.tag-domain {
-  background-color: #333333;
-  color: #ffffff;
-  font-weight: 600;
-}
-
-// Year tag — outlined so it reads as metadata rather than a topic tag.
-.tag-year {
-  background-color: transparent;
-  border: 1px solid #d0d0d0;
-  color: #777777;
 }
 
 // Blog listing - clean minimal list
@@ -407,6 +431,20 @@ a:hover {
   max-width: 720px;
   margin-left: auto;
   margin-right: auto;
+}
+
+// The projects grid needs more room than the 720px reading column.
+.content:has(.project-grid) {
+  max-width: 1040px;
+}
+
+// The docked sidebar is 300px wide but overlaps the start of the body-content
+// grid track — the 720px reading column just happens to clear it. The wider
+// projects grid does not, so pad it clear while the sidebar is docked.
+@media (min-width: 992px) {
+  .content:has(.project-grid) {
+    padding-left: 4rem;
+  }
 }
 
 // Publications timeline (inspired by lingxi.li)
