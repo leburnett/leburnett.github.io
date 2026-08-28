@@ -13,7 +13,7 @@ toc: true
 **[Sexual dimorphism in the complete connectome of the Drosophila male central nervous system](https://doi.org/10.1101/2025.10.09.680999)**
 
 
-Berg, S., ... Burnett, L.E., et al. *Cell*. 2026.
+Berg, S., ... Burnett, L.E., et al. *BioRXiv*. 2026.
 :::
 :::
 :::
@@ -98,7 +98,7 @@ Beattie, R., Postiglione, M.P., Burnett, L.E. et. al. *Neuron*. 2017.
 :::
 ::: {.pub-entries}
 ::: {.pub-entry}
-**Localization of an IgSF-GABA receptor complex sculpts directional selectivity**
+*Localization of an IgSF-GABA receptor complex sculpts directional selectivity*
 Sanfilippo, P.,  ... Burnett, L.E., et al. 
 :::
 :::

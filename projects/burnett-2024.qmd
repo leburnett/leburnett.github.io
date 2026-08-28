@@ -1,7 +1,9 @@
 ---
-title: "Investigating rapid, visually-driven decision making in mouse models of autism"
+title: "Rapid, visual decision making in mouse models of autism"
 description: "PhD research on rapid visual decision-making in autism mouse models, linking perception and avoidance deficits to periaqueductal grey hypoexcitability."
-subtitle: "Perceptual decision-making across autism mouse models"
+subtitle: "Using the escape responses to investigate differences in visual processing"
+image: "/assets/projects/burnett-2024/card.png"
+imagealt: "Camera frames of a mouse escaping from a visual loom stimulus."
 years: "2018–2023"
 kinds: [Experiments, Data Analysis, Pipeline]
 categories: [MATLAB, Data analysis, Decision-making, Autism, Visual neuroscience, Subcortical circuits, Innate behaviour]
@@ -33,5 +35,5 @@ Overall, we were able to link a specific, druggable ion-channel mechanism in a s
 ## Links
 
 - [Source Code]({{< var repos.burnett_2024 >}})
-- [Published Paper](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002668)
-- [Thesis](https://research-explorer.ista.ac.at/download/12716/12718/Burnett_Thesis_2023_pdfA.pdf)
+- [Published Article](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002668)
+- [PhD Thesis](https://research-explorer.ista.ac.at/download/12716/12718/Burnett_Thesis_2023_pdfA.pdf)

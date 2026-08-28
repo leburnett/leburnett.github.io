@@ -1,7 +1,9 @@
 ---
-title: "neuView — Interactive Neuron Type Explorer"
+title: "neuView"
 description: "neuView: a Python CLI generating interactive HTML pages for neuron types from the NeuPrint connectome database, with caching that cut batch builds by 97%."
-subtitle: "Python CLI turning connectome queries into browsable pages"
+subtitle: "Python CLI code to generate an interactive web resource from a connectome dataset"
+image: "/assets/projects/neuview/card.png"
+imagealt: "Hero section of the Cell Type Explorer webpage."
 years: "2024–2026"
 kinds: [Web Resource]
 categories: [Python, NeuPrint, Jinja2, CLI, Caching]
@@ -10,7 +12,7 @@ priority: 2
 
 ## Overview
 
-I was part of a small team thatt developed a modern Python CLI tool that generates rich, interactive HTML pages for neuron types by querying the NeuPrint connectome database. neuView supports multiple datasets (CNS, Hemibrain, Optic-lobe), automatically adapting its queries and output to each. Pages include advanced filtering by cell count, neurotransmitter, and brain region, with responsive design and accessible formatting. The tool features a persistent caching layer for high-throughput processing.
+I was part of a small team (with Frank Loesche) that developed a modern Python CLI tool that generates rich, interactive HTML pages for neuron types by querying the NeuPrint connectome database. neuView supports multiple datasets (CNS, Hemibrain, Optic-lobe), automatically adapting its queries and output to each. Pages include advanced filtering by cell count, neurotransmitter, and brain region, with responsive design and accessible formatting. The tool features a persistent caching layer for high-throughput processing.
 
 ## Technical Highlights
 
