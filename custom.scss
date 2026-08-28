@@ -199,7 +199,9 @@ b {
   margin-top: 1.75rem;
 }
 
-@media (max-width: 1000px) {
+// Drop to two columns below 1250px. Three columns any narrower gives ~210px
+// cards, too tight for a project's tags to sit on one line.
+@media (max-width: 1250px) {
   .project-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -265,7 +267,7 @@ b {
   gap: 0.6rem;
   flex: 1 1 auto;
   min-height: 0;
-  padding: 1.1rem 1.25rem;
+  padding: 1.1rem 1.15rem;
 }
 
 .project-card-title {
@@ -289,14 +291,16 @@ b {
 .project-card-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem;
+  gap: 0.28rem;
 }
 
+// Sized so a project's full set of tags sits on a single line at the narrowest
+// three-column width; see the 1250px breakpoint above.
 .project-tag {
   display: inline-block;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   line-height: 1.3;
-  padding: 0.15rem 0.6rem;
+  padding: 0.15rem 0.45rem;
   border-radius: 999px;
   white-space: nowrap;
 }
