@@ -1,13 +1,14 @@
 ---
 title: "About Me"
-description: "Laura Burnett, a research data scientist across molecular and systems neuroscience, focused on making research data reproducible, accessible and reusable."
 toc: true
 ---
 
 Hey there! 👋 I'm Laura. 
 
-I have a background in both **molecular and systems neuroscience** and my work has spanned gut nervous system development to decision making in mice to mapping out the fruit fly's nervous system.
+When I'm not at my computer you can find me with my nose in a book (both fiction and non-fiction), listening to a podcast, running along trails, trying to grow enough basil to make "fresh" pesto year round, painting, drawing or making linoleum relief prints. 
 
-When I'm not at my computer you can find me with my nose in a book (both fiction and non-fiction), listening to a podcast, running along trails, trying to grow enough basil to make "fresh" pesto year round, painting, drawing or making linoleum relief prints. I have enjoyed taking advantage of the international nature of a career in science and have lived in the UK, US, Austria and Australia.
+I have enjoyed taking advantage of the international nature of a career in science and have lived in the UK, US, Austria and Australia.
 
-Over the course of my research career, I've realised that I greatly enjoy working with **data** — figuring out how to best collect it, synthesise it, present it, and package it in a format that is easy to use in the future by myself and others. I care a lot about making research outputs genuinely **accessible**, not just available. I like thinking about ways in which scientific knowledge might be both shared and used beyond the traditional publishing system and **developing data pipelines** that integrate into experimental workflows to make the entire research process more reliable and reproducible.
+I love working with **data** - sifting through noisy and complex datasets to glean some insight and making informative and aesthetically-pleasing plots. 
+
+I also think knowledge should be accessible and try and implement FAIR (findable, accessible, interoperable and reusable) principles in all aspects of my work. 
