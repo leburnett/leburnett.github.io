@@ -9,6 +9,4 @@ When I'm not at my computer you can find me with my nose in a book (both fiction
 
 I have enjoyed taking advantage of the international nature of a career in science and have lived in the UK, US, Austria and Australia.
 
-I love working with **data** - sifting through noisy and complex datasets to glean some insight and making informative and aesthetically-pleasing plots. 
-
-I also think knowledge should be accessible and try and implement FAIR (findable, accessible, interoperable and reusable) principles in all aspects of my work. 
+I love working with **data** - sifting through noisy and complex datasets to glean some insight and making informative and aesthetically-pleasing plots.
