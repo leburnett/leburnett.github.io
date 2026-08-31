@@ -8,7 +8,7 @@ toc: true
 
 [Last updated: 2026-07-21]{.cv-updated}
 
-## Education
+## Research experience
 
 ::: {.pub-timeline}
 ::: {.pub-year}
@@ -36,16 +36,99 @@ September 2016 - May 2023
 :::
 :::
 
-
 ::: {.pub-timeline}
 ::: {.pub-year}
-September 2012 - May 2016
+June 2016 - August 2016
 :::
 ::: {.pub-entries}
 ::: {.pub-entry}
-**Natural Sciences BSc & MSc** (First Class Honours)
+**Graduate Summer Intern**
+
+[Hippenmeyer Lab](https://ist.ac.at/en/research/hippenmeyer-group/), Insitute of Science and Technology Austria (ISTA)
+:::
+:::
+:::
+
+::: {.pub-timeline}
+::: {.pub-year}
+September 2015 - June 2016
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**Master's Student**
+
+with [Dr Conor McCann](https://www.ucl.ac.uk/population-health-sciences/child-health/research/stem-cells-regenerative-medicine/gut-development-and-repair-group) within the Burns Lab, UCL Institute of Child Health, London 
+:::
+:::
+:::
+
+::: {.pub-timeline}
+::: {.pub-year}
+February 2015 - June 2015
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**Undergraduate research placement**
+
+[Young Lab](https://pursuit.unimelb.edu.au/individuals/professor-heather-young), The University of Melbourne, Australia
+:::
+:::
+:::
+
+::: {.pub-timeline}
+::: {.pub-year}
+September 2014 - November 2014
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**Undergraduate lab experience**
+
+with Dr Joanne Britto in the Tan Lab, The Florey Institute, Melbourne, Australia
+:::
+:::
+:::
+
+## Education
+
+::: {.pub-timeline}
+::: {.pub-year}
+September 2015 - May 2016
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**Natural Sciences MSc** (First Class Honours)
+
+*Neuroscience*
 
 Univeristy College London (UCL)
+:::
+:::
+:::
+
+::: {.pub-timeline}
+::: {.pub-year}
+September 2012 - May 2015
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**Natural Sciences BSc** (First Class Honours)
+
+*Organic chemistry & Biomedical sciences*
+
+Univeristy College London (UCL)
+:::
+:::
+:::
+
+::: {.pub-timeline}
+::: {.pub-year}
+July 2014 - July 2015
+:::
+::: {.pub-entries}
+::: {.pub-entry}
+**Study Abroad** (First Class Honours & Dean's List Award for outstanding grades)
+
+The University of Melbourne, Australia
 :::
 :::
 :::
