@@ -31,7 +31,7 @@ September 2016 - May 2023
 ::: {.pub-entry}
 **PhD Student**
 
-[Joesch Lab](https://ista.ac.at/en/research/josch-group/), Insitute of Science and Technology Austria (ISTA)
+[Joesch Lab](https://ista.ac.at/en/research/josch-group/), Institute of Science and Technology Austria (ISTA)
 :::
 :::
 :::
@@ -44,7 +44,7 @@ June 2016 - August 2016
 ::: {.pub-entry}
 **Graduate Summer Intern**
 
-[Hippenmeyer Lab](https://ist.ac.at/en/research/hippenmeyer-group/), Insitute of Science and Technology Austria (ISTA)
+[Hippenmeyer Lab](https://ist.ac.at/en/research/hippenmeyer-group/), Institute of Science and Technology Austria (ISTA)
 :::
 :::
 :::
