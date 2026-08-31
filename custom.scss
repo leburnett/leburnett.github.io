@@ -49,15 +49,24 @@ b {
   border-right: 1px solid #e8e8e8;
 }
 
+// The sidebar fills its grid track rather than being pinned to a fixed 300px.
+// A hard width overflows the track on mid-size screens (the track is only
+// ~125px wide at a 1000px viewport), which pushed the sidebar out over the
+// article text. `max-width` keeps the intended 300px wherever there is room.
 #quarto-sidebar {
-  width: 300px;
-  padding-left: 2.5rem;
-  padding-right: 1.5rem;
+  width: 100%;
+  max-width: 300px;
+  // Trimmed from 2.5/1.5rem: the track is 225.5px, and the old padding left
+  // only 157px of usable width — 4px short of the five social icons, which
+  // pushed one onto a second row.
+  padding-left: 2rem;
+  padding-right: 1rem;
 }
 
-// Push grid sidebar column wider
+// Give the sidebar the full run up to the body column, so it has room to reach
+// 300px on wide screens while still stopping short of the text.
 .page-columns > #quarto-sidebar {
-  grid-column: screen-start / page-start-inset;
+  grid-column: screen-start / body-start;
 }
 
 .sidebar-item .sidebar-item-text {
@@ -76,7 +85,9 @@ b {
 .sidebar-item:has(.bi-mortarboard-fill),
 .sidebar-item:has(.bi-envelope) {
   display: inline-block;
-  margin-right: 0.4rem;
+  // Kept tight: these five sit on one row inside a ~174px sidebar, and the
+  // whitespace between inline-blocks counts toward that too.
+  margin-right: 0.15rem;
 
   .sidebar-item-container {
     padding: 0;
