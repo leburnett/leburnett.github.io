@@ -2,11 +2,11 @@
 title: "Investigating the role of Lgl1 function in cortical development"
 description: "Using Mosaic Analysis with Double Markers (MADM) to separate tissue-level and cell-intrinsic roles of Lgl1 in cortical development. Neuron, 2017."
 subtitle: "Single-cell genetic dissection using the mosaic analysis with double markers (MADM) technique"
-image: "/assets/projects/madm/card.png"
+image: "/assets/projects/madm/card.jpg"
 imagealt: "Confocal micrographs of MADM mouse tissue in a control (left) and Lgl-/+ (right) mice."
 years: "2016"
 kinds: [Experiments, Data Analysis]
-categories: [Molecular, MADM, Genetics, RNAseq]
+categories: [Molecular, MADM, Genetics, RNAseq, Histology]
 priority: 7
 ---
 
@@ -16,16 +16,12 @@ This project uncovered two distinct roles of the protein Lgl1, a protein involve
 
 I started working on this project during my summer intership at the Institute of Science and Technology, Austria (ISTA) under the supervision of Dr Robert Beattie in the group of Professor Simon Hippenmeyer. I learnt a lot about mouse genetics, histology techniques, confocal microscopy and mouse husbandry during my time in the Hippenmeyer group.
 
-## Technical Highlights
+## Highlights
 
-- **Mouse Genetics**: understanding the genetic tool MADM
+- **Mouse Genetics**: understanding the mechanism behind the genetic tool MADM
 - **Image Analysis Pipeline** tracking red, green and yellow MADM cells in confocal micrographs
-- **Microscopy** confocal microscopy
-- **Histology** preparation of mouse histology sections
-
-## Technologies
-
-[MADM]{.tag} [Confocal]{.tag} [Genetics]{.tag}
+- **Confocal Microscopy** 
+- **Histology** preparation of histology sections for imaging
 
 ## Links
 
