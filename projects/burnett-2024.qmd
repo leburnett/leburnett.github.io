@@ -1,5 +1,5 @@
 ---
-title: "Rapid responses to visual threats in mouse models of autism"
+title: "Responses to visual threats in mouse models of autism"
 description: "PhD research on rapid visual decision-making in autism mouse models, linking perception and avoidance deficits to periaqueductal grey hypoexcitability."
 subtitle: "How genes linked to autism affect a circuit that drives innate responses to visual threats"
 image: "/assets/projects/burnett-2024/card.png"
@@ -7,7 +7,7 @@ imagealt: "Camera frames of a mouse escaping from a visual loom stimulus."
 years: "2018–2023"
 kinds: [Experiments, Data Analysis, Pipeline]
 categories: [MATLAB, Decision-making, Autism, Visual neuroscience, Innate behaviour, Electrophysiology, Optogenetics]
-priority: 6
+priority: 2
 ---
 
 *My PhD project investigated whether altered functioning in a subcortical visual pathway could be responsible for some of the attentional differences observed in mouse models of autism.*
