@@ -2,7 +2,7 @@
 title: "Characterising the gut nervous system in a disease mouse model"
 description: "Cellular and molecular profiling of the enteric nervous system in nNOS-/- mice, establishing a baseline for stem cell transplants. Nat Communications, 2017."
 subtitle: "Cellular and molecular profiling in preparation for stem cell transplant therapies"
-image: "/assets/projects/enteric/card.png"
+image: "/assets/projects/enteric/card.jpg"
 imagealt: "Confocal micrograph of stem cells transplanted into a mouse's gut."
 years: "2015–2016"
 kinds: [Experiments, Data Analysis]
@@ -16,17 +16,13 @@ During my masters degree, I worked in the group of Dr Alan Burns under the super
 
 I was specifically involved in characterising the populations of cells within the enteric nervous system of these <i>nNOS^-^^/^^-^</i> mice at baseline to have a reference against which to compare the populations found after the ENSC transplants. Among other things, I was introduced to the technique of quantitative polymerase chain reaction (qPCR) to measure gene expression levels in tissues and performed dissections of enteric tissues and immunohistological stainings to uncover the levels of certain proteins present in this tissue.
 
-## Technical Highlights
+## Highlights
 
 - **Microscopy** confocal microscopy
 - **Dissection** preparation of histological sections
 - **Immunohistochemistry** labelling samples with antibodies to detect the presence and abundance of certain proteins
 - **qPCR** quantitative technique for measuring gene expression levels in tissues
 
-## Technologies
-
-[Enteric]{.tag} [Confocal]{.tag} [Dissection]{.tag} [Immunohistochemistry]{.tag} [qPCR]{.tag}
-
 ## Links
 
-- [Article](https://www.nature.com/articles/ncomms15937)
+- [Published Article](https://www.nature.com/articles/ncomms15937)
