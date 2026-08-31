@@ -55,6 +55,22 @@ matters for dense multi-panel figures.
 
 ## Preparing the files
 
+Run every new image through the helper script before referencing it:
+
+    # a card image
+    python3 scripts/optimise-image.py assets/projects/madm/card.png --card --replace
+
+    # an in-page figure (wider, higher quality — these open in the lightbox)
+    python3 scripts/optimise-image.py assets/projects/madm/fig1.png --figure --replace
+
+    # check the whole site for anything too heavy
+    python3 scripts/optimise-image.py --check
+
+It resizes, tries both JPEG and PNG, keeps whichever is smaller, and prints the
+path to reference. Without `--replace` the original is left untouched.
+
+The guidelines it applies, if you ever do it by hand:
+
 - **Max 1600px wide.** Anything larger is wasted — the reading column is ~720px
   and the lightbox scales to the viewport.
 - **JPEG (quality ~80) for photos and 3D renders; PNG for plots, diagrams and

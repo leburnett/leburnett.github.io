@@ -21,6 +21,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Fails the build if an unprocessed multi-megabyte image has been
+      # committed. Runs before the render so it fails fast.
+      # Fix locally with: python3 scripts/optimise-image.py <path> --replace
+      - name: Check image sizes
+        run: |
+          python3 -m pip install --quiet Pillow
+          python3 scripts/optimise-image.py --check
+
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
