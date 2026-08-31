@@ -10,26 +10,42 @@ categories: [MATLAB, Decision-making, Autism, Visual neuroscience, Innate behavi
 priority: 2
 ---
 
-*My PhD project investigated whether altered functioning in a subcortical visual pathway could be responsible for some of the attentional differences observed in mouse models of autism.*
+*My **PhD** project investigated whether altered functioning in a subcortical visual pathway could be responsible for some of the attentional differences observed in mouse models of autism.*
+
+![Sequential frames of a mouse responding to an overhead looming stimulus. From *Burnett et al. 2024* ](/assets/projects/burnett-2024/card.jpg){width=90%}
 
 ## Background
 
 Autism has a complex and unknown aetiology. What is known however, is that it is not caused by a single mutation in a single gene, instead it is **polygenic**, with differences in hundreds, or thousands, of genes likely interacting to results in the physiological and behvaioural differences observed in autistic individuals. Disruptive variants of certain genes, like *SETD5*, however have been found with significantly increased frequencies among autistic individuals and therefore have been classified as autism "risk genes". These risk genes serve as valuable experimental starting points to probe the potential biological consequences of these genetic differences. 
 
-While researching the differences in visual attention and overall sensory differences in autism, I was intrigued to see that little autism research investigated the circuits driving subconscious visual processing through subcortical circuits, especially through a brain region called the **superior colliculus** (SC), and instead focussed on the predominant visual processing pathway through the lateral geniculate nucleus and onto the visual cortex.
+While researching the differences in visual attention and overall sensory differences in autism, I was intrigued to see that little autism research investigated the circuits driving subconscious visual processing through subcortical circuits, especially through a brain region called the **superior colliculus** (SC), and instead focussed on the predominant visual processing pathway through the lateral geniculate nucleus and onto the visual cortex. The SC is known to be critical in mediating rapid, visually-evoked responses such as escape responses to **looming visual stimuli** (dark, expanding dots that mimic the approach of an aerial predator).
+
+![Figure 1. Visual pathways in humans and mice. Adapted from my thesis, Burnett 2023.](/assets/projects/burnett-2024/anat.jpg){width=90%}
+
 
 ::: {.problem-box}
 ## Hypothesis I
 I speculated whether visual processing through this subcortical visual pathway might be affected in the *Setd5* mouse model of autism.
 :::
 
+::: {.note-box}
+**NOTE:** <br>Mice lacking one, functional copy of the gene will be referred to as ***Setd5^+/-^***, whereas their wild-type littermates will be referred to as ***Setd5^+/+^***. Given a single litter would normally have a mixture of +/- and +/+ pups, we always tested sex-matched, sibling pairs together to ensure that the mice are as comparable as possible.
+:::
+
+
 ## Methods & Results
 To test my hypothesis I investigated both the behavioural and physiological differences of these mice.
 
-- I rigorously analysed the **behavioural** responses to the looming stimulus
+- I rigorously analysed the **behavioural** responses to the looming stimulus.
 - I recorded the **electrophysiological** responses of neurons within the **SC**, that receive direct visual information from the retinal ganglion cells within the eye, to visual stimuli in order to ascertain if mutations in *Setd5* result in fundamental differences in SC visual processing.
  
-From these experiments, I found that although the *Setd5+/-* mice were slower at initiating an escape response, I couldn't identify any major differences in their visual responses within the SC. With this is mind, I went back to what was known about this circuit. As *Evans et al. 2018* described, this neural circuit functioned like a **drift diffusion model**. Cells within the underlying brain region to the SC, called the **periaqueductal grey** (PAG), must integrate the input they receive from SC cells, as well as others, and only when their membrane has become sufficiently depolarised will they start firing themselves and signal to downstream motor regions to trigger an escape response. 
+From these experiments, I found that although the *Setd5^+/-^* mice were slower at initiating an escape response, I couldn't identify any major differences in their visual responses within the SC. 
+
+![Figure 2. Heatmap plot showing the behavioural responses of *Setd5^+/+^* (black) and *Setd5^+/-^* (red) animals. The colour corresponds to the speed of the animal and each row is one trial. From *Burnett et al. 2024* ](/assets/projects/burnett-2024/heatmap.jpg){width=60%}
+
+With this is mind, I went back to what was known about this circuit. As *Evans et al. 2018* described, this neural circuit functioned like a **drift diffusion model**. Cells within the underlying brain region to the SC, called the **periaqueductal grey** (PAG), must integrate the input they receive from SC cells, as well as others, and only when their membrane has become sufficiently depolarised will they start firing themselves and signal to downstream motor regions to trigger an escape response. 
+
+![Figure 3. Schematic of the proposed drift diffusion model within the SC-PAG circuit that drives escape response to visual threats. From *Evans et al. 2018*.](/assets/projects/burnett-2024/threshold.jpg){width=90%}
 
 This led us to reconsider our initial hypothesis.
 
@@ -47,9 +63,13 @@ We decided to perform *in vitro* recordings instead of *in vivo* silicon probe r
 
 **Optogenetics** is the introduction of a synthetic light-gated ion channel into a biological system. I used viruses that worked in combination with the genetic mouse models I had to infect only certain cells types within certain brain regions with this protein. Through the use of an implanted optic fibre, I could then use light to "turn on" certain cells within the SC or the PAG and observe the effect. As expected based on the previous results, activating the SC cells resulted in arresting behvaioural responses of the variant-carrying *Setd5^+^^/^^-^* mice whereas bypassing the SC and directly activating the PAG cells in these mice led to rapid, uninterrupted escape responses. This supported our idea that it was the **evidence accumulation** step within the PAG and not the visual processing that was actually different in these mice. 
 
+![Figure 4. Mean firing rate (Hz) and SEM of *Setd5^+/+^* (black) and *Setd5^+/-^* (red) PAG cells to increasing amounts of injected current. Shaded areas show the SEM. From *Burnett et al. 2024*](/assets/projects/burnett-2024/patch.jpg){width=70%}
+
 The key finding was that when we recorded from PAG cells in *Setd5^+^^/^^-^* mice, these cells were found to be **hypoexcitable** compared to *Setd5^+^^/^^+^* cells. When higher and higher levels of current were injected into these cells, they were unable to generate corresponding increases in action potentials, unlike the *Setd5^+^^/^^+^* cells. By using the drug (α-dendrotoxin) that selectively blocks **Kv1 potassium channels** we were able to rescue this reduced excitability phenotype which led us to conclude that overactive Kv1 channels in PAG cells were responsible for the delayed escape responses we observed in *Setd5^+^^/^^-^* mice. 
 
 As a final experiment, we implanted a cannula above the PAG of these animals and administered (α-dendrotoxin) while the mice were exposed to looming stimuli. The drug application restored normal escape timing and normal threat avoidance, showing the effect was reversible in adulthood rather than fixed early in development.
+
+![Figure 5. Mean firing rate (Hz) and SEM of *Setd5^+/+^* (black without a-DTX, blue with a-DTX) and *Setd5^+/-^* (red without a-DTX, magenta with a-DTX) PAG cells to increasing amounts of injected current. Shaded areas show the SEM. From *Burnett et al. 2024* From *Burnett et al. 2024* ](/assets/projects/burnett-2024/dtx.jpg){width=80%}
 
 I also tested two other genetically distinct ASD mouse models (***Cul3*** and ***Ptchd1***) that showed similar arrested behavioural responses to the looming stimulus, suggesting a shared "downstream" behavioural outcome despite different molecular causes.
 

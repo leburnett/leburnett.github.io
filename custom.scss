@@ -339,26 +339,46 @@ $project-tag-colors: (
 //   ...text...
 //   :::
 //
-// To add another variant (an outcome box, say), append its class to the two
-// selector lists below and give it its own background colour.
-.problem-box {
-  background-color: #f4f4f4;
+// `.note-box` is the outlined variant, for asides and clarifications:
+//
+//   ::: {.note-box}
+//   **NOTE:** ...text...
+//   :::
+//
+// To add a further variant, append its class to the three selector lists below
+// and give it its own surface (a background, a border, or both).
+.problem-box,
+.note-box {
   border-radius: 6px;
   padding: 1.35rem 1.5rem;
   margin: 2rem 0;
 }
 
+// Filled — used to set out the framing question or the result.
+.problem-box {
+  background-color: #f4f4f4;
+}
+
+// Outlined — a quieter aside that sits in the flow of the prose rather than
+// interrupting it. Border colour is themed (see custom-dark.scss).
+.note-box {
+  border: 1px solid #1a1a1a;
+}
+
 // The theme underlines section headings; inside a filled box that reads as a
 // stray divider, and the usual top margin pushes the heading off centre.
 .problem-box h2,
-.problem-box h3 {
+.problem-box h3,
+.note-box h2,
+.note-box h3 {
   border-bottom: none;
   padding-bottom: 0;
   margin-top: 0;
 }
 
 // Kill the trailing paragraph margin so the box's padding stays even.
-.problem-box > *:last-child {
+.problem-box > *:last-child,
+.note-box > *:last-child {
   margin-bottom: 0;
 }
 
@@ -466,9 +486,35 @@ figcaption,
   border-color: #aaaaaa;
 }
 
+// Keep the sun/moon toggle on the same line as the site title. The name is an
+// inline <a> and the toggle an inline-flex <div>, with a whitespace text node
+// between them — at the sidebar's width that whitespace was just enough to
+// push the toggle onto a second row. Flex drops the whitespace and holds the
+// two on one line; `min-width: 0` lets a long name wrap within itself rather
+// than shoving the toggle out.
+// The header and menu container each carry their own right padding on top of
+// the sidebar's, costing ~17px twice over. That squeezed the title into
+// wrapping the name before the toggle, and the social icons onto a second row.
+// The sidebar's own padding is enough.
+#quarto-sidebar .sidebar-header,
+#quarto-sidebar .sidebar-menu-container {
+  padding-right: 0;
+}
+
+#quarto-sidebar .sidebar-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+#quarto-sidebar .sidebar-title > a {
+  min-width: 0;
+}
+
 // Sun/moon toggle — replace default toggle switch with icons
 .sidebar-tools-main {
-  margin-left: 0.5rem;
+  flex: 0 0 auto;
+  margin-left: 0;
 }
 
 .sidebar-navigation .quarto-color-scheme-toggle .bi::before {
@@ -526,15 +572,6 @@ a:hover {
 // The projects grid needs more room than the 720px reading column.
 .content:has(.project-grid) {
   max-width: 1040px;
-}
-
-// The docked sidebar is 300px wide but overlaps the start of the body-content
-// grid track — the 720px reading column just happens to clear it. The wider
-// projects grid does not, so pad it clear while the sidebar is docked.
-@media (min-width: 992px) {
-  .content:has(.project-grid) {
-    padding-left: 4rem;
-  }
 }
 
 // Publications timeline (inspired by lingxi.li)

@@ -16,3 +16,6 @@ Thumbs.db
 # Lab notebook session notes (auto-added)
 session-notes.md
 .DS_Store
+
+# Full-size source images, kept locally as a backup after optimisation
+image-originals/

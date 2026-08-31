@@ -139,6 +139,12 @@ $project-tag-colors-dark: (
   background-color: #242424;
 }
 
+// Outlined box — white rule on the dark page, matching the black one in light
+// mode. No fill, so it stays quieter than .problem-box.
+.note-box {
+  border-color: #e0e0e0;
+}
+
 // Figures (dark overrides) — a lighter hairline so images don't float
 // borderless against the dark page.
 figure img,
