@@ -1,39 +1,82 @@
 ---
-title: "Rapid, visual decision making in mouse models of autism"
+title: "Rapid responses to visual threats in mouse models of autism"
 description: "PhD research on rapid visual decision-making in autism mouse models, linking perception and avoidance deficits to periaqueductal grey hypoexcitability."
-subtitle: "Using the escape responses to investigate differences in visual processing"
+subtitle: "How genes linked to autism affect a circuit that drives innate responses to visual threats"
 image: "/assets/projects/burnett-2024/card.png"
 imagealt: "Camera frames of a mouse escaping from a visual loom stimulus."
 years: "2018–2023"
 kinds: [Experiments, Data Analysis, Pipeline]
-categories: [MATLAB, Data analysis, Decision-making, Autism, Visual neuroscience, Subcortical circuits, Innate behaviour]
+categories: [MATLAB, Decision-making, Autism, Visual neuroscience, Innate behaviour, Electrophysiology, Optogenetics]
 priority: 6
 ---
 
-## Overview
+*My PhD project investigated whether altered functioning in a subcortical visual pathway could be responsible for some of the attentional differences observed in mouse models of autism.*
 
-My PhD project was interested in understanding whether altered functioning in a subcortical brain pathway could be linked to attentional differences observed in mouse models of autism.
+## Background
 
-Autism spectrum disorders (ASDs) have many different genetic causes, yet people with ASD show strikingly similar sensory and perceptual difficulties alongside their core social/behavioural traits — and the severity of those sensory problems tends to track with the severity of other autistic traits. We wanted to understand whether these seemingly separate deficits (sensory/perceptual vs. behavioural) share a common underlying circuit, using an innate, easily measured behaviour — the mouse "looming escape response" (fleeing from a simulated aerial threat) — as a window into subcortical visual threat processing.
+Autism has a complex and unknown aetiology. What is known however, is that it is not caused by a single mutation in a single gene, instead it is **polygenic**, with differences in hundreds, or thousands, of genes likely interacting to results in the physiological and behvaioural differences observed in autistic individuals. Disruptive variants of certain genes, like *SETD5*, however have been found with significantly increased frequencies among autistic individuals and therefore have been classified as autism "risk genes". These risk genes serve as valuable experimental starting points to probe the potential biological consequences of these genetic differences. 
 
-We found that mice with a mutation in <i>Setd5</i> (a gene strongly linked to human ASD/intellectual disability) took longer to initiate escape from a looming threat and showed weaker learned avoidance of the danger zone, even though their basic vision and motor ability were normal. Two other genetically distinct ASD mouse models (<i>Cul3</i> and <i>Ptchd1</i>) showed similar behavioural impairments, suggesting a shared "downstream" behavioural outcome despite different molecular causes. In <i>Setd5</i> mice specifically, we traced the problem to reduced excitability of neurons in the dorsal periaqueductal grey (dPAG), a brainstem region that triggers escape behaviour — caused by overactive Kv1 potassium channels rather than a change in how many channels were present. Blocking those channels with a drug (α-dendrotoxin) restored normal escape timing and normal threat avoidance, showing the effect was reversible in adulthood rather than fixed early in development.
+While researching the differences in visual attention and overall sensory differences in autism, I was intrigued to see that little autism research investigated the circuits driving subconscious visual processing through subcortical circuits, especially through a brain region called the **superior colliculus** (SC), and instead focussed on the predominant visual processing pathway through the lateral geniculate nucleus and onto the visual cortex.
 
-Overall, we were able to link a specific, druggable ion-channel mechanism in a subcortical brain region to both a perceptual deficit and a related learning/avoidance deficit, offering a concrete example of how very different autism-linked genes might converge on the same circuit-level dysfunction.
+::: {.problem-box}
+## Hypothesis I
+I speculated whether visual processing through this subcortical visual pathway might be affected in the *Setd5* mouse model of autism.
+:::
 
-## Technical Highlights
+## Methods & Results
+To test my hypothesis I investigated both the behavioural and physiological differences of these mice.
+
+- I rigorously analysed the **behavioural** responses to the looming stimulus
+- I recorded the **electrophysiological** responses of neurons within the **SC**, that receive direct visual information from the retinal ganglion cells within the eye, to visual stimuli in order to ascertain if mutations in *Setd5* result in fundamental differences in SC visual processing.
+ 
+From these experiments, I found that although the *Setd5+/-* mice were slower at initiating an escape response, I couldn't identify any major differences in their visual responses within the SC. With this is mind, I went back to what was known about this circuit. As *Evans et al. 2018* described, this neural circuit functioned like a **drift diffusion model**. Cells within the underlying brain region to the SC, called the **periaqueductal grey** (PAG), must integrate the input they receive from SC cells, as well as others, and only when their membrane has become sufficiently depolarised will they start firing themselves and signal to downstream motor regions to trigger an escape response. 
+
+This led us to reconsider our initial hypothesis.
+
+::: {.problem-box}
+## Hypothesis II
+What if the delay in initiating the escape response was not caused by disrupted visual processing, but in fact, was due to a disruption in the executive control and "decision-making" part of this circuit, the PAG? 
+:::
+
+To test this we:
+
+- Conducted **electrophysiological** recordings of cells within the **PAG**. This time we did *in vitro* patch clamp electrophysiology, instead of using extracellular silicon probes *in vivo*. 
+- I also decided to try **optogenetically** activating cells either within the **SC**, or the **PAG**, in live mice and observe the behavioural responses.
+
+We decided to perform *in vitro* recordings instead of *in vivo* silicon probe recordings for multiple reasons. Firstly, it enabled us to confidently record from single cells and not a population. Secondly, while the visually-responsive region of the SC is relatively superficial in the brain, the PAG is below the SC and therefore would have been deeper than the length of our silicon probes would have allowed and we would have damaged the overlying SC in the process. Thirdly, using this method allowed us to included pharmacological interventions, e.g. the addition of drugs, to assess the role of specific ion channels in the physiology of these cells. 
+
+**Optogenetics** is the introduction of a synthetic light-gated ion channel into a biological system. I used viruses that worked in combination with the genetic mouse models I had to infect only certain cells types within certain brain regions with this protein. Through the use of an implanted optic fibre, I could then use light to "turn on" certain cells within the SC or the PAG and observe the effect. As expected based on the previous results, activating the SC cells resulted in arresting behvaioural responses of the variant-carrying *Setd5^+^^/^^-^* mice whereas bypassing the SC and directly activating the PAG cells in these mice led to rapid, uninterrupted escape responses. This supported our idea that it was the **evidence accumulation** step within the PAG and not the visual processing that was actually different in these mice. 
+
+The key finding was that when we recorded from PAG cells in *Setd5^+^^/^^-^* mice, these cells were found to be **hypoexcitable** compared to *Setd5^+^^/^^+^* cells. When higher and higher levels of current were injected into these cells, they were unable to generate corresponding increases in action potentials, unlike the *Setd5^+^^/^^+^* cells. By using the drug (α-dendrotoxin) that selectively blocks **Kv1 potassium channels** we were able to rescue this reduced excitability phenotype which led us to conclude that overactive Kv1 channels in PAG cells were responsible for the delayed escape responses we observed in *Setd5^+^^/^^-^* mice. 
+
+As a final experiment, we implanted a cannula above the PAG of these animals and administered (α-dendrotoxin) while the mice were exposed to looming stimuli. The drug application restored normal escape timing and normal threat avoidance, showing the effect was reversible in adulthood rather than fixed early in development.
+
+I also tested two other genetically distinct ASD mouse models (***Cul3*** and ***Ptchd1***) that showed similar arrested behavioural responses to the looming stimulus, suggesting a shared "downstream" behavioural outcome despite different molecular causes.
+
+::: {.problem-box}
+## Outcome
+We found that mice with a mutation in *Setd5* (a gene strongly linked to human ASD/intellectual disability) took longer to initiate escape from a looming threat and showed weaker learned avoidance of the danger zone, even though their basic vision and motor ability were normal. 
+
+ In *Setd5* mice specifically, we traced the problem to reduced excitability of neurons in the dorsal periaqueductal grey (dPAG), a brainstem region that triggers escape behaviour — caused by overactive Kv1 potassium channels rather than a change in how many channels were present. 
+:::
+
+## Colloquial context
+In truth, this project came about through the fusion of my interest and prior knowledge in the field of **neurodevelopment**, my burgeoning curiosity and appreciation for the tools used in **systems neuroscience** and the elegence and experimental utility of the **neural circuit** known to drive the innate, visually-driven, looming-evoked escape response in mice (*Evans et al. 2018*). I had been reading some literature that described the differences in attention and visual processing often observed in autistic individuals, as well as the seminal paper referenced above that described the experimentally tractable and behaviourally robust visual escape paradigm. I had recently completed a lab rotation in the Novarino group at ISTA that had a number of genetic mouse models of autism and intellectual disability. I was intrigued as to whether we would be able to see any behavioural differences in the responses of these mice compared to their "wild type" siblings in response to this assay. 
+
+Thankfully, both my supervisor, Prof. Maximilian Joesch, and Prof. Gaia Novarino allowed me to test my hypothesis. I was given one litter of *Setd5* mice, and one by one, recorded their behavioural responses to this visual loom stimulus. I tested the animals blind, meaning that I was unaware during the experiments of which animals carried the mutation in *Setd5* and which didn't. However, already having tested just 6 animals, I felt confident that there was a real difference in how some of the animals responded. While some rapidly rushed back to their shelter immediately at the onset of the loom, others displayed a short, but noticeable pause before initiating an escape of their own. When I received the genotypes of the mice, I could verify that this arresting behaviour was observed in the mice carrying the mutation. I rushed into my supervisor's office, plots in hand, and these results then had a cascading effect on my future experiments that culminated in my PhD thesis. 
+
+## Highlights
 
 - **End-to-end experimental pipeline**: generated custom scripts to present visual stimuli and analyse both behaviour and electrophysiological recordings
 - **Multi-model behavioral analysis**: looming escape response paradigm across three ASD mouse lines
 - **Electrophysiology pipeline**: whole-cell patch-clamp and silicon probe recording analysis
 - **Optogenetic circuit dissection**: channelrhodopsin-2 activation of specific neural pathways
-- **Proteomics and molecular analysis**: immunohistochemistry and western blotting quantification
-
-## Technologies
-
-[MATLAB]{.tag} [Electrophysiology]{.tag} [Optogenetics]{.tag} [Visual Stimuli]{.tag} [Statistical Analysis]{.tag} [Pharmacology]{.tag}
 
 ## Links
 
 - [Source Code]({{< var repos.burnett_2024 >}})
 - [Published Article](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002668)
 - [PhD Thesis](https://research-explorer.ista.ac.at/download/12716/12718/Burnett_Thesis_2023_pdfA.pdf)
+
+## References
+- [Evans DA, Stempel AV, Vale R, Ruehle S, Lefler Y, Branco T. A synaptic threshold mechanism for computing escape decisions. Nature. 2018 Jun;558(7711):590-594. doi: 10.1038/s41586-018-0244-6. Epub 2018 Jun 20. PMID: 29925954; PMCID: PMC6235113.](https://www.nature.com/articles/s41586-018-0244-6)
