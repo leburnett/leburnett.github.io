@@ -1,5 +1,5 @@
 ---
-title: "Behavioural responses of walking fruit flies to moving patterns"
+title: "Characterisation of collective fruit fly behaviour to moving patterns"
 description: "End-to-end pipeline for high-throughput fruit fly behaviour: MATLAB stimulus protocols, automated Python processing, and a Dash dashboard for results."
 subtitle: "End-to-end pipeline for a high-throughput behavioural screen"
 image: "/assets/projects/freely-walking-optomotor/card.jpg"
@@ -9,24 +9,22 @@ kinds: [Experiments, Data Analysis, Pipeline]
 categories: [Behaviour, MATLAB, Automation, Group dynamics, High-throughput]
 priority: 3
 ---
+::: {.note-box}
+## Highlights
+
+- **Automated processing pipeline**: monitor &rarr; copy &rarr; track &rarr; process &rarr; visualize
+- **Pipeline status monitoring** with auto-generated HTML reports for real-time experiment tracking
+- Generated a **centralised configuration system** managing parameters across 3 networked machines
+- **Interactive Dash/Plotly dashboard** for exploring experimental results (speed tuning, contrast tuning, behavioral metrics)
+- **Quarto-based auto-generated documentation** keeping docs synchronized with the codebase
+:::
 
 ## Background
 
 I built an end-to-end data pipeline that generates the visual stimuli and the experimental protocols, runs the experiments and automatically processes, validates, and visualizes behavioral experiment data from a high-throughput behavioural screen of fruit fly visual responses. The pipeline coordinates data acquisition, video tracking, and analysis across multiple computers, with Python automation services that monitor for new data and trigger processing pipelines automatically.
 
-I developed all of the protocols, as well as the embedded functions for logging and syncing the visual stimulus to the behavioural camera, and the processing and plotting scripts. This repository was mainly used for a high-throughput screen conducted in collaboration with Aparna Dev, but it also contains a number of development protocols from tests along the way. I also generated detailed documentation of this pipeline within my [documentation website](reiser-documentation.qmd) and created a standalone [dashboard](https://leburnett.github.io/reiser-documentation/Freely-walking/freely_walking_dashboard.html) for viewing the results of the main behavioural screen.
+I developed all of the protocols, as well as the embedded functions for logging and syncing the visual stimulus to the behavioural camera, and the processing and plotting scripts. This repository was mainly used for a high-throughput screen conducted in collaboration with Aparna Dev, but it also contains a number of development protocols from tests along the way. I also generated detailed documentation of this pipeline within my [documentation website]({{< var repos.reiser_docs_site >}}) and created a standalone [dashboard](https://leburnett.github.io/reiser-documentation/Freely-walking/freely_walking_dashboard.html) for viewing the results of the main behavioural screen.
 
-::: {.problem-box}
-## Problem
-:::
-
-## Highlights
-
-- **Automated processing pipeline**: monitor &rarr; copy &rarr; track &rarr; process &rarr; visualize
-- **Interactive Dash/Plotly dashboard** for exploring experimental results (speed tuning, contrast tuning, behavioral metrics)
-- **Pipeline status monitoring** with auto-generated HTML reports for real-time experiment tracking
-- **Centralized configuration system** managing parameters across 3 networked machines
-- **Quarto-based auto-generated documentation** keeping docs synchronized with the codebase
 
 ## Links
 
