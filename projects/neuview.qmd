@@ -6,23 +6,67 @@ image: "/assets/projects/neuview/card.jpg"
 imagealt: "Hero section of the Cell Type Explorer webpage."
 years: "2024–2026"
 kinds: [Web Resource]
-categories: [Python, NeuPrint, Jinja2, CLI, Caching]
+categories: [Python, NeuPrint, Cypher, Jinja2, CLI, Caching, SVG, Neuroglancer]
 priority: 3
 ---
 
+::: {.note-box}
+## Highlights
+- Co-built the modular **Python CLI** generator **neuView** that creates the **Cell Type Explorer** web resource, extending it from the optic lobe to the whole **164,838-neuron** male CNS connectome.
+- Built interactive plots, such as downloadable hexagonal **SVG** eyemaps.
+- Generalised the pipeline to build a similar resource from **any neuPrint dataset**.
+- Set up **CI** on **GitHub Actions**: unit and integration test suites, coverage reporting, and **Ruff** linting on every push.
+:::
+
+![Figure 1. The top of a cell type page in the Cell Type Explorer — here Dm4, right hemisphere. Cell counts, synapse and connection totals, neurotransmitter prediction and per-layer synapse counts are all pre-computed, so a reader never has to write a query to get them.](/assets/projects/neuview/page_example.png){width=90%}
+
 ## Background
 
-I was part of a small team (with Frank Loesche) that developed a modern Python CLI tool that generates rich, interactive HTML pages for neuron types by querying the NeuPrint connectome database. neuView supports multiple datasets (CNS, Hemibrain, Optic-lobe), automatically adapting its queries and output to each. Pages include advanced filtering by cell count, neurotransmitter, and brain region, with responsive design and accessible formatting. The tool features a persistent caching layer for high-throughput processing.
+As I describe on the [connectome](/projects/connectome.qmd) project page, **connectomes** are extraordinary resources — and they are released to the public at the finest possible grain. The dataset I worked on, like the others before it, is published as a database in which every neuron and every synapse carries its own ID, so anyone can query a single cell or a single connection.
 
-## Technical Highlights
+That granularity is the point of a connectome. It is not, however, the level at which most fly experiments happen.
 
-- **NeuPrint integration** with intelligent caching and connection pooling
-- **Multi-dataset support**: automatic adaptation for CNS, Hemibrain, and Optic-lobe datasets
-- **Jinja2 HTML templating** for clean, responsive neuron type pages with interactive filtering
-- **Persistent caching** delivering up to 97% speed improvement for batch processing
-- **Domain-driven design** with CQRS pattern and explicit error handling
-- **Comprehensive documentation**: user guide, developer guide, and performance analysis
+One of the great advantages of working with ***Drosophila melanogaster*** is its genetic tractability: experimenters use genetically modified flies carrying constructs that label or manipulate a specific **population** of cells. The unit of an experiment is therefore usually a cell *type* rather than a cell. Much of the work behind Nern *et al.* 2025 was exactly this — sorting the >50,000 cells of the visual system into types — so it seemed worth building a resource that handed that information back, pre-packaged, at the level people would actually want to use it.
+
+::: {.problem-box}
+## Problem
+
+Give experimenters and students population-level answers from the connectome — morphology, connectivity, synapse counts, spatial coverage — without asking them to write a single **Cypher** or **neuPrint** query, and do it for every cell type in the dataset.
+:::
+
+![Figure 2. The complete web page for a single cell type — Dm4, left hemisphere. Summary statistics and per-layer synapse counts give way to the population spatial coverage maps, an interactive Neuroglancer view of the cells in the brain, the regions they innervate, and tables of every input and output partner.](/assets/projects/neuview/Dm4_L_full_page.png){width=50%}
+
+## Methods
+
+The first version of the [Cell Type Explorer](https://reiserlab.github.io/celltype-explorer-drosophila-male-cns/index.html), released alongside Nern *et al.* 2025, covered only the optic lobe. After that paper was published, Frank Loesche and I were asked to extend it to the >100,000 remaining neurons of the whole male central nervous system ([Berg *et al.* 2026](https://www.biorxiv.org/content/10.1101/2025.10.09.680999v1.full)).
+
+Those cells broke most of the assumptions built into the original pipeline. It produced a great many metrics and plots that only mean something in the visual system. So, rather than special-case our way outwards, we rewrote the code behind the resource entirely. The result is a modular, service-oriented codebase in which each page is assembled from only the analyses that a given cell type, in a given dataset, can actually support.
+
+The rewrite paid for itself in build times as much as in tidiness. Pages are now generated from a file-based work queue, so a whole dataset can be built in parallel across processes, and a **persistent caching** layer that Frank added brought repeat builds down by up to **97%**. Between them, those two changes turned regenerating the resource from an overnight job into something we could do while still working on it.
+
+The spatial coverage maps are drawn from scratch: hand-built hexagonal grids rendered as **SVG** through **Jinja2** templates, with their own coordinate system and colour mapping, and offered to the reader as a downloadable SVG or PNG.
+
+![Figure 3. One of the interactive spatial coverage maps I built. Each hexagon is a single column of the medulla, coloured by the number of synapses the cell type (here Tm3, right hemisphere) makes within it. The selector on the left steps through the ten medulla layers, and both the map and the colour scale update to the layer chosen.](/assets/projects/neuview/eyemap_demo.gif)
+
+We rebuilt the resource around it too. There is now a documentation ["Help" page](https://reiserlab.github.io/celltype-explorer-drosophila-male-cns/help.html), a far more capable [search index](https://reiserlab.github.io/celltype-explorer-drosophila-male-cns/types.html) across every type, and a proper treatment of the fact that a type's cells may sit in the left hemisphere, the right, or on the midline — each type gets its own page per side as well as a combined one. 
+
+![Figure 4. The cell type index, filtered to show every dopaminergic type in the connectome — 44 of the 11,751 available. The index can be narrowed by brain region, neurotransmitter, dimorphism, class, soma neuromere and cell count, and each result carries the tags it matched on.](/assets/projects/neuview/search.png){width=80%}
+
+One of my favourite features that I added was the addition of interactivity to the embedded **Neuroglancer** view on each page. The user can select a partner from the connectivity table and it appears in 3D alongside the cell type. Similarly, a spatial regions of interest (ROIs) can also be visualised within the 3D view by selecting the region within the ROI Innervation table.
+
+![Figure 5. Adding a region of interest to the embedded Neuroglancer view. Selecting the medulla (ME) from the ROI Innervation table renders that neuropil as a green shell around the cell type's neurons — here MeVP39, with its left and right cells in blue and yellow.](/assets/projects/neuview/add_roi_ME50.gif){width=80%}
+
+::: {.problem-box}
+## Outcome
+
+neuView is a **Python CLI** that will build this resource for **any** dataset hosted on [neuPrint](https://neuprint.janelia.org/?dataset=male-cns:v1.0) — a configuration file is all a new dataset needs. Point it at one and it produces a site with statistics for each cell type identified there, filtering by cell count, neurotransmitter and brain region, and connectivity tables at the foot of every page so a reader can walk from a type to its partners and onwards through the data.
+
+For the male CNS that comes to **11,751 cell types**, drawn from **164,838 neurons** and nearly **172 million synapses** — a page for every type, and a resource that can be rebuilt from scratch whenever the underlying data is revised.
+:::
 
 ## Links
 
+- Explore the [Cell Type Explorer](https://reiserlab.github.io/celltype-explorer-drosophila-male-cns/index.html) for yourself!
 - [Source Code]({{< var repos.neuview >}})
+- [Nern *et al.* 2025](https://www.nature.com/articles/s41586-025-08746-0), the optic lobe connectome that the first version of the resource accompanied.
+- [Berg *et al.* 2026](https://www.biorxiv.org/content/10.1101/2025.10.09.680999v1.full), the complete male CNS connectome that the current version covers.
