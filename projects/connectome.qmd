@@ -51,7 +51,7 @@ I was specifically involved performing analyses related to the **spatial organis
 
 ![Figure 3. Spatial analysis of cell types within the fruit fly's visual system. Subpanels from a figure from Nern et al. 2025.](/assets/projects/connectome/spatial_analysis.jpg)
 
-I was also involved in the first generation of the accompanying web resource (Cell Type Explorer) that we later improved upon with the generation of [neuView](/projects/neuview.qmd). We hoped that this web page would provide a more accessible, easy to use resource for researchers investigating the visual system of the fruit fly.
+I was also involved in the first generation of the accompanying web resource ([Cell Type Explorer](https://reiserlab.github.io/celltype-explorer-drosophila-male-cns/index.html)) that we later improved upon with the generation of [neuView](/projects/neuview.qmd). We hoped that this web page would provide a more accessible, easy to use resource for researchers investigating the visual system of the fruit fly.
 
 ::: {.problem-box}
 ## Outcome
