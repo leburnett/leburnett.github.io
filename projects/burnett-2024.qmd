@@ -6,9 +6,18 @@ image: "/assets/projects/burnett-2024/card.jpg"
 imagealt: "Camera frames of a mouse escaping from a visual loom stimulus."
 years: "2018–2023"
 kinds: [Experiments, Data Analysis, Pipeline]
-categories: [MATLAB, Decision-making, Autism, Visual neuroscience, Innate behaviour, Electrophysiology, Optogenetics]
+categories: [MATLAB, Autism, Visual neuroscience, Innate behaviour, Electrophysiology, Optogenetics, Decision-making]
 priority: 2
 ---
+
+::: {.note-box}
+## Highlights
+- Built an **end-to-end experimental pipeline** in **MATLAB**, from visual stimulus presentation through to analysis of behavioural and electrophysiological recordings.
+- Designed and ran an independent, multi-year research project, [published as first author]((https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002668)).
+- Performed **stereotaxic surgery** in mice to implant optic fibres and silicon probes and to deliver viral constructs.
+- Initiated and led **cross-group collaborations** beyond my immediate team.
+- **Mentored** students at graduate, undergraduate and high-school level alongside the research.
+:::
 
 *My **PhD** project investigated whether altered functioning in a subcortical visual pathway could be responsible for some of the attentional differences observed in mouse models of autism.*
 
@@ -81,16 +90,12 @@ We found that mice with a mutation in *Setd5* (a gene strongly linked to human A
 :::
 
 ## Colloquial context
-In truth, this project came about through the fusion of my interest and prior knowledge in the field of **neurodevelopment**, my burgeoning curiosity and appreciation for the tools used in **systems neuroscience** and the elegence and experimental utility of the **neural circuit** known to drive the innate, visually-driven, looming-evoked escape response in mice (*Evans et al. 2018*). I had been reading some literature that described the differences in attention and visual processing often observed in autistic individuals, as well as the seminal paper referenced above that described the experimentally tractable and behaviourally robust visual escape paradigm. I had recently completed a lab rotation in the Novarino group at ISTA that had a number of genetic mouse models of autism and intellectual disability. I was intrigued as to whether we would be able to see any behavioural differences in the responses of these mice compared to their "wild type" siblings in response to this assay. 
+In truth, this project came about through the fusion of my interest and prior knowledge in the field of **neurodevelopment**, my burgeoning curiosity and appreciation for the tools used in **systems neuroscience** and the elegence and experimental utility of the **neural circuit** known to drive the innate, visually-driven, looming-evoked escape response in mice (*Evans et al. 2018*). 
+
+I had been reading some literature that described the differences in attention and visual processing often observed in autistic individuals, as well as the seminal paper referenced above that described the experimentally tractable and behaviourally robust visual escape paradigm. I had recently completed a lab rotation in the Novarino group at ISTA that had a number of genetic mouse models of autism and intellectual disability. I was intrigued as to whether we would be able to see any behavioural differences in the responses of these mice compared to their "wild type" siblings in response to this assay. 
 
 Thankfully, both my supervisor, Prof. Maximilian Joesch, and Prof. Gaia Novarino allowed me to test my hypothesis. I was given one litter of *Setd5* mice, and one by one, recorded their behavioural responses to this visual loom stimulus. I tested the animals blind, meaning that I was unaware during the experiments of which animals carried the mutation in *Setd5* and which didn't. However, already having tested just 6 animals, I felt confident that there was a real difference in how some of the animals responded. While some rapidly rushed back to their shelter immediately at the onset of the loom, others displayed a short, but noticeable pause before initiating an escape of their own. When I received the genotypes of the mice, I could verify that this arresting behaviour was observed in the mice carrying the mutation. I rushed into my supervisor's office, plots in hand, and these results then had a cascading effect on my future experiments that culminated in my PhD thesis. 
 
-## Highlights
-
-- **End-to-end experimental pipeline**: generated custom scripts to present visual stimuli and analyse both behaviour and electrophysiological recordings
-- **Multi-model behavioral analysis**: looming escape response paradigm across three ASD mouse lines
-- **Electrophysiology pipeline**: whole-cell patch-clamp and silicon probe recording analysis
-- **Optogenetic circuit dissection**: channelrhodopsin-2 activation of specific neural pathways
 
 ## Links
 
