@@ -6,9 +6,18 @@ image: "/assets/projects/connectome/card.jpg"
 imagealt: "3D rendering of Drosophila optic lobe neurons."
 years: "2023–2025"
 kinds: [Data Analysis]
-categories: [Python, Plotly, Neo4j, SQL, Snakemake, Blender, neuPrint]
+categories: [Connectomics, Python, Plotly, Neo4j, SQL, Snakemake, Blender, neuPrint]
 priority: 1
 ---
+
+::: {.note-box}
+## Highlights
+- Contributed to a shared codebase with 14 contributors, **authoring and reviewing pull requests** as part of the team's review process.
+- Helped release the analysis as an **"executable paper"**: **Snakemake** pipelines that build the 3D neuron renders, plus **Jupyter notebooks** that reproduce each figure from the source data.
+- Wrote **Cypher** queries against a **Neo4j** graph database to analyse connectivity across **150,000+ neurons**.
+- Applied **object-oriented design** and the core Python data stack (**pandas**, **Plotly**) across the analysis code.
+- Documented code for reuse by others: **docstrings**, **READMEs** and inline comments.
+:::
 
 ## Background
 
@@ -38,7 +47,7 @@ The project involved querying a graphical database (neo4j) of over 150,000 neuro
 
 ![Figure 1. Reconstructed skeletons of selected individual neurons from given cell types that are described within our connectome analysis. Subpanel from a figure from Nern et al. 2025.](/assets/projects/connectome/cell_types.jpg)
 
-I was specifically involved performing analyses related to the spatial organisation of individual cells and groups of cells in 3D space and their assignment to vertical columns that span the depths of the fruit fly's visual system and form functionally distinct units.
+I was specifically involved performing analyses related to the **spatial organisation** of individual cells and groups of cells in 3D space and their assignment to vertical columns that span the depths of the fruit fly's visual system and form functionally distinct units.
 
 ![Figure 2. Spatial analysis of cell types within the fruit fly's visual system. Subpanels from a figure from Nern et al. 2025.](/assets/projects/connectome/spatial_analysis.jpg)
 
@@ -52,13 +61,6 @@ their anatomy. This allowed us to classify ~53,000 neurons into 732 types and fo
 
 Furthermore, we developed a reproducible **analysis pipeline** for this large-scale connectomics dataset. The entire analysis workflow was published as supplemental code for [Nern <i>et al.</i> 2025](https://www.nature.com/articles/s41586-025-08746-0), creating what we like to think of as an "executable paper" where every figure and analysis can be independently replicated and reproduced. 
 :::
-
-## Highlights
-
-- Generated custom **neo4j graph database queries** (Cypher) for connectome analysis across 150,000+ neurons
-- Created reproducible workflows and automated computational pipelines
-- **Python analysis stack**: navis, neuprint-python, pandas, matplotlib, seaborn
-- Large scale **collaborative coding** project 
 
 ## Links
 
