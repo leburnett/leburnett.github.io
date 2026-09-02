@@ -7,7 +7,7 @@ imagealt: "Hero section of the Cell Type Explorer webpage."
 years: "2024–2026"
 kinds: [Web Resource]
 categories: [Python, NeuPrint, Cypher, Jinja2, CLI, Caching, SVG, Neuroglancer]
-priority: 3
+priority: 2
 ---
 
 ::: {.note-box}

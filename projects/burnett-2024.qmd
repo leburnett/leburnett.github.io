@@ -7,7 +7,7 @@ imagealt: "Camera frames of a mouse escaping from a visual loom stimulus."
 years: "2018–2023"
 kinds: [Experiments, Data Analysis, Pipeline]
 categories: [MATLAB, Autism, Visual neuroscience, Innate behaviour, Electrophysiology, Optogenetics, Decision-making]
-priority: 2
+priority: 4
 ---
 
 ::: {.note-box}

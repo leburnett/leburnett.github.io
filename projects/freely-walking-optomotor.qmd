@@ -7,7 +7,7 @@ imagealt: "An example trajectory of a single fruit fly while moving gratings are
 years: "2023–2026"
 kinds: [Experiments, Data Analysis, Pipeline]
 categories: [Behaviour, MATLAB, Automation, Group dynamics, High-throughput]
-priority: 4
+priority: 3
 ---
 
 ## Background
