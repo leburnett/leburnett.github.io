@@ -10,19 +10,39 @@ categories: [Molecular, MADM, Genetics, RNAseq, Histology]
 priority: 7
 ---
 
+![](/assets/projects/madm/card.jpg){fig-alt="Confocal micrographs of MADM mouse tissue in a control (left) and Lgl-/+ (right) mice."}
+
+::: {.note-box}
+## Highlights
+- **Mouse Genetics**: understanding the mechanism behind the genetic tool MADM
+- **Image Analysis Pipeline** tracking red, green and yellow MADM cells in confocal micrographs
+- **Confocal Microscopy** 
+- **Histology** preparation of histology sections for imaging
+:::
+
+## Background
+
+
+::: {.problem-box}
+## Problem
+:::
+
+## Methods
+
 ## Overview
 
 This project uncovered two distinct roles of the protein Lgl1, a protein involved in regulating intracellular polarity, in regulating brain development both at the community level (tissue) and intrinsically within single cells. This project was made possible due to the features of the genetic tool MADM (Mosaic Analysis with Double Markers) to create both sparse and global knockout of the <i>Lgl1</i> gene within tissues. 
 
 I started working on this project during my summer intership at the Institute of Science and Technology, Austria (ISTA) under the supervision of Dr Robert Beattie in the group of Professor Simon Hippenmeyer. I learnt a lot about mouse genetics, histology techniques, confocal microscopy and mouse husbandry during my time in the Hippenmeyer group.
 
-## Highlights
-
-- **Mouse Genetics**: understanding the mechanism behind the genetic tool MADM
-- **Image Analysis Pipeline** tracking red, green and yellow MADM cells in confocal micrographs
-- **Confocal Microscopy** 
-- **Histology** preparation of histology sections for imaging
+::: {.problem-box}
+## Outcome
+:::
 
 ## Links
 
 - [Article](https://www.cell.com/neuron/fulltext/S0896-6273(17)30305-7?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0896627317303057%3Fshowall%3Dtrue)
+
+## Acknowledgements
+
+This project was carried out under the supervision of **Dr Robert Beattie**, then a postdoctoral researcher in **Prof Simon Hippenmeyer's** group at the Institute of Science and Technology Austria (ISTA).

@@ -10,6 +10,8 @@ categories: [Connectomics, Python, Plotly, Neo4j, SQL, Snakemake, Blender, neuPr
 priority: 1
 ---
 
+![](/assets/projects/connectome/card.jpg){fig-alt="3D rendering of Drosophila optic lobe neurons."}
+
 ::: {.note-box}
 ## Highlights
 - Contributed to a shared codebase with 14 contributors, **authoring and reviewing pull requests** as part of the team's review process.
@@ -67,3 +69,7 @@ Furthermore, we developed a reproducible **analysis pipeline** for this large-sc
 - [Source Code]({{< var repos.connectome >}}). This code contains everything needed to reproduce the analyses and to generate the figures in the paper below.
 - [Published Article](https://www.nature.com/articles/s41586-025-08746-0)
 - Related [preprint article](https://www.biorxiv.org/content/10.1101/2025.10.09.680999v1.full) that describes the entire nervous system connectome, not just the visual system.
+
+## Acknowledgements
+
+This project took place while I was a member of the **Reiser Lab** at Howard Hughes Medical Institute (HHMI) Janelia Research Campus. The generation of the male fruit fly connectome was led by the **FlyEM** team at Janelia.

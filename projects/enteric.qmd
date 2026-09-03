@@ -10,19 +10,26 @@ categories: [Dissections, Histology, Molecular, qPCR, Confocal imaging]
 priority: 8
 ---
 
-## Overview
+![](/assets/projects/enteric/card.jpg){fig-alt="Confocal micrograph of stem cells transplanted into a mouse's gut."}
 
-During my master's degree, I worked in the group of Dr Alan Burns under the supervision of Dr Conor McCann. Dr McCann's research centred on determining the feasibility of transplanting enteric neural stem cells (ENSCs) into the gastrointestinal system of a mouse model of human enteric neuropathy (<i>nNOS^-^^/^^-^</i>) to rescue the impaired gut motility observed in this mouse model. 
-
-I was specifically involved in characterising the populations of cells within the enteric nervous system of these <i>nNOS^-^^/^^-^</i> mice at baseline to have a reference against which to compare the populations found after the ENSC transplants. Among other things, I was introduced to the technique of quantitative polymerase chain reaction (qPCR) to measure gene expression levels in tissues and performed dissections of enteric tissues and immunohistological stainings to uncover the levels of certain proteins present in this tissue.
-
+::: {.note-box}
 ## Highlights
-
 - **Microscopy** confocal microscopy
 - **Dissection** preparation of histological sections
 - **Immunohistochemistry** labelling samples with antibodies to detect the presence and abundance of certain proteins
 - **qPCR** quantitative technique for measuring gene expression levels in tissues
+:::
+
+## Overview
+
+During my master's degree, I worked in the group of Dr Alan Burns under the supervision of Dr Conor McCann. Dr McCann's research centred on determining the feasibility of transplanting enteric neural stem cells (ENSCs) into the gastrointestinal system of a mouse model of human enteric neuropathy (*nNOS^-/-^*) to rescue the impaired gut motility observed in this mouse model. 
+
+I was specifically involved in characterising the populations of cells within the enteric nervous system of these *nNOS^-/-^* mice at baseline to have a reference against which to compare the populations found after the ENSC transplants. Among other things, I was introduced to the technique of quantitative polymerase chain reaction (qPCR) to measure gene expression levels in tissues and performed dissections of enteric tissues and immunohistological stainings to uncover the levels of certain proteins present in this tissue.
 
 ## Links
 
 - [Published Article](https://www.nature.com/articles/ncomms15937)
+
+## Acknowledgements
+
+This project was carried out under the supervision of **Dr Conor McCann**, then a postdoctoral researcher in **Dr Alan Burns'** group at the UCL and Great Ormond Street Institute of Child Health.

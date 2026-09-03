@@ -10,24 +10,37 @@ categories: [MATLAB, Python, Signal Processing, Experimental Design]
 priority: 5
 ---
 
-## Overview
+![](/assets/projects/nested-rf/card.png){fig-alt="Data visualisations of a single cell's response to flashes at different locations in space."}
+
+## Background
 
 I designed and built an adaptive experimental protocol for electrophysiology recordings of motion-responsive cell types. This two-step system runs a coarse mapping protocol (P1), automatically analyses the neural responses, then generates a tailored high-resolution follow-up protocol (P2) centered on the neuron's identified receptive field. This two-stage adaptive approach improves data quality by allowing for  time to be better allocated to record responses only to stimuli in the region of visual space we know the cell cares about.
 
 This protocol was based on a similiar protocol developed by Eyal Gruntman in the Reiser Lab and was designed for experiments carried out by Jin Yong Park at HHMI Janelia for a collaboration with S Lawrence (Larry) Zipurski and Piero Sanfilippo at UCLA.
 
-## Technical Highlights
+::: {.problem-box}
+## Problem
+:::
+
+## Methods
+
+::: {.problem-box}
+## Outcome
+:::
+
+## Highlights
 
 - **Adaptive pipeline design**: automated analysis of protocol 1 results feeds directly into protocol 2 generation
 - **Real-time signal processing** of electrophysiology data
 - **MATLAB GUI** for parameter input and experiment control
 - **Automated protocol generation** from prior experimental results — no manual intervention required between stages
 
-## Technologies
-
-[MATLAB]{.tag} [Python]{.tag} [Signal Processing]{.tag} [Experimental Design]{.tag} [Real-time Analysis]{.tag}
-
 ## Links
 
 - [Source Code]({{< var repos.nested_rf >}})
 - [Documentation]({{< var repos.reiser_docs_site >}}/Ephys/ephys_nested_rf.html)
+
+
+## Acknowledgements
+
+This project took place while I was a member of the **Reiser Lab** at Howard Hughes Medical Institute (HHMI) Janelia Research Campus. All fly husbandry was carried out by **Dr Ed Rogers** though, Janelia's Invertebrate Shared Resource helped maintain some of the fly stocks. The in-vivo patching experiments were done by **Dr Jin-Yong Park**, a member of Janelia's Project Team Resources (PTR). These experiments were done for a collaboration with **Dr Piero Sanfilippo** in **Dr Larry Zipurski's** group at UCLA.  
