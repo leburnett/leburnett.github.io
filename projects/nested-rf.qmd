@@ -6,41 +6,70 @@ image: "/assets/projects/nested-rf/card.png"
 imagealt: "Data visualisations of a single cell's response to flashes at different locations in space."
 years: "2024–2026"
 kinds: [Pipeline]
-categories: [MATLAB, Python, Signal Processing, Experimental Design]
+categories: [MATLAB, Python, Electrophysiology, Signal Processing, Dash, Experimental Design]
 priority: 5
 ---
 
 ![](/assets/projects/nested-rf/card.png){fig-alt="Data visualisations of a single cell's response to flashes at different locations in space."}
 
+::: {.note-box}
+## Highlights
+
+- Designed a **two-stage adaptive protocol** for patch electrophysiology: a coarse survey of the whole arena (~7 minutes), then a dense follow-up (~20 minutes) centred on the receptive field that survey finds.
+- Wrote the **MATLAB** stimulus generation for both stages, building every pattern, function and experiment file from scratch per recording so the second protocol is tailored to the cell being held.
+- Automated the analysis in between: **P1** responses are processed into response grids, and a single number read off them generates the whole of **P2**.
+- Built the analysis extracting **receptive-field structure** and **direction-selectivity indices** from each cell, plus a **Dash** dashboard for reviewing recordings cell by cell.
+- Wrote the **documentation** so the protocol runs end to end without me; it is now in routine use by the experimenter it was built for.
+:::
+
 ## Background
 
-I designed and built an adaptive experimental protocol for electrophysiology recordings of motion-responsive cell types. This two-step system runs a coarse mapping protocol (P1), automatically analyses the neural responses, then generates a tailored high-resolution follow-up protocol (P2) centered on the neuron's identified receptive field. This two-stage adaptive approach improves data quality by allowing for  time to be better allocated to record responses only to stimuli in the region of visual space we know the cell cares about.
+Direction selectivity has to be built somewhere. In the fly's visual system, the first cells that respond more strongly to motion one way than the other are **T4** and **T5** — T4 to moving bright edges, T5 to dark ones. Everything downstream that cares about motion inherits its directional preference from them.
 
-This protocol was based on a similiar protocol developed by Eyal Gruntman in the Reiser Lab and was designed for experiments carried out by Jin Yong Park at HHMI Janelia for a collaboration with S Lawrence (Larry) Zipurski and Piero Sanfilippo at UCLA.
+That preference comes from **asymmetric inputs**. A T4 or T5 cell collects excitation and inhibition from columnar neurons that synapse at different positions along its dendrite, and because the dendrite is laid out retinotopically, those positions correspond to different points in visual space. Mapping the receptive field with local flashes shows the consequence directly: offset depolarising and hyperpolarising fields, with fast excitation and an inhibition that is delayed and trails it in space. That was worked out for T4 in Gruntman *et al.* 2018 and for T5 in Gruntman *et al.* 2019 (both below). An edge sweeping one way arrives at the inhibitory field first and the response is suppressed; sweeping the other way it does not. The direction preference is a consequence of *where* the inputs sit, not only of what they are.
+
+So the shape of a cell's receptive field is the mechanism, not merely a description of it. Map it finely enough and the offset is directly visible: in the map above, a depolarising lobe sits above a hyperpolarising one, displaced in space. Perturb the wiring and you would expect that offset and the direction selectivity it produces to shift together — so it is worth measuring both in the same cell.
+
+The difficulty is time. An *in vivo* patch recording lasts only as long as the cell stays healthy, and mapping a receptive field at fine resolution across the whole arena is far too slow to fit inside that window — most of the positions tested would fall in parts of visual space the cell ignores. Fine mapping has to be aimed.
 
 ::: {.problem-box}
 ## Problem
+
+Recover both the fine structure of a cell's receptive field and its direction selectivity from a single patch recording — by locating the receptive field quickly, then spending what time remains only where the cell actually responds.
 :::
 
 ## Methods
 
+Both protocols run on the lab's **G4 LED arena**, driven through its `G4_Display_Tools` experiment conductor.
+
+The first protocol is a coarse survey, around seven minutes long. Bright and dark squares are flashed one position at a time across a grid spanning the arena, first at 12 px and then at 6 px, which is enough to establish roughly where the cell's receptive field sits and whether bright or dark flashes drive it. Processing scripts then turn those recordings into a grid of response traces, one tile per position — the left-hand panel of the figure above is one of these.
+
+At that point the experimenter reads the peak position off the grid and types it, with the arena side, into a short **MATLAB GUI**. That hand-off is deliberate: judging which position genuinely drove the cell is a call worth a human making, and it costs one number. Everything downstream of it is automatic. `generate_protocol2()` writes a complete second experiment into a timestamped folder — patterns, display functions, the experiment file and its log — generated from scratch and centred on the position just entered.
+
+The second protocol runs for twenty to twenty-five minutes and does two things at once. Small squares, 6 px then 4 px with 50% overlap between positions, map the receptive field at much higher spatial resolution than the survey could afford. Moving bars, at two widths and at 14, 28 and 56 °/s in both directions, measure direction selectivity over the same patch of visual space. Because both are aimed at the region the cell responds to, almost none of the recording is spent on stimuli it will ignore.
+
+Analysis is automated from there: receptive-field structure and centroid from the flash responses, direction-selectivity indices and median membrane voltage from the bar sweeps, alongside recording-quality checks that flag cells worth excluding. Results are collected into a **Dash** dashboard where each cell can be reviewed on one page — bar sweeps, both flash maps, bar flashes and the original survey grids — and experiment metadata is pushed to a shared **Google Sheet** so the log keeps itself.
+
 ::: {.problem-box}
 ## Outcome
+
+The protocol is in routine use for the collaboration it was built for, and has been run across control and experimental genotypes to compare receptive-field structure and direction selectivity between them.
+
+Pre-made first protocols for each side of the arena ship with the code, so a new experimenter starts from a known-good survey rather than building one. The work is unpublished, so this page stays quiet on the findings.
 :::
-
-## Highlights
-
-- **Adaptive pipeline design**: automated analysis of protocol 1 results feeds directly into protocol 2 generation
-- **Real-time signal processing** of electrophysiology data
-- **MATLAB GUI** for parameter input and experiment control
-- **Automated protocol generation** from prior experimental results — no manual intervention required between stages
 
 ## Links
 
 - [Source Code]({{< var repos.nested_rf >}})
-- [Documentation]({{< var repos.reiser_docs_site >}}/Ephys/ephys_nested_rf.html)
+- [Documentation]({{< var repos.reiser_docs_site >}}/Ephys/ephys_nested_rf.html) — how to generate and run both protocols, and how to analyse the data.
 
+## References
+
+- Gruntman E, Romani S, Reiser MB. Simple integration of fast excitation and offset, delayed inhibition computes directional selectivity in Drosophila. *Nature Neuroscience* 21, 250–257 (2018). <https://www.nature.com/articles/s41593-017-0046-4> — the ON pathway (T4).
+- Gruntman E, Romani S, Reiser MB. The computation of directional selectivity in the Drosophila OFF motion pathway. *eLife* 8:e50706 (2019). <https://elifesciences.org/articles/50706> — the OFF pathway (T5), and the protocol this one was based on.
 
 ## Acknowledgements
 
-This project took place while I was a member of the **Reiser Lab** at Howard Hughes Medical Institute (HHMI) Janelia Research Campus. All fly husbandry was carried out by **Dr Ed Rogers** though, Janelia's Invertebrate Shared Resource helped maintain some of the fly stocks. The in-vivo patching experiments were done by **Dr Jin-Yong Park**, a member of Janelia's Project Team Resources (PTR). These experiments were done for a collaboration with **Dr Piero Sanfilippo** in **Dr Larry Zipurski's** group at UCLA.  
+The protocol was based on one developed by **Dr Eyal Gruntman** in the Reiser Lab.
+
+This project took place while I was a member of the **Reiser Lab** at Howard Hughes Medical Institute (HHMI) Janelia Research Campus. The *in vivo* patching experiments were carried out by **Dr Jin-Yong Park**, a member of Janelia's Project Team Resources (PTR). Fly husbandry was carried out by **Dr Ed Rogers**, and Janelia's Invertebrate Shared Resource helped maintain some of the fly stocks. The experiments were run for a collaboration with **Dr Piero Sanfilippo** in **Dr Larry Zipursky's** group at UCLA.
