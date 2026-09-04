@@ -1,7 +1,7 @@
 ---
 title: "Making sense of a fruit fly's neural wiring diagram"
 description: "Analysis of the male Drosophila visual system connectome: Python, Cypher and Snakemake workflows mapping 50,000+ neurons, released as reproducible code."
-subtitle: "Connectivity analysis and 3D visualisation of >50,000 neurons"
+subtitle: "Visual system connectivity analysis and 3D visualisation of >50,000 neurons"
 image: "/assets/projects/connectome/card.jpg"
 imagealt: "3D rendering of Drosophila optic lobe neurons."
 years: "2023–2025"
@@ -38,17 +38,17 @@ Since the generation of a single connectome requires vast amounts of time and re
 
 The nervous system of the fruit fly (***Drosophila melanogaster***) was an especially valuable candidate for connectome generation, since it is paired with nearly a century of deep genetic characterization, including a vast toolkit of mutants, genetic drivers, and functional data. 
 
-Combining this genetic knowledge with a complete wiring diagram allows researchers to link neural structure directly to gene expression and circuit function, turning the connectome into a resource not just for observing the nervous system, but for testing how it actually works.
+Combining this genetic knowledge with a complete wiring diagram allows researchers to link neural structure directly to gene expression and circuit function, turning the connectome into a resource not just for observing the nervous system, but for testing how it actually works. 
 
 ::: {.problem-box}
 ## Problem
 
-Transform this dense database of connectivity data on an individual cell level into **meaningful insights** about the visual system of the fruit fly, primarily through the categorisation of cells into types.
+Transform this dense database of connectivity data on an individual cell level into meaningful insights about the **visual system** of the fruit fly, primarily through the categorisation of cells into types.
 :::
 
 ## Methods
 
-The project involved querying a graphical database (neo4j) of over 150,000 neurons (~50,000 of which are within the visual system), performing connectivity analysis, creating 3D neuronal morphology renderings, and building reproducible computational workflows.
+The project involved querying a graphical database (neo4j) of ~50,000 visual system neurons, performing connectivity analysis, creating 3D neuronal morphology renderings, and building reproducible computational workflows. This dataset was a subset of the full dataset that was released in [2026](https://www.cell.com/cell/fulltext/S0092-8674(26)00942-6).
 
 ![Reconstructed skeletons of selected individual neurons from given cell types that are described within our connectome analysis. Subpanel from a figure from Nern *et al.* 2025.](/assets/projects/connectome/cell_types.jpg){#fig-cell-types}
 
