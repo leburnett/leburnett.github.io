@@ -40,7 +40,7 @@ Give experimenters and students population-level answers from the connectome —
 
 ## Methods
 
-The first version of the [Cell Type Explorer](https://reiserlab.github.io/celltype-explorer-drosophila-male-cns/index.html), released alongside Nern *et al.* 2025, covered only the optic lobe. After that paper was published, Frank Loesche and I were asked to extend it to the >100,000 remaining neurons of the whole male central nervous system ([Berg *et al.* 2026](https://www.biorxiv.org/content/10.1101/2025.10.09.680999v1.full)).
+The first version of the [Cell Type Explorer](https://reiserlab.github.io/celltype-explorer-drosophila-male-cns/index.html), released alongside Nern *et al.* 2025, covered only the optic lobe. After that paper was published, Frank Loesche and I were asked to extend it to the >100,000 remaining neurons of the whole male central nervous system ([Berg *et al.* 2026](https://www.cell.com/cell/fulltext/S0092-8674(26)00942-6)).
 
 Those cells broke most of the assumptions built into the original pipeline. It produced a great many metrics and plots that only mean something in the visual system. So, rather than special-case our way outwards, we rewrote the code behind the resource entirely. The result is a modular, service-oriented codebase in which each page is assembled from only the analyses that a given cell type, in a given dataset, can actually support.
 
@@ -70,8 +70,11 @@ For the male CNS that comes to **11,751 cell types**, drawn from **164,838 neuro
 
 - Explore the [Cell Type Explorer](https://reiserlab.github.io/celltype-explorer-drosophila-male-cns/index.html) for yourself!
 - [Source Code]({{< var repos.neuview >}})
-- [Nern *et al.* 2025](https://www.nature.com/articles/s41586-025-08746-0), the optic lobe connectome that the first version of the resource accompanied.
-- [Berg *et al.* 2026](https://www.biorxiv.org/content/10.1101/2025.10.09.680999v1.full), the complete male CNS connectome that the current version covers.
+
+## References
+
+- Berg, S., … Burnett, L.E., *et al.* [Sexual dimorphism in the complete connectome of the *Drosophila* male central nervous system.](https://www.cell.com/cell/fulltext/S0092-8674(26)00942-6) *Cell* (2026) — the complete male CNS connectome that the current version of the resource covers.
+- Nern, A., Loesche, F., Takemura, S., Burnett, L.E., *et al.* [Connectome-driven neural inventory of a complete visual system.](https://doi.org/10.1038/s41586-025-08746-0) *Nature* 641, 1225–1237 (2025) — the optic lobe connectome that the first version accompanied.
 
 ## Acknowledgements
 

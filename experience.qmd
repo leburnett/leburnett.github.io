@@ -141,10 +141,10 @@ The University of Melbourne, Australia
 :::
 ::: {.pub-entries}
 ::: {.pub-entry}
-**[Sexual dimorphism in the complete connectome of the Drosophila male central nervous system](https://doi.org/10.1101/2025.10.09.680999)**
+**[Sexual dimorphism in the complete connectome of the Drosophila male central nervous system](https://www.cell.com/cell/fulltext/S0092-8674(26)00942-6)**
 
 
-Berg, S., ... Burnett, L.E., et al. *BioRXiv*. 2026.
+Berg, S., ... Burnett, L.E., et al. *Cell*. 2026.
 :::
 :::
 :::

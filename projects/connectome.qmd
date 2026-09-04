@@ -66,9 +66,12 @@ Furthermore, we developed a reproducible **analysis pipeline** for this large-sc
 
 ## Links
 
-- [Source Code]({{< var repos.connectome >}}). This code contains everything needed to reproduce the analyses and to generate the figures in the paper below.
-- [Published Article](https://www.nature.com/articles/s41586-025-08746-0)
-- Related [preprint article](https://www.biorxiv.org/content/10.1101/2025.10.09.680999v1.full) that describes the entire nervous system connectome, not just the visual system.
+- [Source Code]({{< var repos.connectome >}}). This code contains everything needed to reproduce the analyses and to generate the figures in Nern *et al.* 2025, below.
+
+## References
+
+- Nern, A., Loesche, F., Takemura, S., Burnett, L.E., *et al.* [Connectome-driven neural inventory of a complete visual system.](https://doi.org/10.1038/s41586-025-08746-0) *Nature* 641, 1225–1237 (2025) — the visual system connectome this analysis was published as part of.
+- Berg, S., … Burnett, L.E., *et al.* [Sexual dimorphism in the complete connectome of the *Drosophila* male central nervous system.](https://www.cell.com/cell/fulltext/S0092-8674(26)00942-6) *Cell* (2026) — the complete nervous system connectome, not just the visual system.
 
 ## Acknowledgements
 
