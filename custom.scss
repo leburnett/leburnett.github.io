@@ -416,6 +416,147 @@ figcaption,
   margin: 0;
 }
 
+// "On this page" section index. Enabled per page, on the longer projects only,
+// with `format: html: toc: true` in their frontmatter — a bare top-level
+// `toc: true` does not override the project-wide `toc: false` (Quarto 1.8).
+// Styled to match the figure captions and the project nav rather than
+// Bootstrap's defaults, which come in at body size and read as a second menu.
+// Type size and weight are left exactly as Quarto sets them — only colour and
+// the rail are ours.
+#toc-title {
+  color: #888888;
+  margin-bottom: 0.75rem;
+}
+
+#TOC .nav-link {
+  color: #555555;
+  padding: 0.25rem 0 0.25rem 0.7rem;
+  // A hairline rail, so the current section reads as a position rather than
+  // just a colour change.
+  border-left: 2px solid #ececec;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+#TOC .nav-link:hover,
+#TOC .nav-link:focus-visible {
+  color: #1a1a1a;
+  border-left-color: #bbbbbb;
+}
+
+#TOC .nav-link.active {
+  border-left-color: #666666;
+}
+
+// Quarto sets the active TOC colour with `!important`
+// (`.sidebar nav[role="doc-toc"] ul > li > a.active`), so an override has to
+// match that selector and repeat the flag — a plain `#TOC .nav-link.active`
+// rule loses despite the higher specificity.
+.sidebar nav[role="doc-toc"] ul > li > a.active,
+.sidebar nav[role="doc-toc"] ul > li > ul > li > a.active {
+  color: #1a1a1a !important;
+}
+
+// Previous / next project navigation, appended to each project page by
+// _project-nav.html (generated from the `priority` frontmatter).
+// A three-column grid rather than a flex row, so each side keeps the same
+// width whether or not its sibling exists. The first and last projects have
+// only one link, and with `flex: 1 1 0` that link stretched across the whole
+// row; the empty grid column still claims its 1fr share.
+.project-nav {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: stretch;
+  gap: 0.75rem;
+  margin: 3.5rem 0 1rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid #e8e8e8;
+}
+
+.project-nav-link--prev {
+  grid-column: 1;
+}
+
+.project-nav-link--next {
+  grid-column: 3;
+}
+
+.project-nav-link {
+  min-width: 0;                 // let long titles wrap rather than stretch the cell
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  text-decoration: none !important;
+  color: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-nav-link:hover,
+.project-nav-link:focus-visible {
+  border-color: #aaaaaa;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+// "Next" sits on the right and reads right-aligned, mirroring "Previous".
+.project-nav-link--next {
+  text-align: right;
+}
+
+.project-nav-rel {
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #888888;
+}
+
+.project-nav-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #1a1a1a;
+  text-wrap: balance;
+}
+
+.project-nav-all {
+  grid-column: 2;
+  align-self: center;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  color: #555555;
+  text-decoration: none !important;
+  border-bottom: 1px solid transparent;
+}
+
+.project-nav-all:hover,
+.project-nav-all:focus-visible {
+  color: #1a1a1a;
+  border-bottom-color: #aaaaaa;
+}
+
+// One column on phones: two side-by-side cards leave no room for a title.
+@media (max-width: 640px) {
+  .project-nav {
+    grid-template-columns: 1fr;
+  }
+
+  // Stack in source order, with "All projects" last.
+  .project-nav-link--prev,
+  .project-nav-link--next,
+  .project-nav-all {
+    grid-column: 1;
+  }
+
+  .project-nav-link--prev { order: 0; }
+  .project-nav-link--next { order: 1; }
+  .project-nav-all { order: 2; }
+
+  .project-nav-link--next {
+    text-align: left;
+  }
+}
+
 // Blog listing - clean minimal list
 .quarto-listing-table {
   min-width: 500px;

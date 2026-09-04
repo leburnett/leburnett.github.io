@@ -8,9 +8,12 @@ years: "2023–2025"
 kinds: [Data Analysis]
 categories: [Connectomics, Python, Plotly, Neo4j, SQL, Snakemake, Blender, neuPrint]
 priority: 1
+format:
+  html:
+    toc: true
 ---
 
-![](/assets/projects/connectome/card.jpg){fig-alt="3D rendering of Drosophila optic lobe neurons."}
+![Render of optic lobe cells reconstructed from the Optic Lobe Connectome. Image copyright of [HHMI Janelia Research Campus](https://www.janelia.org/project-team/flyem/optic-lobe)](/assets/projects/connectome/card.jpg){fig-alt="3D rendering of Drosophila optic lobe neurons."}
 
 ::: {.note-box}
 ## Highlights
@@ -29,7 +32,7 @@ They are comprehensive maps of all neural cells and their connections within an 
 
 Individual neurons and their connections are meticulously segmented and traced, by both machine learning algorithms and human annotators, to generate a complex database where each neuron and each connection has it's own unique ID. 
 
-![Figure 1. Image of the raw (black and white) electron microscopy (EM) data, the analytically determined "layers" are superimposed in colour. Screenshot of the Neuroglancer viewer within https://neuprint.janelia.org/.](/assets/projects/connectome/raw_data.jpg)
+![Image of the raw (black and white) electron microscopy (EM) data, the analytically determined "layers" are superimposed in colour. Screenshot of the Neuroglancer viewer within https://neuprint.janelia.org/.](/assets/projects/connectome/raw_data.jpg){#fig-raw-data}
 
 Since the generation of a single connectome requires vast amounts of time and resources, very few exist at the moment. The [first connectome](https://royalsocietypublishing.org/rstb/article-abstract/314/1165/1/52889/The-structure-of-the-nervous-system-of-the?redirectedFrom=fulltext) was of the soil-dwelling nematode worm *Caenorhabditis elegans* (C.elegans) which is only ~1mm long and contains only 302 neurons. 
 
@@ -47,11 +50,11 @@ Transform this dense database of connectivity data on an individual cell level i
 
 The project involved querying a graphical database (neo4j) of over 150,000 neurons (~50,000 of which are within the visual system), performing connectivity analysis, creating 3D neuronal morphology renderings, and building reproducible computational workflows.
 
-![Figure 2. Reconstructed skeletons of selected individual neurons from given cell types that are described within our connectome analysis. Subpanel from a figure from Nern et al. 2025.](/assets/projects/connectome/cell_types.jpg)
+![Reconstructed skeletons of selected individual neurons from given cell types that are described within our connectome analysis. Subpanel from a figure from Nern *et al.* 2025.](/assets/projects/connectome/cell_types.jpg){#fig-cell-types}
 
 I was specifically involved performing analyses related to the **spatial organisation** of individual cells and groups of cells in 3D space and their assignment to vertical columns that span the depths of the fruit fly's visual system and form functionally distinct units.
 
-![Figure 3. Spatial analysis of cell types within the fruit fly's visual system. Subpanels from a figure from Nern et al. 2025.](/assets/projects/connectome/spatial_analysis.jpg)
+![Spatial analysis of cell types within the fruit fly's visual system. Subpanels from a figure from Nern *et al.* 2025.](/assets/projects/connectome/spatial_analysis.jpg){#fig-spatial-analysis}
 
 I was also involved in the first generation of the accompanying web resource ([Cell Type Explorer](https://reiserlab.github.io/celltype-explorer-drosophila-male-cns/index.html)) that we later improved upon with the generation of [neuView](/projects/neuview.qmd). We hoped that this web page would provide a more accessible, easy to use resource for researchers investigating the visual system of the fruit fly.
 
@@ -61,7 +64,7 @@ I was also involved in the first generation of the accompanying web resource ([C
 We established a **comprehensive inventory** of the visual neurons and developed a computational framework to quantify
 their anatomy. This allowed us to classify ~53,000 neurons into 732 types and forms a basis by which further analysis based on the morphology of cell types might be conducted.
 
-Furthermore, we developed a reproducible **analysis pipeline** for this large-scale connectomics dataset. The entire analysis workflow was published as supplemental code for [Nern <i>et al.</i> 2025](https://www.nature.com/articles/s41586-025-08746-0), creating what we like to think of as an "executable paper" where every figure and analysis can be independently replicated and reproduced. 
+Furthermore, we developed a reproducible **analysis pipeline** for this large-scale connectomics dataset. The entire analysis workflow was published as supplemental code for [Nern *et al.* 2025](https://www.nature.com/articles/s41586-025-08746-0), creating what we like to think of as an "executable paper" where every figure and analysis can be independently replicated and reproduced. 
 :::
 
 ## Links

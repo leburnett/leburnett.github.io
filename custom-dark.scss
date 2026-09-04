@@ -251,3 +251,62 @@ figcaption,
 #disco-btn:hover {
   border-color: #888888;
 }
+
+// Previous / next project navigation
+.project-nav {
+  border-top-color: #333333;
+}
+
+.project-nav-link {
+  border-color: #333333;
+}
+
+.project-nav-link:hover,
+.project-nav-link:focus-visible {
+  border-color: #777777;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.project-nav-rel {
+  color: #999999;
+}
+
+.project-nav-title {
+  color: #f0f0f0;
+}
+
+.project-nav-all {
+  color: #bbbbbb;
+}
+
+.project-nav-all:hover,
+.project-nav-all:focus-visible {
+  color: #ffffff;
+  border-bottom-color: #777777;
+}
+
+// "On this page" section index
+#toc-title {
+  color: #999999;
+}
+
+#TOC .nav-link {
+  color: #bbbbbb;
+  border-left-color: #333333;
+}
+
+#TOC .nav-link:hover,
+#TOC .nav-link:focus-visible {
+  color: #ffffff;
+  border-left-color: #777777;
+}
+
+#TOC .nav-link.active {
+  border-left-color: #999999;
+}
+
+// Matches Quarto's own !important rule — see the note in custom.scss.
+.sidebar nav[role="doc-toc"] ul > li > a.active,
+.sidebar nav[role="doc-toc"] ul > li > ul > li > a.active {
+  color: #ffffff !important;
+}

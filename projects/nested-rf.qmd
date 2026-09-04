@@ -7,7 +7,10 @@ imagealt: "Data visualisations of a single cell's response to flashes at differe
 years: "2024–2026"
 kinds: [Pipeline]
 categories: [MATLAB, Python, Electrophysiology, Signal Processing, Dash, Experimental Design]
-priority: 5
+priority: 4
+format:
+  html:
+    toc: true
 ---
 
 ![](/assets/projects/nested-rf/card.png){fig-alt="Data visualisations of a single cell's response to flashes at different locations in space."}
@@ -15,16 +18,14 @@ priority: 5
 ::: {.note-box}
 ## Highlights
 
-- Designed a **two-stage adaptive protocol** for patch electrophysiology: a coarse survey of the whole arena (~7 minutes), then a dense follow-up (~20 minutes) centred on the receptive field that survey finds.
-- Wrote the **MATLAB** stimulus generation for both stages, building every pattern, function and experiment file from scratch per recording so the second protocol is tailored to the cell being held.
-- Automated the analysis in between: **P1** responses are processed into response grids, and a single number read off them generates the whole of **P2**.
-- Built the analysis extracting **receptive-field structure** and **direction-selectivity indices** from each cell, plus a **Dash** dashboard for reviewing recordings cell by cell.
-- Wrote the **documentation** so the protocol runs end to end without me; it is now in routine use by the experimenter it was built for.
+- Designed a **two-stage adaptive protocol** for patch electrophysiology.
+- Wrote the **MATLAB** stimulus generation and automatic logging code.
+- Built the analysis scripts that extract the **receptive-field structure** and quantify **direction-selectivity indices** for each cell, plus a **Dash** dashboard for reviewing recordings cell by cell.
 :::
 
 ## Background
 
-Direction selectivity has to be built somewhere. In the fly's visual system, the first cells that respond more strongly to motion one way than the other are **T4** and **T5** — T4 to moving bright edges, T5 to dark ones. Everything downstream that cares about motion inherits its directional preference from them.
+Direction selectivity has to be built somewhere. In the fly's visual system, the first cells that respond more strongly to motion one way than the other are **T4** and **T5** — T4 to moving bright edges, T5 to dark ones. It is widely thought that everything downstream that cares about motion inherits its directional preference from them.
 
 That preference comes from **asymmetric inputs**. A T4 or T5 cell collects excitation and inhibition from columnar neurons that synapse at different positions along its dendrite, and because the dendrite is laid out retinotopically, those positions correspond to different points in visual space. Mapping the receptive field with local flashes shows the consequence directly: offset depolarising and hyperpolarising fields, with fast excitation and an inhibition that is delayed and trails it in space. That was worked out for T4 in Gruntman *et al.* 2018 and for T5 in Gruntman *et al.* 2019 (both below). An edge sweeping one way arrives at the inhibitory field first and the response is suppressed; sweeping the other way it does not. The direction preference is a consequence of *where* the inputs sit, not only of what they are.
 
@@ -53,9 +54,7 @@ Analysis is automated from there: receptive-field structure and centroid from th
 ::: {.problem-box}
 ## Outcome
 
-The protocol is in routine use for the collaboration it was built for, and has been run across control and experimental genotypes to compare receptive-field structure and direction selectivity between them.
-
-Pre-made first protocols for each side of the arena ship with the code, so a new experimenter starts from a known-good survey rather than building one. The work is unpublished, so this page stays quiet on the findings.
+The protocol is in routine use for the collaboration it was built for, and has been run across control and experimental genotypes to compare receptive-field structure and direction selectivity between them. 
 :::
 
 ## Links

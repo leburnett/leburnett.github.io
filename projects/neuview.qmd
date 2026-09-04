@@ -3,14 +3,17 @@ title: "Connectome Cell Type Explorer"
 description: "neuView: a Python CLI generating interactive HTML pages for neuron types from the NeuPrint connectome database, with caching that cut batch builds by 97%."
 subtitle: "Python CLI to generate an interactive web resource from a connectome dataset"
 image: "/assets/projects/neuview/card.jpg"
-imagealt: "Rendering of wide-field visual neurons — H1, H2, Am1, DCH/VCH and LPC1 — in the Drosophila brain."
+imagealt: "The landing page of the Cell Type Explorer, the web resource we built, showing its counts of 11,751 neuron types, 164,838 neurons and 171,898,782 synapses above a quick-search box."
 years: "2024–2026"
 kinds: [Web Resource]
 categories: [Python, NeuPrint, Cypher, Jinja2, CLI, Caching, SVG, Neuroglancer]
 priority: 2
+format:
+  html:
+    toc: true
 ---
 
-![](/assets/projects/neuview/card.jpg){fig-alt="Rendering of wide-field visual neurons — H1, H2, Am1, DCH/VCH and LPC1 — in the Drosophila brain."}
+![](/assets/projects/neuview/card.jpg){fig-alt="The landing page of the Cell Type Explorer, the web resource we built, showing its counts of 11,751 neuron types, 164,838 neurons and 171,898,782 synapses above a quick-search box."}
 
 ::: {.note-box}
 ## Highlights
@@ -20,7 +23,7 @@ priority: 2
 - Set up **CI** on **GitHub Actions**: unit and integration test suites, coverage reporting, and **Ruff** linting on every push.
 :::
 
-![Figure 1. The top of a cell type page in the Cell Type Explorer — here Dm4, right hemisphere. Cell counts, synapse and connection totals, neurotransmitter prediction and per-layer synapse counts are all pre-computed, so a reader never has to write a query to get them.](/assets/projects/neuview/page_example.png){width=90%}
+![The top of a cell type page in the Cell Type Explorer — here Dm4, right hemisphere. Cell counts, synapse and connection totals, neurotransmitter prediction and per-layer synapse counts are all pre-computed, so a reader never has to write a query to get them.](/assets/projects/neuview/page_example.png){#fig-page-example width=90%}
 
 ## Background
 
@@ -36,7 +39,7 @@ One of the great advantages of working with ***Drosophila melanogaster*** is its
 Give experimenters and students population-level answers from the connectome — morphology, connectivity, synapse counts, spatial coverage — without asking them to write a single **Cypher** or **neuPrint** query, and do it for every cell type in the dataset.
 :::
 
-![Figure 2. The complete web page for a single cell type — Dm4, left hemisphere. Summary statistics and per-layer synapse counts give way to the population spatial coverage maps, an interactive Neuroglancer view of the cells in the brain, the regions they innervate, and tables of every input and output partner.](/assets/projects/neuview/Dm4_L_full_page.png){width=50%}
+![The complete web page for a single cell type — Dm4, left hemisphere. Summary statistics and per-layer synapse counts give way to the population spatial coverage maps, an interactive Neuroglancer view of the cells in the brain, the regions they innervate, and tables of every input and output partner.](/assets/projects/neuview/Dm4_L_full_page.png){#fig-dm4-l-full-page width=50%}
 
 ## Methods
 
@@ -48,15 +51,15 @@ The rewrite paid for itself in build times as much as in tidiness. Pages are now
 
 The spatial coverage maps are drawn from scratch: hand-built hexagonal grids rendered as **SVG** through **Jinja2** templates, with their own coordinate system and colour mapping, and offered to the reader as a downloadable SVG or PNG.
 
-![Figure 3. One of the interactive spatial coverage maps I built. Each hexagon is a single column of the medulla, coloured by the number of synapses the cell type (here Tm3, right hemisphere) makes within it. The selector on the left steps through the ten medulla layers, and both the map and the colour scale update to the layer chosen.](/assets/projects/neuview/eyemap_demo.gif)
+![One of the interactive spatial coverage maps I built. Each hexagon is a single column of the medulla, coloured by the number of synapses the cell type (here Tm3, right hemisphere) makes within it. The selector on the left steps through the ten medulla layers, and both the map and the colour scale update to the layer chosen.](/assets/projects/neuview/eyemap_demo.gif){#fig-eyemap-demo}
 
 We rebuilt the resource around it too. There is now a documentation ["Help" page](https://reiserlab.github.io/celltype-explorer-drosophila-male-cns/help.html), a far more capable [search index](https://reiserlab.github.io/celltype-explorer-drosophila-male-cns/types.html) across every type, and a proper treatment of the fact that a type's cells may sit in the left hemisphere, the right, or on the midline — each type gets its own page per side as well as a combined one. 
 
-![Figure 4. The cell type index, filtered to show every dopaminergic type in the connectome — 44 of the 11,751 available. The index can be narrowed by brain region, neurotransmitter, dimorphism, class, soma neuromere and cell count, and each result carries the tags it matched on.](/assets/projects/neuview/search.png){width=80%}
+![The cell type index, filtered to show every dopaminergic type in the connectome — 44 of the 11,751 available. The index can be narrowed by brain region, neurotransmitter, dimorphism, class, soma neuromere and cell count, and each result carries the tags it matched on.](/assets/projects/neuview/search.png){#fig-search width=80%}
 
 One of my favourite features that I added was the addition of interactivity to the embedded **Neuroglancer** view on each page. The user can select a partner from the connectivity table and it appears in 3D alongside the cell type. Similarly, a spatial regions of interest (ROIs) can also be visualised within the 3D view by selecting the region within the ROI Innervation table.
 
-![Figure 5. Adding a region of interest to the embedded Neuroglancer view. Selecting the medulla (ME) from the ROI Innervation table renders that neuropil as a green shell around the cell type's neurons — here MeVP39, with its left and right cells in blue and yellow.](/assets/projects/neuview/add_roi_ME50.gif){width=80%}
+![Adding a region of interest to the embedded Neuroglancer view. Selecting the medulla (ME) from the ROI Innervation table renders that neuropil as a green shell around the cell type's neurons — here MeVP39, with its left and right cells in blue and yellow.](/assets/projects/neuview/add_roi_ME50.gif){#fig-add-roi-me50 width=80%}
 
 ::: {.problem-box}
 ## Outcome

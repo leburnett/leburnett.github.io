@@ -8,6 +8,9 @@ years: "2015–2016"
 kinds: [Experiments, Data Analysis]
 categories: [Dissections, Histology, Molecular, qPCR, Confocal imaging]
 priority: 8
+format:
+  html:
+    toc: true
 ---
 
 ![](/assets/projects/enteric/card.jpg){fig-alt="Confocal micrograph of stem cells transplanted into a mouse's gut."}
