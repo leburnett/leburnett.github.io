@@ -3,7 +3,7 @@ title: "About Me"
 toc: true
 ---
 
-Hey there! 👋 I'm Laura. 
+Hi! 👋 I'm Laura - I'm a research data scientist who's worked in neuroscience labs for over a decade.
 
 When I'm not at my computer you can find me with my nose in a book (both fiction and non-fiction), listening to a podcast, running along trails, trying to grow enough basil to make "fresh" pesto year round, painting, drawing or making linoleum relief prints. 
 

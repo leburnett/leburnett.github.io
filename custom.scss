@@ -161,11 +161,87 @@ b {
   font-style: italic;
 }
 
+// Tools line under the hero subtitle. Deliberately quiet: it is there to be
+// scanned for keywords, not read, so it sits below the subtitle in size and
+// weight and above the bio in the reading order.
+.hero-tools {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #777777;
+  max-width: 640px;
+  margin-bottom: 1.5rem;
+}
+
 .hero .bio {
   font-size: 1.05rem;
   line-height: 1.7;
   color: #333333;
   max-width: 640px;
+}
+
+// Homepage evidence strip — three verifiable credentials, sitting inside
+// `.hero` between the tools line and the featured projects. Text only, so it
+// stays quieter than the project cards below (which carry images) and reads as
+// something to scan rather than something to read.
+//
+// Only a `border-top`: it lives inside `.hero`, whose own `border-bottom`
+// closes the block. Adding a bottom border here would put two hairlines a
+// couple of rem apart, which reads as a mistake.
+.evidence {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e8e8e8;
+}
+
+.evidence-item p {
+  margin: 0;
+}
+
+.evidence-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #888888;
+}
+
+.evidence-note {
+  display: inline-block;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: #555555;
+  margin-top: 0.15rem;
+}
+
+// One column well before 640px: three tracks inside the 1040px column are
+// comfortable, but by ~800px the supporting lines are down to ~230px and start
+// wrapping to three and four lines.
+@media (max-width: 820px) {
+  .evidence {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+// Homepage featured projects — the "See all projects" link under the 3-up grid.
+.featured-more {
+  margin-top: 1.5rem;
+}
+
+// Matches .cv-button: grey outline and text, legible without hovering.
+.btn.more-projects {
+  color: #888888;
+  border-color: #888888;
+}
+
+.btn.more-projects:hover,
+.btn.more-projects:focus-visible {
+  background-color: #888888;
+  border-color: #888888;
+  color: #ffffff;
 }
 
 // Project pages carry both `subtitle` (shown under the title) and `description`
@@ -601,31 +677,6 @@ figcaption,
   font-size: 0.85rem;
 }
 
-// Disco ball easter egg trigger — dark mode only
-#disco-btn {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  z-index: 10000;
-  background: none;
-  border: 1px solid #e0e0e0;
-  border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
-  font-size: 1.2rem;
-  cursor: pointer;
-  opacity: 0.5;
-  transition: opacity 0.2s, border-color 0.2s;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-
-#disco-btn:hover {
-  opacity: 1;
-  border-color: #aaaaaa;
-}
 
 // Keep the sun/moon toggle on the same line as the site title. The name is an
 // inline <a> and the toggle an inline-flex <div>, with a whitespace text node

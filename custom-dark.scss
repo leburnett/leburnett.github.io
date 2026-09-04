@@ -242,15 +242,6 @@ figcaption,
   background-color: #ffffff;
 }
 
-// Disco ball button — visible only in dark mode
-#disco-btn {
-  display: flex;
-  border-color: #444444;
-}
-
-#disco-btn:hover {
-  border-color: #888888;
-}
 
 // Previous / next project navigation
 .project-nav {
@@ -309,4 +300,37 @@ figcaption,
 .sidebar nav[role="doc-toc"] ul > li > a.active,
 .sidebar nav[role="doc-toc"] ul > li > ul > li > a.active {
   color: #ffffff !important;
+}
+
+// Homepage tools line
+.hero-tools {
+  color: #999999;
+}
+
+// Homepage "See all projects" button. The sidebar .cv-button has no dark
+// override, so it inherits the theme; this one is set explicitly to stay legible
+// against the dark ground.
+.btn.more-projects {
+  color: #bbbbbb;
+  border-color: #bbbbbb;
+}
+
+.btn.more-projects:hover,
+.btn.more-projects:focus-visible {
+  background-color: #bbbbbb;
+  border-color: #bbbbbb;
+  color: #1a1a1a;
+}
+
+// Homepage evidence strip
+.evidence {
+  border-top-color: #333333;
+}
+
+.evidence-label {
+  color: #999999;
+}
+
+.evidence-note {
+  color: #bbbbbb;
 }
