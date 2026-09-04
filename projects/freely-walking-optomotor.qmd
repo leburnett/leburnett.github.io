@@ -90,8 +90,8 @@ We are in the process of writing up the results from this screen into an article
 
 ## References
 
-- Ofstad TA, Zuker CS, Reiser MB. Visual place learning in Drosophila melanogaster. Nature. 2011 Jun 8;474(7350):204-7. doi: 10.1038/nature10131.
-- Nern, A., Loesche, F., Takemura, Sy. et al. Connectome-driven neural inventory of a complete visual system. Nature 641, 1225–1237 (2025). https://doi.org/10.1038/s41586-025-08746-0
+- Ofstad TA, Zuker CS, Reiser MB. [Visual place learning in *Drosophila melanogaster*.](https://doi.org/10.1038/nature10131) *Nature* 474, 204–207 (2011) — the source of the arena schematic in @fig-setup.
+- Nern, A., Loesche, F., Takemura, S., Burnett, L.E., *et al.* [Connectome-driven neural inventory of a complete visual system.](https://doi.org/10.1038/s41586-025-08746-0) *Nature* 641, 1225–1237 (2025) — the connectome the cell type renders in @fig-cell-types come from.
 
 ## Acknowledgements
 

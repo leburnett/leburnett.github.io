@@ -94,14 +94,9 @@ def render(items):
   nav.className = 'project-nav';
   nav.setAttribute('aria-label', 'Project navigation');
 
+  // No "all projects" link here: the sidebar already carries one on every
+  // page, so a second copy at the foot of the article is redundant.
   if (i > 0) nav.appendChild(link(ORDER[i - 1], 'prev'));
-
-  var all = document.createElement('a');
-  all.className = 'project-nav-all';
-  all.href = 'index.html';
-  all.textContent = 'All projects';
-  nav.appendChild(all);
-
   if (i < ORDER.length - 1) nav.appendChild(link(ORDER[i + 1], 'next'));
 
   main.appendChild(nav);

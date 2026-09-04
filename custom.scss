@@ -534,13 +534,13 @@ figcaption,
 
 // Previous / next project navigation, appended to each project page by
 // _project-nav.html (generated from the `priority` frontmatter).
-// A three-column grid rather than a flex row, so each side keeps the same
-// width whether or not its sibling exists. The first and last projects have
-// only one link, and with `flex: 1 1 0` that link stretched across the whole
-// row; the empty grid column still claims its 1fr share.
+// A two-column grid rather than a flex row, so each side keeps the same width
+// whether or not its sibling exists. The first and last projects have only one
+// link, and with `flex: 1 1 0` that link stretched across the whole row; the
+// empty grid column still claims its 1fr share.
 .project-nav {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: stretch;
   gap: 0.75rem;
   margin: 3.5rem 0 1rem;
@@ -553,7 +553,7 @@ figcaption,
 }
 
 .project-nav-link--next {
-  grid-column: 3;
+  grid-column: 2;
 }
 
 .project-nav-link {
@@ -595,21 +595,6 @@ figcaption,
   text-wrap: balance;
 }
 
-.project-nav-all {
-  grid-column: 2;
-  align-self: center;
-  padding: 0.5rem 0.9rem;
-  font-size: 0.85rem;
-  color: #555555;
-  text-decoration: none !important;
-  border-bottom: 1px solid transparent;
-}
-
-.project-nav-all:hover,
-.project-nav-all:focus-visible {
-  color: #1a1a1a;
-  border-bottom-color: #aaaaaa;
-}
 
 // One column on phones: two side-by-side cards leave no room for a title.
 @media (max-width: 640px) {
@@ -617,16 +602,10 @@ figcaption,
     grid-template-columns: 1fr;
   }
 
-  // Stack in source order, with "All projects" last.
   .project-nav-link--prev,
-  .project-nav-link--next,
-  .project-nav-all {
+  .project-nav-link--next {
     grid-column: 1;
   }
-
-  .project-nav-link--prev { order: 0; }
-  .project-nav-link--next { order: 1; }
-  .project-nav-all { order: 2; }
 
   .project-nav-link--next {
     text-align: left;

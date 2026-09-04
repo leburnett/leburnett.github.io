@@ -108,7 +108,7 @@ Thankfully, both my supervisor, Prof. Maximilian Joesch, and Prof. Gaia Novarino
 - [PhD Thesis](https://research-explorer.ista.ac.at/download/12716/12718/Burnett_Thesis_2023_pdfA.pdf)
 
 ## References
-- [Evans DA, Stempel AV, Vale R, Ruehle S, Lefler Y, Branco T. A synaptic threshold mechanism for computing escape decisions. Nature. 2018 Jun;558(7711):590-594. doi: 10.1038/s41586-018-0244-6. Epub 2018 Jun 20. PMID: 29925954; PMCID: PMC6235113.](https://www.nature.com/articles/s41586-018-0244-6)
+- Evans DA, Stempel AV, Vale R, Ruehle S, Lefler Y, Branco T. [A synaptic threshold mechanism for computing escape decisions.](https://doi.org/10.1038/s41586-018-0244-6) *Nature* 558, 590–594 (2018) — the drift-diffusion model in @fig-threshold.
 
 ## Acknowledgments 
 

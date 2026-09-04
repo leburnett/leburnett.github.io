@@ -33,12 +33,39 @@ Usage
     # Check the whole site for images that are too heavy (no changes made)
     python3 scripts/optimise-image.py --check
 
+    # Show what a full sweep would do, without writing anything
+    python3 scripts/optimise-image.py --fix --dry-run
+
+    # Sweep the whole of assets/: shrink everything over budget, archive each
+    # original to image-originals/, and repoint any reference whose filename
+    # changed extension
+    python3 scripts/optimise-image.py --fix
+
 Presets
 -------
     card    1200px wide, quality 85  — project card images and social previews
     figure  1600px wide, quality 88  — in-page figures (these open in the lightbox)
 
 If no preset is given, files named `card.*` use `card`, everything else `figure`.
+
+--fix
+-----
+`--fix` is the whole-folder sweep. For every image over the budget it:
+
+  1. copies the original to image-originals/<folder>/ (never deletes it — an
+     existing archive is kept and the new one suffixed -v2, -v3, …),
+  2. re-encodes it with the preset its filename implies, and
+  3. if the extension changed (a .png that compresses better as JPEG becomes
+     .jpg), rewrites every reference to it across the site's .qmd, .yml and
+     .scss sources.
+
+Step 3 is the reason this exists. Converting by hand leaves `image:` fields and
+`![](…)` links pointing at a filename that no longer exists, which shows up as
+a silently missing card rather than an error.
+
+Run `--fix --dry-run` first: it prints the plan and touches nothing. Because the
+output extension depends on which encoder wins, a dry run can only say a rename
+is *possible*, not that it will happen.
 
 Animated GIFs
 -------------
@@ -66,6 +93,8 @@ import argparse
 import glob
 import io
 import os
+import re
+import shutil
 import sys
 
 try:
@@ -368,8 +397,187 @@ def check(budget_kb=BUDGET_KB):
     print(f"\n{len(over)} image(s) over {budget_kb} KB:")
     for p, n in sorted(over, key=lambda x: -x[1]):
         print(f"  {human(n):>9}  {p}")
-    print("\nTo fix:  python3 scripts/optimise-image.py <path> --replace")
+    print("\nTo fix:  python3 scripts/optimise-image.py --fix   (add --dry-run first)")
     return 1
+
+
+# --- --fix ------------------------------------------------------------------
+# Files searched for references to a renamed image. Deliberately narrow: the
+# site's own sources, not _site/ (a build artefact) or image-originals/.
+REFERENCE_GLOBS = ["*.qmd", "projects/*.qmd", "blog/**/*.qmd", "*.yml", "*.scss"]
+
+# Where an original is moved before being replaced. Gitignored, so it keeps
+# untracked sources recoverable — `--replace` alone would delete them.
+ARCHIVE_ROOT = "image-originals"
+
+
+def archive_path(path):
+    """image-originals/<parent dir name>/<filename>, so archives mirror the
+    per-project folders under assets/projects/."""
+    parent = os.path.basename(os.path.dirname(path)) or "misc"
+    return os.path.join(ARCHIVE_ROOT, parent, os.path.basename(path))
+
+
+def site_ref(path):
+    """The root-relative form the site uses, e.g. /assets/projects/x/card.jpg."""
+    rel = os.path.relpath(os.path.abspath(path), os.getcwd())
+    return "/" + rel.replace(os.sep, "/")
+
+
+def find_references(old_ref):
+    """Return {file: count} for every source file mentioning `old_ref`.
+
+    Matches both the root-relative form and the bare path without the leading
+    slash, since either can appear in markdown.
+    """
+    hits = {}
+    bare = old_ref.lstrip("/")
+    # The bare form is a substring of the root-relative one, so counting both
+    # naively double-counts every slashed hit. Count slashed occurrences, then
+    # only those bare occurrences not preceded by a slash.
+    bare_only = re.compile(r"(?<!/)" + re.escape(bare))
+    seen = {p for g in REFERENCE_GLOBS for p in glob.glob(g, recursive=True)}
+    for f in sorted(seen):
+        try:
+            text = open(f, encoding="utf-8").read()
+        except (OSError, UnicodeDecodeError):
+            continue
+        n = text.count(old_ref) + len(bare_only.findall(text))
+        if n:
+            hits[f] = n
+    return hits
+
+
+def rewrite_references(old_ref, new_ref, dry_run):
+    """Point every reference at the new filename. Returns files touched."""
+    touched = []
+    for f, n in find_references(old_ref).items():
+        if not dry_run:
+            text = open(f, encoding="utf-8").read()
+            # Longest form first, so replacing the slashless variant cannot
+            # corrupt a root-relative path that contains it.
+            text = text.replace(old_ref, new_ref)
+            text = text.replace(old_ref.lstrip("/"), new_ref.lstrip("/"))
+            open(f, "w", encoding="utf-8").write(text)
+        print(f"        {'would update' if dry_run else 'updated'} {f} ({n} reference{'s' if n > 1 else ''})")
+        touched.append(f)
+    if not touched:
+        print("        no references found — check nothing points at the old name")
+    return touched
+
+
+def is_spent(path):
+    """True for a still JPEG already at or below its preset width.
+
+    Re-encoding one of these is a bad trade: JPEG is lossy, so a second pass
+    discards image quality while typically saving under a percent. Such a file
+    needs its source resized or recompressed, not another round-trip.
+    """
+    if os.path.splitext(path)[1].lower() not in (".jpg", ".jpeg"):
+        return False
+    try:
+        with Image.open(path) as im:
+            if getattr(im, "n_frames", 1) > 1:
+                return False
+            width = im.size[0]
+    except OSError:
+        return False
+    preset = "card" if os.path.splitext(os.path.basename(path))[0] == "card" else "figure"
+    return width <= PRESETS[preset][0]
+
+
+def fix(budget_kb=BUDGET_KB, dry_run=False, gif_pinned=(None, None, None)):
+    """Shrink every over-budget image, archiving originals and repointing any
+    references whose filename extension changes."""
+    seen = sorted({p for g in SEARCH_GLOBS for p in glob.glob(g, recursive=True)})
+    over = [p for p in seen if os.path.getsize(p) > budget_kb * 1024]
+
+    if not over:
+        print(f"Nothing over {budget_kb} KB — no changes needed.")
+        return 0
+
+    print(f"{len(over)} image(s) over {budget_kb} KB"
+          f"{'  (DRY RUN — nothing will be written)' if dry_run else ''}:\n")
+
+    renamed, failed = [], []
+    for path in over:
+        print(f"  {path}  ({human(os.path.getsize(path))})")
+
+        if dry_run:
+            # Report the plan without touching anything. The exact output
+            # filename depends on which encoder wins, which we cannot know
+            # without doing the work, so flag that a rename is possible.
+            print(f"        would archive original to {archive_path(path)}")
+            try:
+                animated = getattr(Image.open(path), "n_frames", 1) > 1
+            except OSError:
+                animated = False
+            if animated:
+                print("        animated — would search GIF_LADDER for settings that fit; "
+                      "stays .gif, so no reference changes")
+            else:
+                preset = "card" if os.path.splitext(os.path.basename(path))[0] == "card" else "figure"
+                print(f"        would re-encode with the {preset} preset")
+            refs = find_references(site_ref(path))
+            if refs:
+                total = sum(refs.values())
+                print(f"        {total} reference(s) in {len(refs)} file(s): "
+                      f"{', '.join(sorted(refs))}")
+                if not animated and path.lower().endswith(".png"):
+                    print("        may become .jpg — those references would be repointed")
+            continue
+
+        # A JPEG already at or below its preset width has nothing left to give:
+        # re-encoding it buys a fraction of a percent and costs a generation of
+        # quality. Leave it alone and report it — the source needs resizing or
+        # recompressing by hand.
+        if is_spent(path):
+            with Image.open(path) as probe:
+                w = probe.size[0]
+            print(f"        already {w}px JPEG — re-encoding would cost quality for "
+                  f"~no gain; resize or recompress the source by hand")
+            failed.append(path)
+            continue
+
+        # Archive first: optimise() with --replace deletes the original.
+        arch = archive_path(path)
+        os.makedirs(os.path.dirname(arch), exist_ok=True)
+        if os.path.exists(arch):
+            base, ext = os.path.splitext(arch)
+            n = 2
+            while os.path.exists(f"{base}-v{n}{ext}"):
+                n += 1
+            arch = f"{base}-v{n}{ext}"
+        shutil.copy2(path, arch)
+        print(f"        archived original to {arch}")
+
+        old_ref = site_ref(path)
+        out = optimise(path, None, True, False, budget_kb, gif_pinned)
+        if out is None:
+            failed.append(path)
+            continue
+        new_ref = site_ref(out)
+        if new_ref != old_ref:
+            renamed.append((old_ref, new_ref))
+            rewrite_references(old_ref, new_ref, dry_run)
+        # Being smaller is not the same as being small enough.
+        if os.path.getsize(out) > budget_kb * 1024:
+            print(f"        [!] still {human(os.path.getsize(out))} — over the "
+                  f"{budget_kb} KB budget")
+            failed.append(out)
+
+    print()
+    if dry_run:
+        print("Dry run only. Re-run without --dry-run to apply.")
+        return 0
+    if renamed:
+        print(f"{len(renamed)} file(s) changed extension and had references repointed.")
+    if failed:
+        print(f"{len(failed)} image(s) still need attention by hand:")
+        for p in failed:
+            print(f"  {p}")
+    print("\nRe-run `--check` to confirm, then rebuild before committing.")
+    return 1 if failed else 0
 
 
 def main():
@@ -389,6 +597,11 @@ def main():
                     help="write the output even if it is not smaller")
     ap.add_argument("--check", action="store_true",
                     help=f"report images over the budget ({BUDGET_KB} KB) and exit non-zero")
+    ap.add_argument("--fix", action="store_true",
+                    help="sweep assets/: shrink everything over budget, archive originals "
+                         "and repoint references whose extension changed")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="with --fix, print the plan without writing anything")
     ap.add_argument("--budget", type=int, default=BUDGET_KB, metavar="KB",
                     help=f"size budget for --check and for GIF search (default {BUDGET_KB})")
     ap.add_argument("--gif-width", type=int, metavar="PX",
@@ -401,6 +614,11 @@ def main():
 
     if args.check:
         sys.exit(check(args.budget))
+    if args.fix:
+        sys.exit(fix(args.budget, args.dry_run,
+                     (args.gif_width, args.gif_frame_step, args.gif_colors)))
+    if args.dry_run:
+        sys.exit("--dry-run only applies to --fix.")
     if not args.paths:
         ap.print_help()
         sys.exit(1)
