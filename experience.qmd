@@ -6,7 +6,7 @@ toc: true
 
 [<i class="bi bi-file-earmark-arrow-down"></i> Download CV (PDF)](assets/cv.pdf){.btn .btn-outline-secondary .btn-sm .rounded-pill .cv-button target="_blank"}
 
-[Last updated: 2026-07-21]{.cv-updated}
+[Last updated: 2026-09-07]{.cv-updated}
 
 ## Research experience
 
