@@ -1,8 +1,12 @@
 ---
-# `title` stays empty so the hero below is the only heading on the page.
+# `title` must be set, not empty: with an empty title Quarto promotes the
+# first heading in the body into its title block, which pulls the hero's <h1>
+# out of the layout below. Quarto's own title block is hidden by the
+# `body:has(.hero)` rule in custom.scss, so the hero heading is the only one
+# on screen.
 # `pagetitle` sets the browser tab and og:title without Quarto appending the
 # site name — otherwise the share preview reads "– Laura Burnett".
-title: ""
+title: "Laura Burnett"
 pagetitle: "Laura Burnett — Research Data Scientist"
 # Suppress the site-name suffix here; pagetitle already contains her name, so
 # without this the tab reads "…Research Data Scientist – Laura Burnett".
@@ -35,34 +39,50 @@ listing:
 ---
 
 ::: {.hero}
-# Laura Burnett, Ph.D.
-[Research Data Scientist<br>]{.subtitle}
+::: {.hero-main}
+::: {.hero-intro}
+# Laura Burnett
 
-::: {.evidence}
-::: {.evidence-item}
-[Contributing author]{.evidence-label}<br>
-[Nature 2025](https://doi.org/10.1038/s41586-025-08746-0) · [Cell 2026](https://www.cell.com/cell/fulltext/S0092-8674(26)00942-6)<br>
-[*Drosophila* connectomics analysis]{.evidence-note}
-:::
+[Research Data Scientist · Systems Neuroscience Ph.D.]{.subtitle}
 
-::: {.evidence-item}
-[Built &amp; public]{.evidence-label}<br>
-[Cell Type Explorer](https://reiserlab.github.io/celltype-explorer-drosophila-male-cns/index.html)<br>
-[11,751 cell types, open access]{.evidence-note}
+I'm excited about creating tools and workflows to help faciliate scientific research and improve the reach of scientific knowledge.
 :::
 
-::: {.evidence-item}
-[First author]{.evidence-label}<br>
-[PLOS Biology, 2024](https://doi.org/10.1371/journal.pbio.3002668)<br>
-[Visual decision-making in autism mouse models]{.evidence-note}
-:::
-:::
+<!-- Raw <img> rather than markdown: `lightbox: auto` turns a markdown image
+     into a clickable figure and treats the alt text as a caption. -->
+<img class="hero-photo" src="/assets/photo.jpg" alt="Laura Burnett" width="648" height="648">
 :::
 
-### Recent Projects
+::: {.hero-links}
+[[Check out my code]{.hero-link-text}<i class="bi bi-github"></i>](https://github.com/leburnett){target="_blank" rel="noopener"}
+
+[[Read my published work]{.hero-link-text}<i class="bi bi-mortarboard-fill"></i>](https://scholar.google.com/citations?user=oPPRKuIAAAAJ&hl=en&oi=ao){target="_blank" rel="noopener"}
+
+[[Connect with me on LinkedIn]{.hero-link-text}<i class="bi bi-linkedin"></i>](https://www.linkedin.com/in/laura-burnett-265a16247/){target="_blank" rel="noopener"}
+
+[[Get in touch]{.hero-link-text}<i class="bi bi-envelope"></i>](mailto:leburnett3@gmail.com)
+
+[[Download my CV]{.hero-link-text}<i class="bi bi-file-earmark-arrow-down"></i>](/assets/cv.pdf){target="_blank"}
+:::
+
+:::
+
+## Recent Projects {.section-title}
 ::: {#featured-projects}
 :::
 
 ::: {.featured-more}
 [See all projects →](projects/index.qmd){.btn .more-projects}
+:::
+
+<!-- The `#cv` id sits on the wrapper rather than a heading, since this
+     section has no title of its own — the navbar's CV link scrolls here. -->
+::: {#cv .home-section}
+{{< include _cv-body.qmd >}}
+:::
+
+::: {.home-section}
+## About {.section-title}
+
+{{< include _about-body.qmd >}}
 :::

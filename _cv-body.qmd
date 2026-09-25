@@ -1,13 +1,3 @@
----
-title: "CV"
-description: "Experience, technical skills and publications across ten years of neuroscience research."
-toc: true
----
-
-[<i class="bi bi-file-earmark-arrow-down"></i> Download CV (PDF)](assets/cv.pdf){.btn .btn-outline-secondary .btn-sm .rounded-pill .cv-button target="_blank"}
-
-[Last updated: 2026-09-07]{.cv-updated}
-
 ## Research experience
 
 ::: {.pub-timeline}
@@ -220,20 +210,6 @@ Beattie, R., Postiglione, M.P., Burnett, L.E. et. al. *Neuron*. 2017.
 :::
 
 
-
-## Submitted publications
-
-::: {.pub-timeline}
-::: {.pub-year}
-2026
-:::
-::: {.pub-entries}
-::: {.pub-entry}
-*Localization of an IgSF-GABA receptor complex sculpts directional selectivity*
-Sanfilippo, P.,  ... Burnett, L.E., et al. 
-:::
-:::
-:::
 
 
 

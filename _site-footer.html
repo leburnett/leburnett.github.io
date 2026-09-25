@@ -1,0 +1,40 @@
+<!-- Fixed footer icon bar, present on every page (site-wide via
+     `include-after-body` in _quarto.yml). Root-relative hrefs so it resolves
+     correctly from any page depth (e.g. /projects/connectome.html).
+
+     `data-tooltip` drives the hover label (see `.site-footer-bar` in
+     custom.scss) rather than a native `title`, which is slow to appear and
+     styled by the OS. `aria-label` carries the same text for screen readers,
+     since the links have no visible text of their own. -->
+<div class="site-footer-bar">
+  <a href="https://github.com/leburnett" target="_blank" rel="noopener" aria-label="Check out my code on GitHub" data-tooltip="Check out my code"><i class="bi bi-github"></i></a>
+  <a href="https://scholar.google.com/citations?user=oPPRKuIAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" aria-label="Read my published work on Google Scholar" data-tooltip="Read my published work"><i class="bi bi-mortarboard-fill"></i></a>
+  <a href="https://www.linkedin.com/in/laura-burnett-265a16247/" target="_blank" rel="noopener" aria-label="Connect with me on LinkedIn" data-tooltip="Connect with me on LinkedIn"><i class="bi bi-linkedin"></i></a>
+  <a href="mailto:leburnett3@gmail.com" aria-label="Get in touch by email" data-tooltip="Get in touch"><i class="bi bi-envelope"></i></a>
+  <a href="/assets/cv.pdf" target="_blank" aria-label="Download my CV" data-tooltip="Download my CV"><i class="bi bi-file-earmark-arrow-down"></i></a>
+</div>
+
+<!-- Publishes two measurements so the homepage hero can fill exactly the
+     window on landing (see `.hero` in custom.scss): where the hero starts,
+     and how tall this footer bar is. Neither is a constant — the hero's top
+     is the fixed navbar plus Quarto's own content margins, and both differ
+     between the desktop and mobile layouts — so they are measured rather
+     than hard-coded. The hero's top doesn't depend on its own height, so
+     setting the height from it can't feed back. -->
+<script>
+  (function () {
+    var footer = document.querySelector(".site-footer-bar");
+    var hero = document.querySelector(".hero");
+    function setHeroMetrics() {
+      var root = document.documentElement;
+      if (footer) {
+        root.style.setProperty("--footer-height", footer.getBoundingClientRect().height + "px");
+      }
+      if (hero) {
+        root.style.setProperty("--hero-top", (hero.getBoundingClientRect().top + window.scrollY) + "px");
+      }
+    }
+    setHeroMetrics();
+    window.addEventListener("resize", setHeroMetrics);
+  })();
+</script>
