@@ -43,7 +43,7 @@ listing:
 ::: {.hero-intro}
 # Laura Burnett
 
-[Research Data Scientist · Systems Neuroscience Ph.D.]{.subtitle}
+[Research Data Scientist · Systems Neuroscience PhD]{.subtitle}
 
 I'm excited about creating tools and workflows to help faciliate scientific research and improve the reach of scientific knowledge.
 :::
