@@ -225,8 +225,8 @@ b {
 //
 // $hero-tail runs the hero that much PAST the fold, and its bottom padding is
 // the tail plus the gap the links want above it. Net effect: the links keep
-// their spacing above the fold while the closing divider is pushed out of
-// sight, so no stray line hints at the section below on landing.
+// their spacing above the fold while what follows stays out of sight, so
+// nothing hints at the section below on landing.
 $hero-tail: 4rem;
 
 .hero {
@@ -236,7 +236,6 @@ $hero-tail: 4rem;
   flex-direction: column;
   padding: 2rem 0 ($hero-tail + 2rem);
   margin-bottom: 2rem;
-  border-bottom: 1px solid #e8e8e8;
 }
 
 // The homepage sets a real `title` so Quarto stops promoting the hero's <h1>
@@ -323,23 +322,29 @@ body:has(.hero) #title-block-header {
   color: #1a1a1a;
 }
 
-// Homepage section titles ("Recent Projects", "CV", "About") — the only other
-// place the display serif is used.
+// Homepage section headings — "Recent Projects" and "About", plus the CV's
+// own headings ("Research experience", "Education", …), which sit at the same
+// level since the CV section carries no title of its own. This is the only
+// other place the display serif is used.
 //
-// The selector targets the heading ELEMENT, not the `.section-title` class
-// itself: Quarto renders with `section-divs`, so a `{.section-title}`
+// The first selector targets the heading ELEMENT, not the `.section-title`
+// class itself: Quarto renders with `section-divs`, so a `{.section-title}`
 // attribute written on a markdown heading lands on the whole <section>
 // wrapper, and a font-family set there would cascade into everything in the
 // section — project cards included.
-.section-title > h2 {
+.section-title > h2,
+#cv h2 {
   font-family: "Source Serif 4", Georgia, serif;
   font-size: 1.9rem;
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.02em;
-  // The theme underlines h2s. These titles already sit under the
-  // `.home-section` divider, so a second rule right beneath them reads as a
-  // mistake — and "Recent Projects" had no underline as an h3 before.
+}
+
+// The theme underlines h2s. The CV headings keep that rule — it separates
+// each block of entries — but these two stand alone above their content,
+// where an underline reads as a stray divider.
+.section-title > h2 {
   border-bottom: none;
   padding-bottom: 0;
 }
@@ -400,11 +405,11 @@ body:has(.hero) #title-block-header {
 
 // Homepage sections — scrolling down the page runs hero → Recent Projects
 // (a 3-up preview linking out to the projects page) → CV → About, the last
-// two carrying their full content rather than a teaser.
+// two carrying their full content rather than a teaser. Separated by space
+// alone; the only rules on the page are the ones under the CV headings.
 .home-section {
   margin-top: 3.5rem;
   padding-top: 3rem;
-  border-top: 1px solid #e8e8e8;
 }
 
 // The homepage column is widened to 1040px for the project grid (see
