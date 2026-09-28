@@ -213,6 +213,38 @@ figcaption,
   color: #aaaaaa;
 }
 
+// Publications cards — the same hairline as the project cards in dark mode.
+.pub-item {
+  border-color: #333333;
+}
+
+.pub-item > p {
+  color: #aaaaaa;
+}
+
+// Teaching and outreach grid
+.cv-grid-item p {
+  color: #aaaaaa;
+}
+
+.cv-grid-year {
+  color: #888888;
+}
+
+// Expandable detail on a CV entry
+.cv-detail > :not(summary) {
+  color: #aaaaaa;
+}
+
+.cv-detail summary {
+  color: #999999;
+}
+
+.cv-detail summary:hover,
+.cv-detail summary:focus-visible {
+  color: #ffffff;
+}
+
 // Hero icon — invert for dark mode
 .hero-icon {
   filter: invert(1);

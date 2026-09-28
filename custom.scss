@@ -415,7 +415,11 @@ body:has(.hero) #title-block-header {
 // The homepage column is widened to 1040px for the project grid (see
 // `.content:has(.project-grid)`); the CV and About prose below it would run
 // to that full width, well past a comfortable measure, without this.
+// `.pub-list` is deliberately not in this list: the publication cards run the
+// full width of the widened column, lining up with the project grid above and
+// with the rules under the section headings.
 .home-section .pub-timeline,
+.home-section .cv-grid,
 .home-section > .level2 > p,
 .home-section > .level2 > ul {
   max-width: 760px;
@@ -953,6 +957,166 @@ a:hover {
 
 .pub-entry p {
   margin: 0.15rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444444;
+}
+
+// Publications — one outlined card per paper, borrowing the hairline and
+// radius of the project cards but running the full width of the reading
+// column. The surrounding CV uses the dotted timeline above; boxing this
+// section keeps the two from reading as the same list twice.
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.pub-item {
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  padding: 1.1rem 1.25rem;
+}
+
+// Authors and venue.
+.pub-item > p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444444;
+}
+
+// The title, which carries its own link to the paper. Journal's own
+// `a { font-weight: 400 }` outranks the <strong> the markdown title sits in,
+// so the weight has to be restored on the anchor itself.
+.pub-item > p:first-child {
+  font-size: 1rem;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+.pub-item > p:first-child strong a {
+  font-weight: 700;
+}
+
+.pub-item > p + p {
+  margin-top: 0.35rem;
+}
+
+// The link to the project page sits in the card's bottom-right corner.
+// `:has()` targets the paragraph Pandoc wraps the link in, so the markdown
+// stays an ordinary link rather than another nested div.
+.pub-item > p:has(> .pub-item-link) {
+  margin-top: 0.7rem;
+  text-align: right;
+}
+
+.pub-item-link {
+  font-size: 0.85rem;
+}
+
+// Teaching and outreach — short, self-contained entries, so they sit in a
+// plain two-column grid: no rail, no dots, no box. Three textures down the
+// page (timeline, cards, grid) rather than one repeated three times.
+.cv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 2rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 700px) {
+  .cv-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Single-column variant, used by Teaching and mentoring so that it and the
+// Outreach grid below it don't read as the same block twice.
+.cv-grid-single {
+  grid-template-columns: 1fr;
+  row-gap: 1.25rem;
+}
+
+.cv-grid-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #444444;
+}
+
+.cv-grid-item p + p {
+  margin-top: 0.2rem;
+}
+
+// The year, on its own line above the entry. A block-level span rather than a
+// separate paragraph, so the markdown stays compact.
+.cv-grid-year {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #888888;
+  margin-bottom: 0.1rem;
+}
+
+// Expandable detail on a CV entry (see _cv-body.qmd). A native <details>, so
+// it opens without JavaScript and is keyboard-operable as it stands.
+.cv-detail {
+  margin-top: 0.5rem;
+}
+
+// The default disclosure triangle is replaced by the chevron below;
+// `list-style` hides it in Firefox, the pseudo-element in Safari.
+.cv-detail summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: fit-content;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #777777;
+  list-style: none;
+}
+
+.cv-detail summary::-webkit-details-marker {
+  display: none;
+}
+
+.cv-detail summary:hover,
+.cv-detail summary:focus-visible {
+  color: #1a1a1a;
+}
+
+// Chevron, drawn with the same masked-SVG approach as _icons.scss so it takes
+// its colour from the summary and needs no icon font.
+.cv-detail summary::after {
+  content: "";
+  width: 0.7em;
+  height: 0.7em;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%3D%22currentColor%22%20fill-rule%3D%22evenodd%22%20d%3D%22M1.646%204.646a.5.5%200%200%201%20.708%200L8%2010.293l5.646-5.647a.5.5%200%200%201%20.708.708l-6%206a.5.5%200%200%201-.708%200l-6-6a.5.5%200%200%201%200-.708%22%2F%3E%3C%2Fsvg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%3D%22currentColor%22%20fill-rule%3D%22evenodd%22%20d%3D%22M1.646%204.646a.5.5%200%200%201%20.708%200L8%2010.293l5.646-5.647a.5.5%200%200%201%20.708.708l-6%206a.5.5%200%200%201-.708%200l-6-6a.5.5%200%200%201%200-.708%22%2F%3E%3C%2Fsvg%3E") center / contain no-repeat;
+  transition: transform 0.2s ease;
+}
+
+.cv-detail[open] summary::after {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cv-detail summary::after {
+    transition: none;
+  }
+}
+
+// The revealed content, held to a readable measure. Type is set here rather
+// than inherited so the block can be pasted anywhere — inside a CV entry or
+// on its own — and still look the same.
+.cv-detail > :not(summary) {
+  max-width: 46rem;
+  margin-top: 0.4rem;
   font-size: 0.95rem;
   line-height: 1.5;
   color: #444444;
