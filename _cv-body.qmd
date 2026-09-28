@@ -2,7 +2,7 @@
 
 ::: {.pub-timeline}
 ::: {.pub-year}
-August 2023 - June 2026
+August 2023 - May 2026
 :::
 ::: {.pub-entries}
 ::: {.pub-entry}
@@ -367,7 +367,7 @@ One research technician (1 year), one graduate student (4 months), one summer un
 :::
 
 ::: {.cv-grid-item}
-[2017 - 2019]{.cv-grid-year}
+[2018 - 2020]{.cv-grid-year}
 **Teaching Assistant**, Neuroscience Track Core Course, ISTA
 
 Taught the image analysis with MATLAB section to incoming first-year students.
@@ -437,7 +437,7 @@ Created and ran an extra-curricular club for members of ISTA to create art toget
 :::
 
 ::: {.cv-grid-item}
-[2018 - 2019]{.cv-grid-year}
+[2018 - 2020]{.cv-grid-year}
 **Graduate Student Association (GSA) Representative**, ISTA
 :::
 
