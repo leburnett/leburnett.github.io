@@ -321,11 +321,11 @@ Innsbruck, Austria
 
 ::: {.pub-timeline}
 ::: {.pub-year}
-2018
+2019
 :::
 ::: {.pub-entries}
 ::: {.pub-entry}
-**Color Vision conference** (poster)
+**Color Vision: Circuits and Behaviour conference** (poster)
 
 HHMI Janelia Research Campus, Ashburn, Virginia, USA
 :::
