@@ -1,0 +1,21 @@
+```{=html}
+<div class="project-grid project-grid--posts">
+<% for (const item of items) { %>
+<a class="project-card project-card--post" href="<%- item.path %>">
+<% if (item.image) { %><div class="project-card-media"><img src="<%- item.image %>" alt="<%- item.imagealt || '' %>" loading="lazy"></div><% } %>
+<div class="project-card-body">
+<% const cats = Array.isArray(item.categories) ? item.categories : (item.categories ? [item.categories] : []); %>
+<% if (cats.length) { %>
+<div class="project-card-tags">
+<% for (const cat of cats) { %>
+<span class="project-tag project-tag--<%- String(cat).trim().toLowerCase().replace(/[^a-z0-9]+/g, '-') %>"><%- cat %></span>
+<% } %>
+</div>
+<% } %>
+<h3 class="project-card-title"><%- item.title %></h3>
+<span class="project-card-subtitle"><%- item.subtitle || item.description || '' %></span>
+</div>
+</a>
+<% } %>
+</div>
+```

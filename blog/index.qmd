@@ -1,18 +1,34 @@
 ---
+# Cards are generated from each post's frontmatter by ../_blog-card.ejs, using
+# the same card styles as the Projects page. Per-post fields it reads: title,
+# description, categories (shown as tags) and date (sort order only; the date
+# is shown on the post itself, not on the card).
 title: "Blog"
+page-layout: full
+# Card titles are <h3>; without this, anchor-sections nests an <a> inside the
+# card's own <a>, which is invalid HTML.
+anchor-sections: false
 listing:
-  contents:
-    - posts/*/index.qmd
-    - "!personal/**"
-  type: table
-  sort: "date desc"
-  fields: [date, title]
-  date-format: "YYYY-MM-DD"
-  table-hover: true
-  categories: false
-  sort-ui: false
-  filter-ui: false
+  - id: posts
+    template: ../_blog-card.ejs
+    contents:
+      - posts/*.md
+      # Drafts: remove as each post is published (see _quarto.yml).
+      - "!posts/0[679]_*.md"
+    sort: "date desc"
 ---
 
-<br>
-[<i class="bi bi-lock-fill"></i> Personal Blog](personal/index.html){.btn .btn-outline-secondary .btn-sm .rounded-pill}
+Hello! Welcome to the blog portion of my website. 
+
+I will use this space to keep track of ideas and helpful tips and tricks that I come across or that I have gathered from my career so far and create posts about interesting topics that I want to deep dive or dismantle.
+
+Every post carries one of three tags, so you can tell at a glance what kind of thing it is:
+
+- [Tool]{.project-tag .project-tag--tool} — a tool or resource: what it does and how it could help you.
+- [Tips]{.project-tag .project-tag--tips} — advice and tips I've picked up so far.
+- [Topic]{.project-tag .project-tag--topic} — an explainer on a subject, written up for someone coming to it fresh.
+
+I almost certainly will make some mistakes, so please feel free to send any comments, corrections or suggestions to me by email.
+
+::: {#posts}
+:::

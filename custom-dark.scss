@@ -139,6 +139,10 @@ $project-tag-colors-dark: (
   "data-analysis": (#26313d, #9db9d6),
   "web-resource":  (#332b3a, #c0a9cd),
   "pipeline":      (#3a3128, #d3b48d),
+  // Blog post categories
+  "tips":          (#3a3128, #d3b48d),
+  "tool":          (#26313d, #9db9d6),
+  "topic":         (#332b3a, #c0a9cd),
 );
 
 @each $name, $pair in $project-tag-colors-dark {

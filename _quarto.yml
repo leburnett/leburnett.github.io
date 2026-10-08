@@ -1,12 +1,16 @@
 project:
   type: website
   output-dir: _site
-  # Render everything except the blog (kept in the repo, not published for now).
-  # To bring the blog back, remove these render rules.
+  # The blog renders only the posts that are ready. Posts 06, 07 and 09 are drafts:
+  # remove their exclusions below as each one is published.
   render:
     - "*.qmd"
     - "**/*.qmd"
-    - "!blog/**"
+    - "blog/posts/*.md"
+    - "!blog/posts/welcome/**"
+    - "!blog/posts/06_*.md"
+    - "!blog/posts/07_*.md"
+    - "!blog/posts/09_*.md"
 
 website:
   title: "Laura Burnett"
@@ -37,6 +41,8 @@ website:
     right:
       - text: "Projects"
         href: projects/index.qmd
+      - text: "Blog"
+        href: blog/index.qmd
       - text: "CV"
         href: "/#cv"
       - text: "About"

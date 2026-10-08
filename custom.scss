@@ -499,6 +499,21 @@ body:has(.hero) #title-block-header {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
+// Blog post cards have no fixed square: they are text-only unless a post sets
+// `image:`. Instead of hugging their content — which left short posts looking
+// stunted next to long ones — they get a floor and grow past it when a title
+// or description needs the room. `stretch` equalises the cards within a row
+// (a row is only as tall as its tallest card); `min-height` is the floor
+// across rows, set just above the tallest card at the time of writing.
+.project-grid--posts {
+  align-items: stretch;
+}
+
+.project-card--post {
+  aspect-ratio: auto;
+  min-height: 11rem;
+}
+
 // Optional image, shown only when a project sets `image:` in its frontmatter.
 // Takes the top ~45% of the square; the body flexes into whatever is left.
 .project-card-media {
@@ -578,6 +593,10 @@ $project-tag-colors: (
   "data-analysis": (#e3ecf5, #3a5a7d),
   "web-resource":  (#efe7f3, #66507c),
   "pipeline":      (#f5ece0, #7d5e3c),
+  // Blog post categories
+  "tips":          (#f5ece0, #7d5e3c),
+  "tool":          (#e3ecf5, #3a5a7d),
+  "topic":         (#efe7f3, #66507c),
 );
 
 @each $name, $pair in $project-tag-colors {
