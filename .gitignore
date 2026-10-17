@@ -13,6 +13,9 @@ Thumbs.db
 
 **/*.quarto_ipynb
 
+# Support files Quarto writes when a single post is rendered on its own
+blog/posts/*_files/
+
 # Lab notebook session notes (auto-added)
 session-notes.md
 .DS_Store
