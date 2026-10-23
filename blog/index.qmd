@@ -24,9 +24,9 @@ I will use this space to keep track of ideas and helpful tips and tricks that I 
 
 Every post carries one of three tags, so you can tell at a glance what kind of thing it is:
 
-- [Tool]{.project-tag .project-tag--tool} — a tool or resource: what it does and how it could help you.
+- [Tool]{.project-tag .project-tag--tool} — a tool or resource: what it does, how it works and how it could help you.
 - [Tips]{.project-tag .project-tag--tips} — advice and tips I've picked up so far.
-- [Topic]{.project-tag .project-tag--topic} — an explainer on a subject, written up for someone coming to it fresh.
+- [Topic]{.project-tag .project-tag--topic} — an introductory explainer on a specific subject.
 
 I almost certainly will make some mistakes, so please feel free to send any comments, corrections or suggestions to me by email.
 
