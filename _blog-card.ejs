@@ -4,6 +4,9 @@
 <a class="project-card project-card--post" href="<%- item.path %>">
 <% if (item.image) { %><div class="project-card-media"><img src="<%- item.image %>" alt="<%- item.imagealt || '' %>" loading="lazy"></div><% } %>
 <div class="project-card-body">
+<h3 class="project-card-title"><%- item.title %></h3>
+<span class="project-card-subtitle"><%- item.subtitle || item.description || '' %></span>
+<div class="project-card-footer">
 <% const cats = Array.isArray(item.categories) ? item.categories : (item.categories ? [item.categories] : []); %>
 <% if (cats.length) { %>
 <div class="project-card-tags">
@@ -12,8 +15,8 @@
 <% } %>
 </div>
 <% } %>
-<h3 class="project-card-title"><%- item.title %></h3>
-<span class="project-card-subtitle"><%- item.subtitle || item.description || '' %></span>
+<% if (item.date) { %><span class="project-card-date"><%- item.date %></span><% } %>
+</div>
 </div>
 </a>
 <% } %>

@@ -36,6 +36,16 @@ listing:
       - "!projects/index.qmd"
     sort: "priority asc"
     max-items: 3
+  # The three newest posts, in the same card template as blog/index.qmd.
+  # Keep the draft exclusions in step with blog/index.qmd and _quarto.yml.
+  - id: recent-posts
+    template: _blog-card.ejs
+    contents:
+      - "blog/posts/*.md"
+      - "!blog/posts/0[679]_*.md"
+    sort: "date desc"
+    date-format: "D MMM YYYY"
+    max-items: 3
 ---
 
 ::: {.hero}
@@ -79,6 +89,16 @@ I'm excited about creating tools and workflows to help faciliate scientific rese
      section has no title of its own — the navbar's CV link scrolls here. -->
 ::: {#cv .home-section}
 {{< include _cv-body.qmd >}}
+:::
+
+::: {.home-section}
+## Recent Blog Posts {.section-title}
+::: {#recent-posts}
+:::
+
+::: {.featured-more}
+[See all blog posts →](blog/index.qmd){.btn .more-projects}
+:::
 :::
 
 ::: {.home-section}

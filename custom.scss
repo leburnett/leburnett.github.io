@@ -514,6 +514,25 @@ body:has(.hero) #title-block-header {
   min-height: 11rem;
 }
 
+// Blog tags sit after the description; `margin-top: auto` pins them to the
+// bottom-left of the card whatever the text length.
+.project-card--post .project-card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+// Posted date, bottom-right: same size and colour as the subtitle.
+.project-card-date {
+  margin-left: auto;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: #555555;
+  white-space: nowrap;
+}
+
 // Optional image, shown only when a project sets `image:` in its frontmatter.
 // Takes the top ~45% of the square; the body flexes into whatever is left.
 .project-card-media {

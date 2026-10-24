@@ -16,6 +16,7 @@ listing:
       # Drafts: remove as each post is published (see _quarto.yml).
       - "!posts/0[679]_*.md"
     sort: "date desc"
+    date-format: "D MMM YYYY"
 ---
 
 Hello! Welcome to the blog portion of my website. 
