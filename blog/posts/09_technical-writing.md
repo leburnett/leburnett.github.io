@@ -2,7 +2,7 @@
 title: "How to improve your technical writing skills."
 date: "2026-10-24"
 description: "Why it's important and how it can help improve your code and research practice."
-categories: [Tool]
+categories: [Tips]
 ---
 
 When most scientists think about writing, they think about writing papers. But the ability to write clear, useful technical text matters far beyond the manuscript: in the comments in your code, the instructions you leave for a colleague and the methods you will have to remember in six months' time. It is incredibly useful for anyone in a scientific or technical career.
