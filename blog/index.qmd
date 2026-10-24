@@ -14,7 +14,7 @@ listing:
     contents:
       - posts/*.md
       # Drafts: remove as each post is published (see _quarto.yml).
-      - "!posts/0[679]_*.md"
+      - "!posts/0[67]_*.md"
     sort: "date desc"
     date-format: "D MMM YYYY"
 ---

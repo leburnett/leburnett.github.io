@@ -10,7 +10,7 @@ project:
     - "!blog/posts/welcome/**"
     - "!blog/posts/06_*.md"
     - "!blog/posts/07_*.md"
-    - "!blog/posts/09_*.md"
+  
 
 website:
   title: "Laura Burnett"
