@@ -1,7 +1,7 @@
 Hi! 👋 I'm Laura - I'm a research data scientist who's worked in neuroscience labs for over a decade in the UK, US, Austria and Australia.
 
-I love working with **data**, sifting through complex datasets to uncover novel insights and building software that makes data usable and informative to a broader audience. I care about FAIR principles (findable, accessible, interoperable, reusable) in everything I write, because reusable work is what gives research a life beyond the paper it was written for.
+I love working with **data**, sifting through complex datasets to uncover novel insights and building software that makes data usable and informative to a broader audience.
 
-When I'm not at my computer you can find me with my nose in a book (both fiction and non-fiction), running along trails, trying to grow enough basil to make "fresh" pesto year round or making linoleum relief prints.
+When I'm not at my computer you can find me with my nose in a book (both fiction and non-fiction), running along trails, trying to grow enough basil to make "fresh" pesto year round or [making linoleum relief prints](https://leb-art.co.uk).
 
 Feel free to reach out if you have any questions or just want to get in touch!
