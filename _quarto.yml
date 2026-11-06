@@ -1,7 +1,7 @@
 project:
   type: website
   output-dir: _site
-  # The blog renders only the posts that are ready. Posts 06, 07 and 09 are drafts:
+  # The blog renders only the posts that are ready. Posts 06 and 07 are drafts:
   # remove their exclusions below as each one is published.
   render:
     - "*.qmd"
